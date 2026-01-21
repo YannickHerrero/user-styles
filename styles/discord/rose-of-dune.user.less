@@ -569,6 +569,21 @@
   }
 
   // ==========================================================================
+  // Hide server list, reveal on hover
+  // ==========================================================================
+  nav[aria-label*="Servers"],
+  nav[aria-label*="serveurs"],
+  nav[aria-label*="Encadré"],
+  [class*="guilds"][class*="wrapper"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  // ==========================================================================
   // Hide profile pictures in main chat area
   // ==========================================================================
   [class*="message"] [class*="avatar"],

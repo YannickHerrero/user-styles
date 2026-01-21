@@ -409,6 +409,14 @@
   *::-webkit-scrollbar-track { background: @scrollbar-track; }
   *::-webkit-scrollbar-thumb { background: @scrollbar-thumb; border-radius: 4px; &:hover { background: @scrollbar-hover; } }
 
+  // Hide server list, reveal on hover
+  nav[aria-label*="Servers"], nav[aria-label*="serveurs"], nav[aria-label*="Encadré"],
+  [class*="guilds"][class*="wrapper"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    &:hover { opacity: 1; }
+  }
+
   // Hide profile pictures in main chat area
   [class*="message"] [class*="avatar"], [class*="message"] [class*="Avatar"],
   [class*="chatContent"] [class*="avatar"], [class*="chatContent"] [class*="Avatar"] {

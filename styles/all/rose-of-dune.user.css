@@ -367,6 +367,19 @@
   *::-webkit-scrollbar-thumb:hover {
     background: rgba(107, 88, 67, 0.6);
   }
+  nav[aria-label*="Servers"],
+  nav[aria-label*="serveurs"],
+  nav[aria-label*="Encadré"],
+  [class*="guilds"][class*="wrapper"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  nav[aria-label*="Servers"]:hover,
+  nav[aria-label*="serveurs"]:hover,
+  nav[aria-label*="Encadré"]:hover,
+  [class*="guilds"][class*="wrapper"]:hover {
+    opacity: 1;
+  }
   [class*="message"] [class*="avatar"],
   [class*="message"] [class*="Avatar"],
   [class*="chatContent"] [class*="avatar"],
