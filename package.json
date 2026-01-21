@@ -1,0 +1,29 @@
+{
+  "name": "stylus",
+  "version": "1.0.0",
+  "description": "Custom userstyles for browser apps using the Rose of Dune color scheme",
+  "scripts": {
+    "build": "bun run build:themes && bun run build:styles && bun run build:import",
+    "build:themes": "bun scripts/generate-theme.js",
+    "build:styles": "bun run build:discord && bun run build:claude && bun run build:combined",
+    "build:discord": "lessc styles/discord/rose-of-dune.user.less styles/discord/rose-of-dune.user.css",
+    "build:claude": "lessc styles/claude/rose-of-dune.user.less styles/claude/rose-of-dune.user.css",
+    "build:combined": "lessc styles/all/rose-of-dune.user.less styles/all/rose-of-dune.user.css",
+    "build:import": "bun scripts/generate-import.js"
+  },
+  "devDependencies": {
+    "less": "^4.2.0"
+  },
+  "keywords": [
+    "userstyles",
+    "stylus",
+    "theme",
+    "rose-of-dune",
+    "discord",
+    "claude"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "smol-toml": "^1.6.0"
+  }
+}
