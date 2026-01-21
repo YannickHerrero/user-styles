@@ -569,6 +569,16 @@
   }
 
   // ==========================================================================
+  // Hide profile pictures in main chat area
+  // ==========================================================================
+  [class*="message"] [class*="avatar"],
+  [class*="message"] [class*="Avatar"],
+  [class*="chatContent"] [class*="avatar"],
+  [class*="chatContent"] [class*="Avatar"] {
+    display: none !important;
+  }
+
+  // ==========================================================================
   // Image/Media Opacity Effect - Reveal on hover
   // ==========================================================================
   img,

@@ -409,6 +409,12 @@
   *::-webkit-scrollbar-track { background: @scrollbar-track; }
   *::-webkit-scrollbar-thumb { background: @scrollbar-thumb; border-radius: 4px; &:hover { background: @scrollbar-hover; } }
 
+  // Hide profile pictures in main chat area
+  [class*="message"] [class*="avatar"], [class*="message"] [class*="Avatar"],
+  [class*="chatContent"] [class*="avatar"], [class*="chatContent"] [class*="Avatar"] {
+    display: none !important;
+  }
+
   // Image/Media Opacity Effect - Reveal on hover
   img, video, [class*="avatar"], [class*="Avatar"], [class*="guildIcon"], [class*="serverIcon"],
   [class*="emoji"], [class*="Emoji"], [class*="stickerAsset"], [class*="imageWrapper"],

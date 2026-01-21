@@ -416,6 +416,12 @@
   *::-webkit-scrollbar-thumb:hover {
     background: rgba(107, 88, 67, 0.6);
   }
+  [class*="message"] [class*="avatar"],
+  [class*="message"] [class*="Avatar"],
+  [class*="chatContent"] [class*="avatar"],
+  [class*="chatContent"] [class*="Avatar"] {
+    display: none !important;
+  }
   img,
   video,
   [class*="avatar"],
