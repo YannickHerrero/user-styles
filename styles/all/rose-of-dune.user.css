@@ -367,6 +367,43 @@
   *::-webkit-scrollbar-thumb:hover {
     background: rgba(107, 88, 67, 0.6);
   }
+  img,
+  video,
+  [class*="avatar"],
+  [class*="Avatar"],
+  [class*="guildIcon"],
+  [class*="serverIcon"],
+  [class*="emoji"],
+  [class*="Emoji"],
+  [class*="stickerAsset"],
+  [class*="imageWrapper"],
+  [class*="videoWrapper"],
+  [class*="embedVideo"],
+  [class*="embedImage"],
+  [class*="embedThumbnail"],
+  [data-type="gif"],
+  [data-type="sticker"] {
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+  }
+  img:hover,
+  video:hover,
+  [class*="avatar"]:hover,
+  [class*="Avatar"]:hover,
+  [class*="guildIcon"]:hover,
+  [class*="serverIcon"]:hover,
+  [class*="emoji"]:hover,
+  [class*="Emoji"]:hover,
+  [class*="stickerAsset"]:hover,
+  [class*="imageWrapper"]:hover,
+  [class*="videoWrapper"]:hover,
+  [class*="embedVideo"]:hover,
+  [class*="embedImage"]:hover,
+  [class*="embedThumbnail"]:hover,
+  [data-type="gif"]:hover,
+  [data-type="sticker"]:hover {
+    opacity: 1;
+  }
 }
 @-moz-document domain("claude.ai") {
   :root,

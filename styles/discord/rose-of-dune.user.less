@@ -567,4 +567,31 @@
       background: @scrollbar-hover;
     }
   }
+
+  // ==========================================================================
+  // Image/Media Opacity Effect - Reveal on hover
+  // ==========================================================================
+  img,
+  video,
+  [class*="avatar"],
+  [class*="Avatar"],
+  [class*="guildIcon"],
+  [class*="serverIcon"],
+  [class*="emoji"],
+  [class*="Emoji"],
+  [class*="stickerAsset"],
+  [class*="imageWrapper"],
+  [class*="videoWrapper"],
+  [class*="embedVideo"],
+  [class*="embedImage"],
+  [class*="embedThumbnail"],
+  [data-type="gif"],
+  [data-type="sticker"] {
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
