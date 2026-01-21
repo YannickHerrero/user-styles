@@ -1,0 +1,402 @@
+/* ==UserStyle==
+@name         Claude - Rose of Dune
+@namespace    github.com/yherrero/stylus
+@version      2.0.0
+@description  A soft rose-gold theme for Claude.ai with warm brown accents (Base16)
+@author       yherrero
+@license      MIT
+@preprocessor less
+==/UserStyle== */
+
+@import "../../themes/rose-of-dune.less";
+
+@-moz-document domain("claude.ai") {
+  // ============================================================================
+  // Claude CSS Custom Properties - Based on catppuccin approach
+  // ============================================================================
+  
+  :root,
+  :root[data-mode="dark"],
+  :root[data-mode="light"],
+  [data-theme="claude"][data-mode="light"],
+  [data-theme="claude"][data-mode="dark"] {
+    // Accent colors
+    --accent-brand: @primary !important;
+    --accent-main-000: @primary !important;
+    --accent-main-100: @primary !important;
+    --accent-main-200: darken(@primary, 5%) !important;
+    --accent-main-900: lighten(@primary, 10%) !important;
+    --accent-pro-000: @accent !important;
+    --accent-pro-100: @accent !important;
+    --accent-pro-200: darken(@accent, 5%) !important;
+    --accent-pro-900: lighten(@accent, 10%) !important;
+    --accent-secondary-000: @base0E !important;
+    --accent-secondary-100: @base0E !important;
+    --accent-secondary-200: darken(@base0E, 5%) !important;
+    --accent-secondary-900: lighten(@base0E, 10%) !important;
+    
+    // Background colors
+    --bg-000: @base01 !important;
+    --bg-100: @base00 !important;
+    --bg-200: @base00 !important;
+    --bg-300: @base01 !important;
+    --bg-400: @base01 !important;
+    --bg-500: darken(@base01, 3%) !important;
+    
+    // Border colors
+    --border-000: @base00 !important;
+    --border-100: @border-subtle !important;
+    --border-200: @border-primary !important;
+    --border-300: @border-primary !important;
+    --border-400: @accent !important;
+    --border-500: @accent !important;
+    
+    // Status colors
+    --danger-000: lighten(@base08, 10%) !important;
+    --danger-100: @base08 !important;
+    --danger-200: darken(@base08, 5%) !important;
+    --danger-900: fade(@base08, 20%) !important;
+    
+    // On-color (text on colored backgrounds)
+    --oncolor-000: @base01 !important;
+    --oncolor-100: @base01 !important;
+    --oncolor-200: @base00 !important;
+    --oncolor-300: @base07 !important;
+    
+    // Text colors
+    --text-000: @base05 !important;
+    --text-100: @base05 !important;
+    --text-200: @base05 !important;
+    --text-300: @base04 !important;
+    --text-400: @base03 !important;
+    --text-500: @base03 !important;
+    
+    // Focus
+    --ring-color: @primary !important;
+    --focus-ring-color: @focus-ring !important;
+  }
+  
+  // ============================================================================
+  // Force background on common Tailwind classes Claude uses
+  // ============================================================================
+  .bg-bg-100, .bg-bg-200 {
+    background-color: @base00 !important;
+  }
+  
+  .bg-bg-000, .bg-bg-300 {
+    background-color: @base01 !important;
+  }
+  
+  // Target the main app container
+  #__next,
+  [data-testid="app-root"],
+  .flex.min-h-screen,
+  .min-h-screen {
+    background-color: @base00 !important;
+  }
+
+  // ============================================================================
+  // Component-specific overrides
+  // ============================================================================
+  
+  // Main background
+  body {
+    background: @base00 !important;
+    color: @base05 !important;
+  }
+  
+  // Sidebar navigation
+  nav {
+    background: @base01 !important;
+  }
+  
+  // Force sidebar background (Claude uses !bg-bg-200 class)
+  nav.\!bg-bg-200,
+  .bg-bg-200 {
+    background: @base01 !important;
+  }
+  
+  // Chat messages area
+  main {
+    background: @base00 !important;
+  }
+  
+  // ============================================================================
+  // Code blocks - using base16 syntax colors
+  // ============================================================================
+  .code-block__code {
+    background: @code-bg !important;
+    
+    code {
+      // Default color
+      span {
+        color: @base05 !important;
+      }
+      
+      // Syntax highlighting using base16 colors
+      span.token[style*="color: rgb(152, 195, 121)"],
+      span.token.string {
+        color: @syntax-string !important;
+      }
+      
+      span.token[style*="color: rgb(209, 154, 102)"],
+      span.token.keyword,
+      span.token.attr-name {
+        color: @syntax-keyword !important;
+      }
+      
+      span.token[style*="color: rgb(97, 175, 239)"],
+      span.token.function,
+      span.token.tag {
+        color: @syntax-function !important;
+      }
+      
+      span.token[style*="color: rgb(224, 108, 117)"],
+      span.token.important,
+      span.token.deleted {
+        color: @syntax-variable !important;
+      }
+      
+      span.token[style*="color: rgb(198, 120, 221)"],
+      span.token.class-name,
+      span.token.builtin {
+        color: @syntax-class !important;
+      }
+      
+      span.token[style*="color: rgb(171, 178, 191)"],
+      span.token.comment {
+        color: @syntax-comment !important;
+      }
+      
+      span.token.number {
+        color: @syntax-constant !important;
+      }
+      
+      span.token.operator {
+        color: @base04 !important;
+      }
+      
+      span.token.punctuation {
+        color: @base03 !important;
+      }
+      
+      span.token.regex {
+        color: @syntax-regex !important;
+      }
+    }
+  }
+  
+  // Inline code
+  code:not(pre code),
+  code.text-danger-000 {
+    background: @code-bg !important;
+    color: @syntax-variable !important;
+    padding: 0.125rem 0.375rem;
+    border-radius: 4px;
+  }
+  
+  // ============================================================================
+  // UI Elements
+  // ============================================================================
+  
+  // Tooltips
+  div.bg-black\/80 {
+    background: @base01 !important;
+  }
+  
+  div.text-white {
+    color: @base05 !important;
+  }
+  
+  // Logo and branding
+  div.text-\[\#D97757\] {
+    color: @primary !important;
+  }
+  
+  // "New chat" button icon
+  div.text-always-white svg {
+    color: @base00 !important;
+  }
+  
+  // Pro/subscription buttons
+  button.bg-accent-pro-100 > span.inline-block {
+    color: @base00 !important;
+  }
+  
+  // Buttons with accent background
+  button.bg-accent-secondary-900 {
+    span.text-text-000 {
+      color: @base00 !important;
+    }
+    span.text-text-300 {
+      color: @base01 !important;
+    }
+    div.bg-accent-secondary-000 {
+      background: darken(@base0E, 10%) !important;
+    }
+  }
+  
+  // Delete conversation (danger state)
+  div.\!text-danger-000.\[\&\[data-highlighted\]\]\:bg-danger-900[data-highlighted] {
+    background: fade(@base08, 20%) !important;
+  }
+  
+  // Checkboxes
+  input[type="checkbox"] + div.bg-bg-000 {
+    background: @base05 !important;
+  }
+  
+  // Links
+  a {
+    color: @base0D !important;
+    
+    &:hover {
+      color: darken(@base0D, 10%) !important;
+    }
+  }
+  
+  // ============================================================================
+  // Input fields
+  // ============================================================================
+  input, textarea {
+    background: @input-bg !important;
+    border-color: @input-border !important;
+    color: @base05 !important;
+    
+    &::placeholder {
+      color: @input-placeholder !important;
+    }
+    
+    &:focus {
+      border-color: @input-focus-border !important;
+      box-shadow: 0 0 0 2px @focus-ring !important;
+    }
+  }
+  
+  // Chat input area
+  .ProseMirror {
+    background: @base01 !important;
+    color: @base05 !important;
+    
+    &::placeholder,
+    .placeholder {
+      color: @input-placeholder !important;
+    }
+  }
+  
+  // ============================================================================
+  // Message bubbles
+  // ============================================================================
+  [data-testid="human-turn"] {
+    background: @base01 !important;
+  }
+  
+  [data-testid="assistant-turn"] {
+    background: @base00 !important;
+  }
+  
+  // ============================================================================
+  // Conversation list
+  // ============================================================================
+  .hover\:bg-bg-300:hover {
+    background: @hover-overlay !important;
+  }
+  
+  .bg-bg-300 {
+    background: @selection-bg !important;
+  }
+  
+  // ============================================================================
+  // Scrollbars
+  // ============================================================================
+  * {
+    .apply-scrollbar();
+  }
+  
+  // ============================================================================
+  // Modals and Dialogs
+  // ============================================================================
+  [role="dialog"] {
+    background: @base00 !important;
+    border-color: @border-primary !important;
+  }
+  
+  // Dropdown menus
+  [role="menu"],
+  [role="listbox"] {
+    background: @base07 !important;
+    border-color: @border-primary !important;
+  }
+  
+  // Menu items on hover
+  [role="menuitem"]:hover,
+  [role="option"]:hover {
+    background: @hover-overlay !important;
+  }
+  
+  // ============================================================================
+  // Artifacts/rendered content
+  // ============================================================================
+  .artifact-container,
+  [data-testid="artifact"] {
+    background: @base07 !important;
+    border-color: @border-primary !important;
+  }
+  
+  // ============================================================================
+  // Tables in responses
+  // ============================================================================
+  table {
+    border-color: @border-primary !important;
+    
+    th {
+      background: @base01 !important;
+      color: @base05 !important;
+      border-color: @border-primary !important;
+    }
+    
+    td {
+      border-color: @border-subtle !important;
+    }
+    
+    tr:hover {
+      background: @hover-overlay !important;
+    }
+  }
+  
+  // ============================================================================
+  // Markdown elements
+  // ============================================================================
+  blockquote {
+    border-left-color: @accent !important;
+    background: fade(@accent, 8%) !important;
+    color: @base04 !important;
+  }
+  
+  hr {
+    border-color: @border-primary !important;
+  }
+  
+  ul, ol {
+    color: @base05 !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: @base06 !important;
+  }
+  
+  strong, b {
+    color: @base05 !important;
+  }
+  
+  em, i {
+    color: @base04 !important;
+  }
+  
+  // ============================================================================
+  // Selection highlight
+  // ============================================================================
+  ::selection {
+    background-color: fade(@primary, 60%) !important;
+  }
+}

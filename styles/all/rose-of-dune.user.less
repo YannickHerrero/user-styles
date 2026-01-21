@@ -1,0 +1,551 @@
+/* ==UserStyle==
+@name         All Sites - Rose of Dune
+@namespace    github.com/yherrero/stylus
+@version      2.0.0
+@description  A soft rose-gold theme for all supported websites (Discord, Claude.ai)
+@author       yherrero
+@license      MIT
+@preprocessor less
+==/UserStyle== */
+
+@import "../../themes/rose-of-dune.less";
+
+// ============================================================================
+// Discord
+// ============================================================================
+@-moz-document domain("discord.com") {
+  .theme-dark, .theme-light {
+    // Brand Scale (100-900)
+    --brand-100: lighten(@primary, 45%) !important;
+    --brand-130: lighten(@primary, 42.5%) !important;
+    --brand-160: lighten(@primary, 40%) !important;
+    --brand-200: lighten(@primary, 37.5%) !important;
+    --brand-230: lighten(@primary, 35%) !important;
+    --brand-260: lighten(@primary, 32.5%) !important;
+    --brand-300: lighten(@primary, 30%) !important;
+    --brand-330: lighten(@primary, 25%) !important;
+    --brand-360: lighten(@primary, 20%) !important;
+    --brand-400: lighten(@primary, 15%) !important;
+    --brand-430: lighten(@primary, 10%) !important;
+    --brand-460: lighten(@primary, 5%) !important;
+    --brand-500: @primary !important;
+    --brand-530: darken(@primary, 5%) !important;
+    --brand-560: darken(@primary, 10%) !important;
+    --brand-600: darken(@primary, 15%) !important;
+    --brand-630: darken(@primary, 20%) !important;
+    --brand-660: darken(@primary, 25%) !important;
+    --brand-700: darken(@primary, 30%) !important;
+    --brand-730: darken(@primary, 32.5%) !important;
+    --brand-760: darken(@primary, 35%) !important;
+    --brand-800: darken(@primary, 37.5%) !important;
+    --brand-830: darken(@primary, 40%) !important;
+    --brand-860: darken(@primary, 42.5%) !important;
+    --brand-900: darken(@primary, 45%) !important;
+    
+    // Brand Alpha variants
+    --brand-05a: fade(@primary, 5%) !important;
+    --brand-10a: fade(@primary, 10%) !important;
+    --brand-15a: fade(@primary, 15%) !important;
+    --brand-20a: fade(@primary, 20%) !important;
+    --brand-25a: fade(@primary, 25%) !important;
+    --brand-30a: fade(@primary, 30%) !important;
+    --brand-35a: fade(@primary, 35%) !important;
+    --brand-40a: fade(@primary, 40%) !important;
+    --brand-45a: fade(@primary, 45%) !important;
+    --brand-50a: fade(@primary, 50%) !important;
+    --brand-55a: fade(@primary, 55%) !important;
+    --brand-60a: fade(@primary, 60%) !important;
+    --brand-65a: fade(@primary, 65%) !important;
+    --brand-70a: fade(@primary, 70%) !important;
+    --brand-75a: fade(@primary, 75%) !important;
+    --brand-80a: fade(@primary, 80%) !important;
+    --brand-85a: fade(@primary, 85%) !important;
+    --brand-90a: fade(@primary, 90%) !important;
+    --brand-95a: fade(@primary, 95%) !important;
+
+    // Legacy brand variables
+    --brand-experiment: @primary !important;
+    --brand-experiment-360: lighten(@primary, 20%) !important;
+    --brand-experiment-400: lighten(@primary, 15%) !important;
+    --brand-experiment-430: lighten(@primary, 10%) !important;
+    --brand-experiment-460: lighten(@primary, 5%) !important;
+    --brand-experiment-500: @primary !important;
+    --brand-experiment-530: darken(@primary, 5%) !important;
+    --brand-experiment-560: darken(@primary, 10%) !important;
+    --brand-experiment-600: darken(@primary, 15%) !important;
+    --brand-experiment-630: darken(@primary, 20%) !important;
+    --brand-experiment-660: darken(@primary, 25%) !important;
+    
+    // Background Colors - Base Hierarchy
+    --app-frame-background: darken(@base01, 2%) !important;
+    --background-base-lowest: darken(@base01, 3%) !important;
+    --background-base-lower: @base01 !important;
+    --background-base-low: @base00 !important;
+    --background-surface-high: @base00 !important;
+    --background-surface-higher: darken(@base00, 2%) !important;
+    --background-surface-highest: @base01 !important;
+    --bg-surface-raised: @base01 !important;
+    --background-gradient-highest: @base00 !important;
+    
+    // Legacy background variables
+    --background-primary: @base00 !important;
+    --background-secondary: @base01 !important;
+    --background-secondary-alt: darken(@base00, 1%) !important;
+    --background-tertiary: @base01 !important;
+    --background-accent: @accent !important;
+    --background-floating: @base07 !important;
+    --background-mobile-primary: @base00 !important;
+    --background-mobile-secondary: @base01 !important;
+    --home-background: @base00 !important;
+    
+    // Background modifiers
+    --background-modifier-hover: fade(@base04, 10%) !important;
+    --background-modifier-active: fade(@base04, 20%) !important;
+    --background-modifier-selected: fade(@primary, 20%) !important;
+    --background-modifier-accent: fade(@base04, 10%) !important;
+    --background-mod-muted: fade(@base04, 5%) !important;
+    --background-mod-normal: fade(@base04, 15%) !important;
+    --background-mod-subtle: fade(@base04, 25%) !important;
+    --background-mod-strong: fade(@base04, 45%) !important;
+    
+    // Feedback backgrounds
+    --background-feedback-positive: fade(@base0C, 10%) !important;
+    --background-feedback-critical: fade(@base08, 10%) !important;
+    --background-feedback-warning: fade(@base09, 10%) !important;
+    --background-feedback-info: fade(@base0D, 10%) !important;
+
+    // Text Colors
+    --text-default: @base05 !important;
+    --text-normal: @base05 !important;
+    --text-muted: @base03 !important;
+    --text-link: @base0D !important;
+    --text-link-low-saturation: @base0D !important;
+    --text-brand: @primary !important;
+    --text-strong: @base05 !important;
+    --text-subtle: @base04 !important;
+    --text-positive: @base0C !important;
+    --text-warning: @base09 !important;
+    --text-danger: @base08 !important;
+    --text-feedback-positive: @base0C !important;
+    --text-feedback-critical: @base08 !important;
+    --text-feedback-warning: @base09 !important;
+    --text-feedback-info: @base0D !important;
+    --header-primary: @base05 !important;
+    --header-secondary: @base04 !important;
+
+    // Interactive Elements
+    --interactive-normal: @base04 !important;
+    --interactive-hover: @base05 !important;
+    --interactive-active: @base05 !important;
+    --interactive-muted: @base03 !important;
+    --interactive-icon-default: @base05 !important;
+    --interactive-icon-hover: @base05 !important;
+    --interactive-icon-active: @base05 !important;
+    --interactive-text-default: @base05 !important;
+    --interactive-text-hover: @base05 !important;
+    --interactive-text-active: @base05 !important;
+    --interactive-background-hover: fade(@base04, 15%) !important;
+    --interactive-background-selected: fade(@base03, 20%) !important;
+    --interactive-background-active: fade(@base05, 17%) !important;
+
+    // Icons
+    --icon-muted: @base03 !important;
+    --icon-default: @base05 !important;
+    --icon-strong: @base05 !important;
+    --icon-subtle: @base04 !important;
+    --icon-feedback-positive: @base0C !important;
+    --icon-feedback-warning: @base09 !important;
+    --icon-feedback-critical: @base08 !important;
+    --icon-feedback-info: @base0D !important;
+
+    // Channels & Sidebar
+    --channels-default: @base04 !important;
+    --channel-icon: @base03 !important;
+    --channel-text-area-placeholder: fade(@base05, 50%) !important;
+    --channeltextarea-background: @base01 !important;
+    --custom-channel-members-bg: @base01 !important;
+
+    // Chat
+    --chat-background: @base00 !important;
+    --chat-background-default: @base00 !important;
+    --chat-border: @border-primary !important;
+    --chat-text-muted: @base03 !important;
+    --chat-input-container-background: @base01 !important;
+
+    // Messages
+    --message-background-hover: fade(@base01, 30%) !important;
+    --message-mentioned-background-default: fade(@base09, 10%) !important;
+    --message-mentioned-background-hover: fade(@base09, 8%) !important;
+    --message-reacted-background-default: fade(@primary, 30%) !important;
+    --message-reacted-text-default: @primary !important;
+    --message-highlight-background-default: fade(@primary, 8%) !important;
+    --message-highlight-background-hover: fade(@primary, 6%) !important;
+    --message-automod-background-default: fade(@base08, 5%) !important;
+    --message-automod-background-hover: fade(@base08, 10%) !important;
+
+    // Borders
+    --border-muted: @base01 !important;
+    --border-strong: @base01 !important;
+    --border-normal: @border-primary !important;
+    --border-subtle: @base00 !important;
+
+    // Controls & Buttons
+    --control-primary-background-default: @primary !important;
+    --control-primary-background-hover: darken(@primary, 7.5%) !important;
+    --control-primary-background-active: darken(@primary, 12.5%) !important;
+    --control-secondary-background-default: @base01 !important;
+    --control-secondary-background-hover: darken(@base01, 5%) !important;
+    --control-secondary-background-active: darken(@base01, 7.5%) !important;
+    --control-secondary-text-default: @base05 !important;
+    --control-secondary-text-hover: @base05 !important;
+    --control-secondary-border-default: @base01 !important;
+    --control-critical-primary-background-default: @base08 !important;
+    --control-critical-primary-background-hover: darken(@base08, 5%) !important;
+    --control-critical-primary-background-active: darken(@base08, 10%) !important;
+    --control-critical-primary-text-default: @base00 !important;
+    --control-critical-primary-text-hover: @base00 !important;
+    --control-brand-foreground: @primary !important;
+    --control-brand-foreground-new: @primary !important;
+    --button-danger-background: @base08 !important;
+    --button-danger-background-hover: darken(@base08, 8%) !important;
+    --button-danger-background-active: darken(@base08, 12%) !important;
+    --button-positive-background: @base0C !important;
+    --button-positive-background-hover: darken(@base0C, 8%) !important;
+    --button-positive-background-active: darken(@base0C, 12%) !important;
+    --button-secondary-background: @base01 !important;
+    --button-secondary-background-hover: darken(@base01, 5%) !important;
+    --button-secondary-background-active: darken(@base01, 8%) !important;
+    --button-outline-danger-text: @base08 !important;
+    --button-outline-danger-border: @base08 !important;
+    --button-outline-danger-background-hover: fade(@base08, 15%) !important;
+    --button-outline-positive-text: @base0C !important;
+    --button-outline-positive-border: @base0C !important;
+    --button-outline-positive-background-hover: fade(@base0C, 15%) !important;
+    --redesign-button-positive-background: @base0C !important;
+    --redesign-button-secondary-background: @base01 !important;
+
+    // Input Fields
+    --input-background: @base07 !important;
+    --input-background-default: @base07 !important;
+    --input-text-default: @base05 !important;
+    --input-placeholder-text: @base03 !important;
+    --input-placeholder-text-default: @base04 !important;
+    --input-border-default: @base03 !important;
+
+    // Modals & Cards
+    --modal-background: @base00 !important;
+    --modal-footer-background: @base00 !important;
+    --card-background-default: @base01 !important;
+
+    // Status Colors
+    --status-danger: @base08 !important;
+    --status-positive: @base0C !important;
+    --status-warning: @base09 !important;
+    --status-positive-background: @base0C !important;
+    --status-positive-text: @base00 !important;
+    --status-warning-background: @base09 !important;
+    --status-warning-text: @base00 !important;
+    --status-danger-background: fade(@base08, 20%) !important;
+    --status-danger-text: @base08 !important;
+
+    // Info Colors
+    --info-positive-background: fade(@base0C, 15%) !important;
+    --info-positive-foreground: @base0C !important;
+    --info-positive-text: @base0C !important;
+    --info-warning-background: fade(@base09, 15%) !important;
+    --info-warning-foreground: @base09 !important;
+    --info-warning-text: @base09 !important;
+    --info-danger-background: fade(@base08, 15%) !important;
+    --info-danger-foreground: @base08 !important;
+    --info-danger-text: @base08 !important;
+    --info-help-background: fade(@accent, 15%) !important;
+    --info-help-foreground: @accent !important;
+    --info-help-text: @accent !important;
+
+    // Mentions
+    --mention-foreground: @primary !important;
+    --mention-background: fade(@primary, 30%) !important;
+
+    // Scrollbar
+    --scrollbar-thin-thumb: @primary !important;
+    --scrollbar-thin-track: transparent !important;
+    --scrollbar-auto-thumb: @primary !important;
+    --scrollbar-auto-track: @base01 !important;
+    --scrollbar-auto-scrollbar-color-thumb: @primary !important;
+    --scrollbar-auto-scrollbar-color-track: @base01 !important;
+
+    // Focus & Selection
+    --focus-primary: @primary !important;
+    --__adaptive-focus-ring-color: @primary !important;
+
+    // Spoilers
+    --spoiler-revealed-background: @base01 !important;
+    --spoiler-hidden-background: @base04 !important;
+
+    // Code
+    --background-code: @base00 !important;
+    --textbox-markdown-syntax: @base03 !important;
+
+    // Checkbox
+    --checkbox-border-default: @base03 !important;
+
+    // Elevation
+    --elevation-stroke: 0 0 0 1px @border-subtle !important;
+    --elevation-low: 0 1px 2px @card-shadow !important;
+    --elevation-medium: 0 4px 8px @card-shadow !important;
+    --elevation-high: 0 8px 16px @card-shadow !important;
+
+    // Primary Scale
+    --primary-100: @base04 !important;
+    --primary-200: @base03 !important;
+    --primary-300: @base04 !important;
+    --primary-400: @base04 !important;
+    --primary-630: @base01 !important;
+    --primary-700: @base01 !important;
+    --primary-800: @base01 !important;
+
+    // White Scale
+    --white: @base05 !important;
+    --white-400: @base05 !important;
+    --white-500: @base05 !important;
+    --white-600: @base04 !important;
+    --white-700: @base03 !important;
+
+    // Semantic Colors
+    --black-500: @base01 !important;
+    --green-360: @base0C !important;
+    --green-300: @base0C !important;
+    --yellow-360: @base09 !important;
+    --yellow-300: @base09 !important;
+    --red-400: @base08 !important;
+    --red-430: darken(@base08, 10%) !important;
+    --red-500: darken(@base08, 15%) !important;
+    --blue-500: darken(@base0D, 10%) !important;
+    --blue-530: darken(@base0D, 15%) !important;
+
+    // Blurple/Opacity variants
+    --opacity-blurple-8: fade(@primary, 8%) !important;
+    --opacity-blurple-16: fade(@primary, 16%) !important;
+    --opacity-blurple-24: fade(@primary, 24%) !important;
+    --opacity-blurple-32: fade(@primary, 32%) !important;
+    --opacity-blurple-60: fade(@primary, 60%) !important;
+    --blurple-50: @primary !important;
+
+    // Premium Colors
+    --guild-boosting-pink: @base0A !important;
+    --guild-boosting-blue: @base0D !important;
+    --guild-boosting-purple: @base0E !important;
+    --premium-perk-yellow: @base09 !important;
+    --premium-perk-purple: @base0E !important;
+    --premium-perk-blue: @base0D !important;
+    --premium-perk-green: @base0C !important;
+    --premium-perk-pink: @base0A !important;
+    --premium-perk-orange: @base09 !important;
+
+    // User Profile
+    --user-profile-overlay-background: @base01 !important;
+    --user-profile-overlay-background-hover: @base01 !important;
+
+    // Badge
+    --badge-background-default: @primary !important;
+    --badge-text-default: @base01 !important;
+    --badge-text-brand: @base00 !important;
+
+    // Integrations
+    --twitch: darken(@base0E, 10%) !important;
+    --playstation: darken(@base0D, 10%) !important;
+    --spotify: @base0C !important;
+
+    // Notice
+    --notice-background-critical: @base08 !important;
+    --notice-background-info: @base0D !important;
+    --notice-background-positive: @base0C !important;
+    --notice-background-warning: @base09 !important;
+    --notice-text-critical: @base01 !important;
+    --notice-text-info: @base01 !important;
+    --notice-text-positive: @base01 !important;
+    --notice-text-warning: @base01 !important;
+
+    // Logo
+    --logo-primary: @base05 !important;
+
+    // Search
+    --search-popout-option-non-text-color: @base03 !important;
+
+    // Header Bar
+    --__header-bar-background: @base01 !important;
+
+    // Deprecated
+    --deprecated-card-bg: @card-bg !important;
+    --deprecated-card-editable-bg: @card-bg !important;
+    --deprecated-store-bg: @base00 !important;
+    --deprecated-quickswitcher-input-background: @input-bg !important;
+    --deprecated-quickswitcher-input-placeholder: @input-placeholder !important;
+    --deprecated-text-input-bg: @input-bg !important;
+    --deprecated-text-input-border: @input-border !important;
+    --deprecated-text-input-border-hover: @accent !important;
+    --deprecated-text-input-border-disabled: @border-subtle !important;
+    --deprecated-text-input-prefix: @text-muted !important;
+    --activity-card-background: @card-bg !important;
+    --plum-23: @base00 !important;
+  }
+
+  ::selection { background-color: fade(@primary, 60%) !important; }
+  .hljs-keyword { color: @syntax-keyword !important; }
+  .hljs-string { color: @syntax-string !important; }
+  .hljs-function { color: @syntax-function !important; }
+  .hljs-comment { color: @syntax-comment !important; }
+  .hljs-number { color: @syntax-constant !important; }
+  .hljs-class { color: @syntax-class !important; }
+  .hljs-variable { color: @syntax-variable !important; }
+  .hljs-regexp { color: @syntax-regex !important; }
+  .hljs-built_in { color: @syntax-function !important; }
+  .hljs-literal { color: @syntax-constant !important; }
+  .hljs-type { color: @syntax-class !important; }
+  .hljs-title { color: @syntax-function !important; }
+  .hljs-attr { color: @syntax-variable !important; }
+  pre, code { background: @code-bg !important; }
+  *::-webkit-scrollbar { width: 8px; height: 8px; }
+  *::-webkit-scrollbar-track { background: @scrollbar-track; }
+  *::-webkit-scrollbar-thumb { background: @scrollbar-thumb; border-radius: 4px; &:hover { background: @scrollbar-hover; } }
+}
+
+// ============================================================================
+// Claude.ai
+// ============================================================================
+@-moz-document domain("claude.ai") {
+  :root,
+  :root[data-mode="dark"],
+  :root[data-mode="light"],
+  [data-theme="claude"][data-mode="light"],
+  [data-theme="claude"][data-mode="dark"] {
+    --accent-brand: @primary !important;
+    --accent-main-000: @primary !important;
+    --accent-main-100: @primary !important;
+    --accent-main-200: darken(@primary, 5%) !important;
+    --accent-main-900: lighten(@primary, 10%) !important;
+    --accent-pro-000: @accent !important;
+    --accent-pro-100: @accent !important;
+    --accent-pro-200: darken(@accent, 5%) !important;
+    --accent-pro-900: lighten(@accent, 10%) !important;
+    --accent-secondary-000: @base0E !important;
+    --accent-secondary-100: @base0E !important;
+    --accent-secondary-200: darken(@base0E, 5%) !important;
+    --accent-secondary-900: lighten(@base0E, 10%) !important;
+    --bg-000: @base01 !important;
+    --bg-100: @base00 !important;
+    --bg-200: @base00 !important;
+    --bg-300: @base01 !important;
+    --bg-400: @base01 !important;
+    --bg-500: darken(@base01, 3%) !important;
+    --border-000: @base00 !important;
+    --border-100: @border-subtle !important;
+    --border-200: @border-primary !important;
+    --border-300: @border-primary !important;
+    --border-400: @accent !important;
+    --border-500: @accent !important;
+    --danger-000: lighten(@base08, 10%) !important;
+    --danger-100: @base08 !important;
+    --danger-200: darken(@base08, 5%) !important;
+    --danger-900: fade(@base08, 20%) !important;
+    --oncolor-000: @base01 !important;
+    --oncolor-100: @base01 !important;
+    --oncolor-200: @base00 !important;
+    --oncolor-300: @base07 !important;
+    --text-000: @base05 !important;
+    --text-100: @base05 !important;
+    --text-200: @base05 !important;
+    --text-300: @base04 !important;
+    --text-400: @base03 !important;
+    --text-500: @base03 !important;
+    --ring-color: @primary !important;
+    --focus-ring-color: @focus-ring !important;
+  }
+
+  .bg-bg-100, .bg-bg-200 { background-color: @base00 !important; }
+  .bg-bg-000, .bg-bg-300 { background-color: @base01 !important; }
+  #__next, [data-testid="app-root"], .flex.min-h-screen, .min-h-screen { background-color: @base00 !important; }
+
+  body { background: @base00 !important; color: @base05 !important; }
+  nav { background: @base01 !important; }
+  nav.\!bg-bg-200, .bg-bg-200 { background: @base01 !important; }
+  main { background: @base00 !important; }
+  
+  .code-block__code {
+    background: @code-bg !important;
+    code {
+      span { color: @base05 !important; }
+      span.token[style*="color: rgb(152, 195, 121)"], span.token.string { color: @syntax-string !important; }
+      span.token[style*="color: rgb(209, 154, 102)"], span.token.keyword, span.token.attr-name { color: @syntax-keyword !important; }
+      span.token[style*="color: rgb(97, 175, 239)"], span.token.function, span.token.tag { color: @syntax-function !important; }
+      span.token[style*="color: rgb(224, 108, 117)"], span.token.important, span.token.deleted { color: @syntax-variable !important; }
+      span.token[style*="color: rgb(198, 120, 221)"], span.token.class-name, span.token.builtin { color: @syntax-class !important; }
+      span.token[style*="color: rgb(171, 178, 191)"], span.token.comment { color: @syntax-comment !important; }
+      span.token.number { color: @syntax-constant !important; }
+      span.token.operator { color: @base04 !important; }
+      span.token.punctuation { color: @base03 !important; }
+      span.token.regex { color: @syntax-regex !important; }
+    }
+  }
+  
+  code:not(pre code), code.text-danger-000 {
+    background: @code-bg !important;
+    color: @syntax-variable !important;
+    padding: 0.125rem 0.375rem;
+    border-radius: 4px;
+  }
+  
+  div.bg-black\/80 { background: @base01 !important; }
+  div.text-white { color: @base05 !important; }
+  div.text-\[\#D97757\] { color: @primary !important; }
+  div.text-always-white svg { color: @base00 !important; }
+  button.bg-accent-pro-100 > span.inline-block { color: @base00 !important; }
+  
+  button.bg-accent-secondary-900 {
+    span.text-text-000 { color: @base00 !important; }
+    span.text-text-300 { color: @base01 !important; }
+    div.bg-accent-secondary-000 { background: darken(@base0E, 10%) !important; }
+  }
+  
+  div.\!text-danger-000.\[\&\[data-highlighted\]\]\:bg-danger-900[data-highlighted] { background: fade(@base08, 20%) !important; }
+  input[type="checkbox"] + div.bg-bg-000 { background: @base05 !important; }
+  a { color: @base0D !important; &:hover { color: darken(@base0D, 10%) !important; } }
+  
+  input, textarea {
+    background: @input-bg !important;
+    border-color: @input-border !important;
+    color: @base05 !important;
+    &::placeholder { color: @input-placeholder !important; }
+    &:focus { border-color: @input-focus-border !important; box-shadow: 0 0 0 2px @focus-ring !important; }
+  }
+  
+  .ProseMirror {
+    background: @base01 !important;
+    color: @base05 !important;
+    &::placeholder, .placeholder { color: @input-placeholder !important; }
+  }
+  
+  [data-testid="human-turn"] { background: @base01 !important; }
+  [data-testid="assistant-turn"] { background: @base00 !important; }
+  .hover\:bg-bg-300:hover { background: @hover-overlay !important; }
+  .bg-bg-300 { background: @selection-bg !important; }
+  * { .apply-scrollbar(); }
+  [role="dialog"] { background: @base00 !important; border-color: @border-primary !important; }
+  [role="menu"], [role="listbox"] { background: @base07 !important; border-color: @border-primary !important; }
+  [role="menuitem"]:hover, [role="option"]:hover { background: @hover-overlay !important; }
+  .artifact-container, [data-testid="artifact"] { background: @base07 !important; border-color: @border-primary !important; }
+  
+  table {
+    border-color: @border-primary !important;
+    th { background: @base01 !important; color: @base05 !important; border-color: @border-primary !important; }
+    td { border-color: @border-subtle !important; }
+    tr:hover { background: @hover-overlay !important; }
+  }
+  
+  blockquote { border-left-color: @accent !important; background: fade(@accent, 8%) !important; color: @base04 !important; }
+  hr { border-color: @border-primary !important; }
+  ul, ol { color: @base05 !important; }
+  h1, h2, h3, h4, h5, h6 { color: @base06 !important; }
+  strong, b { color: @base05 !important; }
+  em, i { color: @base04 !important; }
+}

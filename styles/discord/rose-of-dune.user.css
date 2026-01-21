@@ -1,0 +1,419 @@
+/* ==UserStyle==
+@name         Discord - Rose of Dune
+@namespace    github.com/yherrero/stylus
+@version      2.0.0
+@description  A soft rose-gold theme for Discord with warm brown accents (Base16)
+@author       yherrero
+@license      MIT
+@preprocessor less
+==/UserStyle== */
+@-moz-document domain("discord.com") {
+  .theme-dark,
+  .theme-light {
+    --brand-100: #ffffff !important;
+    --brand-130: #ffffff !important;
+    --brand-160: #fbf6f7 !important;
+    --brand-200: #f6eeef !important;
+    --brand-230: #f2e5e7 !important;
+    --brand-260: #eedddf !important;
+    --brand-300: #ead4d7 !important;
+    --brand-330: #e1c3c8 !important;
+    --brand-360: #d9b2b8 !important;
+    --brand-400: #d0a1a8 !important;
+    --brand-430: #c89098 !important;
+    --brand-460: #bf7f89 !important;
+    --brand-500: #b76e79 !important;
+    --brand-530: #af5d69 !important;
+    --brand-560: #a2505d !important;
+    --brand-600: #914853 !important;
+    --brand-630: #803f49 !important;
+    --brand-660: #6f373f !important;
+    --brand-700: #5e2e36 !important;
+    --brand-730: #552a31 !important;
+    --brand-760: #4d262c !important;
+    --brand-800: #442227 !important;
+    --brand-830: #3b1e22 !important;
+    --brand-860: #33191d !important;
+    --brand-900: #2a1518 !important;
+    --brand-05a: rgba(183, 110, 121, 0.05) !important;
+    --brand-10a: rgba(183, 110, 121, 0.1) !important;
+    --brand-15a: rgba(183, 110, 121, 0.15) !important;
+    --brand-20a: rgba(183, 110, 121, 0.2) !important;
+    --brand-25a: rgba(183, 110, 121, 0.25) !important;
+    --brand-30a: rgba(183, 110, 121, 0.3) !important;
+    --brand-35a: rgba(183, 110, 121, 0.35) !important;
+    --brand-40a: rgba(183, 110, 121, 0.4) !important;
+    --brand-45a: rgba(183, 110, 121, 0.45) !important;
+    --brand-50a: rgba(183, 110, 121, 0.5) !important;
+    --brand-55a: rgba(183, 110, 121, 0.55) !important;
+    --brand-60a: rgba(183, 110, 121, 0.6) !important;
+    --brand-65a: rgba(183, 110, 121, 0.65) !important;
+    --brand-70a: rgba(183, 110, 121, 0.7) !important;
+    --brand-75a: rgba(183, 110, 121, 0.75) !important;
+    --brand-80a: rgba(183, 110, 121, 0.8) !important;
+    --brand-85a: rgba(183, 110, 121, 0.85) !important;
+    --brand-90a: rgba(183, 110, 121, 0.9) !important;
+    --brand-95a: rgba(183, 110, 121, 0.95) !important;
+    --brand-experiment: #b76e79 !important;
+    --brand-experiment-360: #d9b2b8 !important;
+    --brand-experiment-400: #d0a1a8 !important;
+    --brand-experiment-430: #c89098 !important;
+    --brand-experiment-460: #bf7f89 !important;
+    --brand-experiment-500: #b76e79 !important;
+    --brand-experiment-530: #af5d69 !important;
+    --brand-experiment-560: #a2505d !important;
+    --brand-experiment-600: #914853 !important;
+    --brand-experiment-630: #803f49 !important;
+    --brand-experiment-660: #6f373f !important;
+    --app-frame-background: #e9ccb0 !important;
+    --background-base-lowest: #e8c9ac !important;
+    --background-base-lower: #EBD1B8 !important;
+    --background-base-low: #F5E6D3 !important;
+    --background-surface-high: #F5E6D3 !important;
+    --background-surface-higher: #f3e1cb !important;
+    --background-surface-highest: #EBD1B8 !important;
+    --bg-surface-raised: #EBD1B8 !important;
+    --background-gradient-highest: #F5E6D3 !important;
+    --background-primary: #F5E6D3 !important;
+    --background-secondary: #EBD1B8 !important;
+    --background-secondary-alt: #f4e4cf !important;
+    --background-tertiary: #EBD1B8 !important;
+    --background-accent: #AD9980 !important;
+    --background-floating: #E6D1C2 !important;
+    --background-mobile-primary: #F5E6D3 !important;
+    --background-mobile-secondary: #EBD1B8 !important;
+    --home-background: #F5E6D3 !important;
+    --background-modifier-hover: rgba(107, 88, 67, 0.1) !important;
+    --background-modifier-active: rgba(107, 88, 67, 0.2) !important;
+    --background-modifier-selected: rgba(183, 110, 121, 0.2) !important;
+    --background-modifier-accent: rgba(107, 88, 67, 0.1) !important;
+    --background-mod-muted: rgba(107, 88, 67, 0.05) !important;
+    --background-mod-normal: rgba(107, 88, 67, 0.15) !important;
+    --background-mod-subtle: rgba(107, 88, 67, 0.25) !important;
+    --background-mod-strong: rgba(107, 88, 67, 0.45) !important;
+    --background-feedback-positive: rgba(124, 169, 115, 0.1) !important;
+    --background-feedback-critical: rgba(179, 68, 56, 0.1) !important;
+    --background-feedback-warning: rgba(217, 160, 107, 0.1) !important;
+    --background-feedback-info: rgba(200, 124, 106, 0.1) !important;
+    --text-default: #3C2B20 !important;
+    --text-normal: #3C2B20 !important;
+    --text-muted: #7A6A57 !important;
+    --text-link: #C87C6A !important;
+    --text-link-low-saturation: #C87C6A !important;
+    --text-brand: #b76e79 !important;
+    --text-strong: #3C2B20 !important;
+    --text-subtle: #6B5843 !important;
+    --text-positive: #7CA973 !important;
+    --text-warning: #D9A06B !important;
+    --text-danger: #B34438 !important;
+    --text-feedback-positive: #7CA973 !important;
+    --text-feedback-critical: #B34438 !important;
+    --text-feedback-warning: #D9A06B !important;
+    --text-feedback-info: #C87C6A !important;
+    --header-primary: #3C2B20 !important;
+    --header-secondary: #6B5843 !important;
+    --interactive-normal: #6B5843 !important;
+    --interactive-hover: #3C2B20 !important;
+    --interactive-active: #3C2B20 !important;
+    --interactive-muted: #7A6A57 !important;
+    --interactive-icon-default: #3C2B20 !important;
+    --interactive-icon-hover: #3C2B20 !important;
+    --interactive-icon-active: #3C2B20 !important;
+    --interactive-text-default: #3C2B20 !important;
+    --interactive-text-hover: #3C2B20 !important;
+    --interactive-text-active: #3C2B20 !important;
+    --interactive-background-hover: rgba(107, 88, 67, 0.15) !important;
+    --interactive-background-selected: rgba(122, 106, 87, 0.2) !important;
+    --interactive-background-active: rgba(60, 43, 32, 0.17) !important;
+    --icon-muted: #7A6A57 !important;
+    --icon-default: #3C2B20 !important;
+    --icon-strong: #3C2B20 !important;
+    --icon-subtle: #6B5843 !important;
+    --icon-feedback-positive: #7CA973 !important;
+    --icon-feedback-warning: #D9A06B !important;
+    --icon-feedback-critical: #B34438 !important;
+    --icon-feedback-info: #C87C6A !important;
+    --channels-default: #6B5843 !important;
+    --channel-icon: #7A6A57 !important;
+    --channel-text-area-placeholder: rgba(60, 43, 32, 0.5) !important;
+    --channeltextarea-background: #EBD1B8 !important;
+    --custom-channel-members-bg: #EBD1B8 !important;
+    --chat-background: #F5E6D3 !important;
+    --chat-background-default: #F5E6D3 !important;
+    --chat-border: rgba(107, 88, 67, 0.2) !important;
+    --chat-text-muted: #7A6A57 !important;
+    --chat-input-container-background: #EBD1B8 !important;
+    --message-background-hover: rgba(235, 209, 184, 0.3) !important;
+    --message-mentioned-background-default: rgba(217, 160, 107, 0.1) !important;
+    --message-mentioned-background-hover: rgba(217, 160, 107, 0.08) !important;
+    --message-reacted-background-default: rgba(183, 110, 121, 0.3) !important;
+    --message-reacted-text-default: #b76e79 !important;
+    --message-highlight-background-default: rgba(183, 110, 121, 0.08) !important;
+    --message-highlight-background-hover: rgba(183, 110, 121, 0.06) !important;
+    --message-automod-background-default: rgba(179, 68, 56, 0.05) !important;
+    --message-automod-background-hover: rgba(179, 68, 56, 0.1) !important;
+    --border-muted: #EBD1B8 !important;
+    --border-strong: #EBD1B8 !important;
+    --border-normal: rgba(107, 88, 67, 0.2) !important;
+    --border-subtle: #F5E6D3 !important;
+    --control-primary-background-default: #b76e79 !important;
+    --control-primary-background-hover: #aa5561 !important;
+    --control-primary-background-active: #994c58 !important;
+    --control-secondary-background-default: #EBD1B8 !important;
+    --control-secondary-background-hover: #e5c4a4 !important;
+    --control-secondary-background-active: #e3be9a !important;
+    --control-secondary-text-default: #3C2B20 !important;
+    --control-secondary-text-hover: #3C2B20 !important;
+    --control-secondary-border-default: #EBD1B8 !important;
+    --control-critical-primary-background-default: #B34438 !important;
+    --control-critical-primary-background-hover: #a03d32 !important;
+    --control-critical-primary-background-active: #8c352c !important;
+    --control-critical-primary-text-default: #F5E6D3 !important;
+    --control-critical-primary-text-hover: #F5E6D3 !important;
+    --control-critical-secondary-text-default: #3C2B20 !important;
+    --control-critical-secondary-border-default: #B34438 !important;
+    --control-critical-secondary-background-default: transparent !important;
+    --control-critical-secondary-background-hover: #a94035 !important;
+    --control-critical-secondary-text-hover: #F5E6D3 !important;
+    --control-critical-secondary-border-hover: #a94035 !important;
+    --control-critical-secondary-background-active: #a03d32 !important;
+    --control-critical-secondary-text-active: #F5E6D3 !important;
+    --control-critical-secondary-border-active: #a94035 !important;
+    --control-connected-background-default: #7CA973 !important;
+    --control-connected-background-hover: #6d9f63 !important;
+    --control-connected-background-active: #67985e !important;
+    --control-connected-border-default: #7CA973 !important;
+    --control-connected-border-hover: #75a46b !important;
+    --control-connected-border-active: #75a46b !important;
+    --control-brand-foreground: #b76e79 !important;
+    --control-brand-foreground-new: #b76e79 !important;
+    --button-danger-background: #B34438 !important;
+    --button-danger-background-hover: #94382e !important;
+    --button-danger-background-active: #843229 !important;
+    --button-positive-background: #7CA973 !important;
+    --button-positive-background-hover: #66975d !important;
+    --button-positive-background-active: #5e8a55 !important;
+    --button-secondary-background: #EBD1B8 !important;
+    --button-secondary-background-hover: #e5c4a4 !important;
+    --button-secondary-background-active: #e2bc98 !important;
+    --button-outline-danger-text: #B34438 !important;
+    --button-outline-danger-border: #B34438 !important;
+    --button-outline-danger-background-hover: rgba(179, 68, 56, 0.15) !important;
+    --button-outline-positive-text: #7CA973 !important;
+    --button-outline-positive-border: #7CA973 !important;
+    --button-outline-positive-background-hover: rgba(124, 169, 115, 0.15) !important;
+    --button-outline-primary-text: #3C2B20 !important;
+    --button-outline-brand-text: #3C2B20 !important;
+    --button-outline-brand-background-hover: #b36571 !important;
+    --button-outline-brand-border-active: #b36571 !important;
+    --redesign-button-positive-background: #7CA973 !important;
+    --redesign-button-positive-pressed-background: #6d9f63 !important;
+    --redesign-button-secondary-background: #EBD1B8 !important;
+    --redesign-button-secondary-pressed-background: #e5c4a4 !important;
+    --input-background: #E6D1C2 !important;
+    --input-background-default: #E6D1C2 !important;
+    --input-text-default: #3C2B20 !important;
+    --input-placeholder-text: #7A6A57 !important;
+    --input-placeholder-text-default: #6B5843 !important;
+    --input-border-default: #7A6A57 !important;
+    --modal-background: #F5E6D3 !important;
+    --modal-footer-background: #F5E6D3 !important;
+    --card-background-default: #EBD1B8 !important;
+    --custom-status-bubble-background: #EBD1B8 !important;
+    --custom-status-bubble-background-color: #EBD1B8 !important;
+    --status-danger: #B34438 !important;
+    --status-positive: #7CA973 !important;
+    --status-warning: #D9A06B !important;
+    --status-positive-background: #7CA973 !important;
+    --status-positive-text: #F5E6D3 !important;
+    --status-warning-background: #D9A06B !important;
+    --status-warning-text: #F5E6D3 !important;
+    --status-danger-background: rgba(179, 68, 56, 0.2) !important;
+    --status-danger-text: #B34438 !important;
+    --info-positive-background: rgba(124, 169, 115, 0.15) !important;
+    --info-positive-foreground: #7CA973 !important;
+    --info-positive-text: #7CA973 !important;
+    --info-warning-background: rgba(217, 160, 107, 0.15) !important;
+    --info-warning-foreground: #D9A06B !important;
+    --info-warning-text: #D9A06B !important;
+    --info-danger-background: rgba(179, 68, 56, 0.15) !important;
+    --info-danger-foreground: #B34438 !important;
+    --info-danger-text: #B34438 !important;
+    --info-help-background: rgba(173, 153, 128, 0.15) !important;
+    --info-help-foreground: #AD9980 !important;
+    --info-help-text: #AD9980 !important;
+    --mention-foreground: #b76e79 !important;
+    --mention-background: rgba(183, 110, 121, 0.3) !important;
+    --scrollbar-thin-thumb: #b76e79 !important;
+    --scrollbar-thin-track: transparent !important;
+    --scrollbar-auto-thumb: #b76e79 !important;
+    --scrollbar-auto-track: #EBD1B8 !important;
+    --scrollbar-auto-scrollbar-color-thumb: #b76e79 !important;
+    --scrollbar-auto-scrollbar-color-track: #EBD1B8 !important;
+    --focus-primary: #b76e79 !important;
+    --__adaptive-focus-ring-color: #b76e79 !important;
+    --spoiler-revealed-background: #EBD1B8 !important;
+    --spoiler-hidden-background: #6B5843 !important;
+    --__spoiler-background-color--hidden: #6B5843 !important;
+    --__spoiler-warning-background-color: #7b654d !important;
+    --background-code: #F5E6D3 !important;
+    --textbox-markdown-syntax: #7A6A57 !important;
+    --checkbox-border-default: #7A6A57 !important;
+    --elevation-stroke: 0 0 0 1px rgba(107, 88, 67, 0.15) !important;
+    --elevation-low: 0 1px 2px rgba(60, 43, 32, 0.1) !important;
+    --elevation-medium: 0 4px 8px rgba(60, 43, 32, 0.1) !important;
+    --elevation-high: 0 8px 16px rgba(60, 43, 32, 0.1) !important;
+    --primary-100: #6B5843 !important;
+    --primary-200: #7A6A57 !important;
+    --primary-300: #6B5843 !important;
+    --primary-400: #6B5843 !important;
+    --primary-630: #EBD1B8 !important;
+    --primary-700: #EBD1B8 !important;
+    --primary-800: #EBD1B8 !important;
+    --white: #3C2B20 !important;
+    --white-400: #3C2B20 !important;
+    --white-500: #3C2B20 !important;
+    --white-600: #6B5843 !important;
+    --white-700: #7A6A57 !important;
+    --black-500: #EBD1B8 !important;
+    --green-360: #7CA973 !important;
+    --green-300: #7CA973 !important;
+    --yellow-360: #D9A06B !important;
+    --yellow-300: #D9A06B !important;
+    --red-400: #B34438 !important;
+    --red-430: #8c352c !important;
+    --red-500: #792e26 !important;
+    --blue-500: #ba5b45 !important;
+    --blue-530: #a8523e !important;
+    --opacity-blurple-8: rgba(183, 110, 121, 0.08) !important;
+    --opacity-blurple-16: rgba(183, 110, 121, 0.16) !important;
+    --opacity-blurple-24: rgba(183, 110, 121, 0.24) !important;
+    --opacity-blurple-32: rgba(183, 110, 121, 0.32) !important;
+    --opacity-blurple-60: rgba(183, 110, 121, 0.6) !important;
+    --blurple-50: #b76e79 !important;
+    --guild-boosting-pink: #D28C74 !important;
+    --guild-boosting-blue: #C87C6A !important;
+    --guild-boosting-purple: #B36E5B !important;
+    --premium-perk-yellow: #D9A06B !important;
+    --premium-perk-purple: #B36E5B !important;
+    --premium-perk-dark-blue: #ba5b45 !important;
+    --premium-perk-light-blue: #cf8c7d !important;
+    --premium-perk-blue: #C87C6A !important;
+    --premium-perk-green: #7CA973 !important;
+    --premium-perk-pink: #D28C74 !important;
+    --premium-perk-orange: #D9A06B !important;
+    --premium-tier-0-blue: #C87C6A !important;
+    --premium-tier-0-purple: #B36E5B !important;
+    --premium-tier-1-blue-for-gradients: #C87C6A !important;
+    --premium-tier-1-dark-blue-for-gradients: #c16c57 !important;
+    --premium-tier-2-purple-for-gradients: #965745 !important;
+    --premium-tier-2-purple-for-gradients-2: #B36E5B !important;
+    --premium-tier-2-pink-for-gradients: #D28C74 !important;
+    --user-profile-overlay-background: #EBD1B8 !important;
+    --user-profile-overlay-background-hover: #EBD1B8 !important;
+    --badge-background-default: #b76e79 !important;
+    --badge-text-default: #EBD1B8 !important;
+    --badge-text-brand: #F5E6D3 !important;
+    --twitch: #965745 !important;
+    --playstation: #ba5b45 !important;
+    --spotify: #7CA973 !important;
+    --notice-background-critical: #B34438 !important;
+    --notice-background-info: #C87C6A !important;
+    --notice-background-positive: #7CA973 !important;
+    --notice-background-warning: #D9A06B !important;
+    --notice-text-critical: #EBD1B8 !important;
+    --notice-text-info: #EBD1B8 !important;
+    --notice-text-positive: #EBD1B8 !important;
+    --notice-text-warning: #EBD1B8 !important;
+    --logo-primary: #3C2B20 !important;
+    --search-popout-option-non-text-color: #7A6A57 !important;
+    --__header-bar-background: #EBD1B8 !important;
+    --deprecated-card-bg: #E6D1C2 !important;
+    --deprecated-card-editable-bg: #E6D1C2 !important;
+    --deprecated-store-bg: #F5E6D3 !important;
+    --deprecated-quickswitcher-input-background: #E6D1C2 !important;
+    --deprecated-quickswitcher-input-placeholder: #7A6A57 !important;
+    --deprecated-text-input-bg: #E6D1C2 !important;
+    --deprecated-text-input-border: rgba(107, 88, 67, 0.2) !important;
+    --deprecated-text-input-border-hover: #AD9980 !important;
+    --deprecated-text-input-border-disabled: rgba(107, 88, 67, 0.15) !important;
+    --deprecated-text-input-prefix: #7A6A57 !important;
+    --activity-card-background: #E6D1C2 !important;
+    --plum-23: #F5E6D3 !important;
+  }
+  ::selection {
+    background-color: rgba(183, 110, 121, 0.6) !important;
+  }
+  .hljs-keyword {
+    color: #B36E5B !important;
+  }
+  .hljs-string {
+    color: #B88642 !important;
+  }
+  .hljs-function {
+    color: #C87C6A !important;
+  }
+  .hljs-comment {
+    color: #7A6A57 !important;
+  }
+  .hljs-number {
+    color: #D9A06B !important;
+  }
+  .hljs-class {
+    color: #D28C74 !important;
+  }
+  .hljs-variable {
+    color: #B34438 !important;
+  }
+  .hljs-regexp {
+    color: #7CA973 !important;
+  }
+  .hljs-built_in {
+    color: #C87C6A !important;
+  }
+  .hljs-literal {
+    color: #D9A06B !important;
+  }
+  .hljs-type {
+    color: #D28C74 !important;
+  }
+  .hljs-params {
+    color: #3C2B20 !important;
+  }
+  .hljs-meta {
+    color: #B36E5B !important;
+  }
+  .hljs-title {
+    color: #C87C6A !important;
+  }
+  .hljs-attr {
+    color: #B34438 !important;
+  }
+  .hljs-selector-tag {
+    color: #B36E5B !important;
+  }
+  .hljs-selector-class {
+    color: #D28C74 !important;
+  }
+  .hljs-selector-id {
+    color: #B34438 !important;
+  }
+  pre,
+  code {
+    background: #EBD1B8 !important;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #EBD1B8;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: rgba(107, 88, 67, 0.4);
+    border-radius: 4px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(107, 88, 67, 0.6);
+  }
+}
