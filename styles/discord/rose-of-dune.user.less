@@ -614,9 +614,41 @@
   [data-type="sticker"] {
     opacity: 0.25;
     transition: opacity 0.2s ease;
-    
-    &:hover {
-      opacity: 1;
-    }
+  }
+
+  // Hover states - reveal on hover (including nested images in wrappers)
+  img:hover,
+  video:hover,
+  [class*="avatar"]:hover,
+  [class*="Avatar"]:hover,
+  [class*="guildIcon"]:hover,
+  [class*="serverIcon"]:hover,
+  [class*="emoji"]:hover,
+  [class*="Emoji"]:hover,
+  [class*="stickerAsset"]:hover,
+  [data-type="gif"]:hover,
+  [data-type="sticker"]:hover {
+    opacity: 1;
+  }
+
+  // Wrapper hover - make wrapper AND all children fully visible
+  [class*="imageWrapper"]:hover,
+  [class*="imageWrapper"]:hover img,
+  [class*="imageWrapper"]:hover video,
+  [class*="videoWrapper"]:hover,
+  [class*="videoWrapper"]:hover video,
+  [class*="videoWrapper"]:hover img,
+  [class*="embedVideo"]:hover,
+  [class*="embedVideo"]:hover video,
+  [class*="embedVideo"]:hover img,
+  [class*="embedImage"]:hover,
+  [class*="embedImage"]:hover img,
+  [class*="embedThumbnail"]:hover,
+  [class*="embedThumbnail"]:hover img,
+  [class*="embed"]:hover [class*="imageWrapper"],
+  [class*="embed"]:hover [class*="imageWrapper"] img,
+  [class*="embed"]:hover img,
+  [class*="embed"]:hover video {
+    opacity: 1;
   }
 }

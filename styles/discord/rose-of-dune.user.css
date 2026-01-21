@@ -463,13 +463,27 @@
   [class*="emoji"]:hover,
   [class*="Emoji"]:hover,
   [class*="stickerAsset"]:hover,
-  [class*="imageWrapper"]:hover,
-  [class*="videoWrapper"]:hover,
-  [class*="embedVideo"]:hover,
-  [class*="embedImage"]:hover,
-  [class*="embedThumbnail"]:hover,
   [data-type="gif"]:hover,
   [data-type="sticker"]:hover {
+    opacity: 1;
+  }
+  [class*="imageWrapper"]:hover,
+  [class*="imageWrapper"]:hover img,
+  [class*="imageWrapper"]:hover video,
+  [class*="videoWrapper"]:hover,
+  [class*="videoWrapper"]:hover video,
+  [class*="videoWrapper"]:hover img,
+  [class*="embedVideo"]:hover,
+  [class*="embedVideo"]:hover video,
+  [class*="embedVideo"]:hover img,
+  [class*="embedImage"]:hover,
+  [class*="embedImage"]:hover img,
+  [class*="embedThumbnail"]:hover,
+  [class*="embedThumbnail"]:hover img,
+  [class*="embed"]:hover [class*="imageWrapper"],
+  [class*="embed"]:hover [class*="imageWrapper"] img,
+  [class*="embed"]:hover img,
+  [class*="embed"]:hover video {
     opacity: 1;
   }
 }
