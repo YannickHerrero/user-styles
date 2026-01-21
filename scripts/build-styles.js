@@ -19,6 +19,8 @@ const SITES = [
   { name: 'discord', file: 'discord.user.less' },
   { name: 'claude', file: 'claude.user.less' },
   { name: 'mtools', file: 'mtools.user.less' },
+  { name: 'outlook', file: 'outlook.user.less' },
+  { name: 'teams', file: 'teams.user.less' },
   { name: 'all', file: 'all.user.less' },
 ];
 

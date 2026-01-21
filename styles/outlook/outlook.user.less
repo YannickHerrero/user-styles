@@ -1,0 +1,661 @@
+/* ==UserStyle==
+@name         Outlook - {{THEME_NAME}}
+@namespace    github.com/yherrero/stylus
+@version      1.0.0
+@description  {{THEME_NAME}} theme for Outlook Office 365 (Base16)
+@author       yherrero
+@license      MIT
+@preprocessor less
+==/UserStyle== */
+
+// Theme variables are injected at build time
+
+@-moz-document domain("outlook.office.com"), domain("outlook.office365.com"), domain("outlook.live.com") {
+  // ============================================================================
+  // Outlook / Fluent UI CSS Custom Properties Override
+  // Comprehensive theming for Microsoft Outlook Web
+  // ============================================================================
+
+  :root,
+  body,
+  .fui-FluentProvider,
+  [data-theme],
+  [class*="FluentProvider"] {
+    // ==========================================================================
+    // Fluent UI v9 Design Tokens - Neutral Colors
+    // ==========================================================================
+    
+    // Background colors
+    --colorNeutralBackground1: @base00 !important;
+    --colorNeutralBackground1Hover: @hover-overlay !important;
+    --colorNeutralBackground1Pressed: @active-overlay !important;
+    --colorNeutralBackground1Selected: @selection-bg !important;
+    --colorNeutralBackground2: @base01 !important;
+    --colorNeutralBackground2Hover: @hover-overlay !important;
+    --colorNeutralBackground2Pressed: @active-overlay !important;
+    --colorNeutralBackground2Selected: @selection-bg !important;
+    --colorNeutralBackground3: @base01 !important;
+    --colorNeutralBackground3Hover: @hover-overlay !important;
+    --colorNeutralBackground3Pressed: @active-overlay !important;
+    --colorNeutralBackground3Selected: @selection-bg !important;
+    --colorNeutralBackground4: @base07 !important;
+    --colorNeutralBackground4Hover: @hover-overlay !important;
+    --colorNeutralBackground4Pressed: @active-overlay !important;
+    --colorNeutralBackground4Selected: @selection-bg !important;
+    --colorNeutralBackground5: @base07 !important;
+    --colorNeutralBackground5Hover: @hover-overlay !important;
+    --colorNeutralBackground5Pressed: @active-overlay !important;
+    --colorNeutralBackground5Selected: @selection-bg !important;
+    --colorNeutralBackground6: @base01 !important;
+    --colorNeutralBackgroundInverted: @base05 !important;
+    --colorNeutralBackgroundStatic: @base00 !important;
+    --colorNeutralBackgroundAlpha: fade(@base00, 50%) !important;
+    --colorNeutralBackgroundAlpha2: fade(@base00, 80%) !important;
+    
+    // Subtle backgrounds
+    --colorSubtleBackground: transparent !important;
+    --colorSubtleBackgroundHover: @hover-overlay !important;
+    --colorSubtleBackgroundPressed: @active-overlay !important;
+    --colorSubtleBackgroundSelected: @selection-bg !important;
+    --colorSubtleBackgroundLightAlphaHover: fade(@base04, 10%) !important;
+    --colorSubtleBackgroundLightAlphaPressed: fade(@base04, 15%) !important;
+    --colorSubtleBackgroundLightAlphaSelected: fade(@primary, 15%) !important;
+    --colorSubtleBackgroundInverted: transparent !important;
+    --colorSubtleBackgroundInvertedHover: fade(@base00, 10%) !important;
+    --colorSubtleBackgroundInvertedPressed: fade(@base00, 20%) !important;
+    --colorSubtleBackgroundInvertedSelected: fade(@base00, 15%) !important;
+    
+    // Transparent backgrounds
+    --colorTransparentBackground: transparent !important;
+    --colorTransparentBackgroundHover: @hover-overlay !important;
+    --colorTransparentBackgroundPressed: @active-overlay !important;
+    --colorTransparentBackgroundSelected: @selection-bg !important;
+    
+    // ==========================================================================
+    // Foreground / Text Colors
+    // ==========================================================================
+    --colorNeutralForeground1: @base05 !important;
+    --colorNeutralForeground1Hover: @base05 !important;
+    --colorNeutralForeground1Pressed: @base05 !important;
+    --colorNeutralForeground1Selected: @base05 !important;
+    --colorNeutralForeground2: @base04 !important;
+    --colorNeutralForeground2Hover: @base05 !important;
+    --colorNeutralForeground2Pressed: @base05 !important;
+    --colorNeutralForeground2Selected: @base05 !important;
+    --colorNeutralForeground2BrandHover: @primary !important;
+    --colorNeutralForeground2BrandPressed: darken(@primary, 10%) !important;
+    --colorNeutralForeground2BrandSelected: @primary !important;
+    --colorNeutralForeground3: @base03 !important;
+    --colorNeutralForeground3Hover: @base04 !important;
+    --colorNeutralForeground3Pressed: @base04 !important;
+    --colorNeutralForeground3Selected: @base04 !important;
+    --colorNeutralForeground4: @base03 !important;
+    --colorNeutralForegroundDisabled: @base03 !important;
+    --colorNeutralForegroundInverted: @base00 !important;
+    --colorNeutralForegroundInvertedHover: @base00 !important;
+    --colorNeutralForegroundInvertedPressed: @base00 !important;
+    --colorNeutralForegroundInvertedSelected: @base00 !important;
+    --colorNeutralForegroundInverted2: @base00 !important;
+    --colorNeutralForegroundOnBrand: @base00 !important;
+    --colorNeutralForegroundStaticInverted: @base00 !important;
+    
+    // ==========================================================================
+    // Brand Colors (Primary accent)
+    // ==========================================================================
+    --colorBrandBackground: @primary !important;
+    --colorBrandBackgroundHover: darken(@primary, 5%) !important;
+    --colorBrandBackgroundPressed: darken(@primary, 10%) !important;
+    --colorBrandBackgroundSelected: darken(@primary, 7%) !important;
+    --colorBrandBackground2: fade(@primary, 15%) !important;
+    --colorBrandBackground2Hover: fade(@primary, 25%) !important;
+    --colorBrandBackground2Pressed: fade(@primary, 35%) !important;
+    --colorBrandBackgroundStatic: @primary !important;
+    --colorBrandBackgroundInverted: @base00 !important;
+    --colorBrandBackgroundInvertedHover: @base01 !important;
+    --colorBrandBackgroundInvertedPressed: @base07 !important;
+    --colorBrandBackgroundInvertedSelected: @base01 !important;
+    
+    --colorBrandForeground1: @primary !important;
+    --colorBrandForeground2: darken(@primary, 5%) !important;
+    --colorBrandForeground2Hover: darken(@primary, 10%) !important;
+    --colorBrandForeground2Pressed: darken(@primary, 15%) !important;
+    --colorBrandForegroundLink: @base0D !important;
+    --colorBrandForegroundLinkHover: darken(@base0D, 10%) !important;
+    --colorBrandForegroundLinkPressed: darken(@base0D, 15%) !important;
+    --colorBrandForegroundLinkSelected: @base0D !important;
+    --colorBrandForegroundInverted: @primary !important;
+    --colorBrandForegroundInvertedHover: lighten(@primary, 5%) !important;
+    --colorBrandForegroundInvertedPressed: lighten(@primary, 10%) !important;
+    --colorBrandForegroundOnLight: @primary !important;
+    --colorBrandForegroundOnLightHover: darken(@primary, 5%) !important;
+    --colorBrandForegroundOnLightPressed: darken(@primary, 10%) !important;
+    --colorBrandForegroundOnLightSelected: darken(@primary, 7%) !important;
+    
+    // ==========================================================================
+    // Compound Brand (two-tone brand)
+    // ==========================================================================
+    --colorCompoundBrandBackground: @primary !important;
+    --colorCompoundBrandBackgroundHover: darken(@primary, 5%) !important;
+    --colorCompoundBrandBackgroundPressed: darken(@primary, 10%) !important;
+    --colorCompoundBrandForeground1: @primary !important;
+    --colorCompoundBrandForeground1Hover: darken(@primary, 5%) !important;
+    --colorCompoundBrandForeground1Pressed: darken(@primary, 10%) !important;
+    --colorCompoundBrandStroke: @primary !important;
+    --colorCompoundBrandStrokeHover: darken(@primary, 5%) !important;
+    --colorCompoundBrandStrokePressed: darken(@primary, 10%) !important;
+    
+    // ==========================================================================
+    // Stroke / Border Colors
+    // ==========================================================================
+    --colorNeutralStroke1: @border-primary !important;
+    --colorNeutralStroke1Hover: @base03 !important;
+    --colorNeutralStroke1Pressed: @base03 !important;
+    --colorNeutralStroke1Selected: @primary !important;
+    --colorNeutralStroke2: @border-subtle !important;
+    --colorNeutralStroke3: @border-subtle !important;
+    --colorNeutralStrokeSubtle: @border-subtle !important;
+    --colorNeutralStrokeAccessible: @base04 !important;
+    --colorNeutralStrokeAccessibleHover: @base03 !important;
+    --colorNeutralStrokeAccessiblePressed: @base03 !important;
+    --colorNeutralStrokeAccessibleSelected: @primary !important;
+    --colorNeutralStrokeDisabled: @border-subtle !important;
+    --colorNeutralStrokeInvertedDisabled: fade(@base00, 40%) !important;
+    --colorNeutralStrokeOnBrand: @base00 !important;
+    --colorNeutralStrokeOnBrand2: @base00 !important;
+    --colorNeutralStrokeOnBrand2Hover: @base00 !important;
+    --colorNeutralStrokeOnBrand2Pressed: @base00 !important;
+    --colorNeutralStrokeOnBrand2Selected: @base00 !important;
+    
+    --colorBrandStroke1: @primary !important;
+    --colorBrandStroke2: fade(@primary, 50%) !important;
+    --colorBrandStroke2Hover: fade(@primary, 60%) !important;
+    --colorBrandStroke2Pressed: fade(@primary, 70%) !important;
+    --colorBrandStroke2Contrast: @primary !important;
+    
+    // ==========================================================================
+    // Status Colors
+    // ==========================================================================
+    // Danger / Error
+    --colorPaletteRedBackground1: fade(@base08, 15%) !important;
+    --colorPaletteRedBackground2: fade(@base08, 25%) !important;
+    --colorPaletteRedBackground3: @base08 !important;
+    --colorPaletteRedForeground1: @base08 !important;
+    --colorPaletteRedForeground2: @base08 !important;
+    --colorPaletteRedForeground3: @base00 !important;
+    --colorPaletteRedBorder1: fade(@base08, 40%) !important;
+    --colorPaletteRedBorder2: @base08 !important;
+    --colorPaletteRedBorderActive: @base08 !important;
+    --colorStatusDangerBackground1: fade(@base08, 15%) !important;
+    --colorStatusDangerBackground2: fade(@base08, 25%) !important;
+    --colorStatusDangerBackground3: @base08 !important;
+    --colorStatusDangerForeground1: @base08 !important;
+    --colorStatusDangerForeground2: @base08 !important;
+    --colorStatusDangerForeground3: @base00 !important;
+    --colorStatusDangerBorder1: fade(@base08, 40%) !important;
+    --colorStatusDangerBorder2: @base08 !important;
+    --colorStatusDangerBorderActive: @base08 !important;
+    
+    // Warning
+    --colorPaletteYellowBackground1: fade(@base09, 15%) !important;
+    --colorPaletteYellowBackground2: fade(@base09, 25%) !important;
+    --colorPaletteYellowBackground3: @base09 !important;
+    --colorPaletteYellowForeground1: @base09 !important;
+    --colorPaletteYellowForeground2: darken(@base09, 10%) !important;
+    --colorPaletteYellowForeground3: @base00 !important;
+    --colorPaletteYellowBorder1: fade(@base09, 40%) !important;
+    --colorPaletteYellowBorder2: @base09 !important;
+    --colorStatusWarningBackground1: fade(@base09, 15%) !important;
+    --colorStatusWarningBackground2: fade(@base09, 25%) !important;
+    --colorStatusWarningBackground3: @base09 !important;
+    --colorStatusWarningForeground1: @base09 !important;
+    --colorStatusWarningForeground2: darken(@base09, 10%) !important;
+    --colorStatusWarningForeground3: @base00 !important;
+    --colorStatusWarningBorder1: fade(@base09, 40%) !important;
+    --colorStatusWarningBorder2: @base09 !important;
+    
+    // Success
+    --colorPaletteGreenBackground1: fade(@base0C, 15%) !important;
+    --colorPaletteGreenBackground2: fade(@base0C, 25%) !important;
+    --colorPaletteGreenBackground3: @base0C !important;
+    --colorPaletteGreenForeground1: @base0C !important;
+    --colorPaletteGreenForeground2: @base0C !important;
+    --colorPaletteGreenForeground3: @base00 !important;
+    --colorPaletteGreenBorder1: fade(@base0C, 40%) !important;
+    --colorPaletteGreenBorder2: @base0C !important;
+    --colorStatusSuccessBackground1: fade(@base0C, 15%) !important;
+    --colorStatusSuccessBackground2: fade(@base0C, 25%) !important;
+    --colorStatusSuccessBackground3: @base0C !important;
+    --colorStatusSuccessForeground1: @base0C !important;
+    --colorStatusSuccessForeground2: @base0C !important;
+    --colorStatusSuccessForeground3: @base00 !important;
+    --colorStatusSuccessBorder1: fade(@base0C, 40%) !important;
+    --colorStatusSuccessBorder2: @base0C !important;
+    
+    // Blue / Info
+    --colorPaletteBlueBackground1: fade(@base0D, 15%) !important;
+    --colorPaletteBlueBackground2: fade(@base0D, 25%) !important;
+    --colorPaletteBlueBackground3: @base0D !important;
+    --colorPaletteBlueForeground1: @base0D !important;
+    --colorPaletteBlueForeground2: @base0D !important;
+    --colorPaletteBlueForeground3: @base00 !important;
+    --colorPaletteBlueBorder1: fade(@base0D, 40%) !important;
+    --colorPaletteBlueBorder2: @base0D !important;
+    
+    // ==========================================================================
+    // Shadow tokens
+    // ==========================================================================
+    --shadow2: 0 0 2px @shadow, 0 1px 2px @shadow !important;
+    --shadow4: 0 0 2px @shadow, 0 2px 4px @shadow !important;
+    --shadow8: 0 0 2px @shadow, 0 4px 8px @shadow !important;
+    --shadow16: 0 0 2px @shadow, 0 8px 16px @shadow !important;
+    --shadow28: 0 0 8px @shadow, 0 14px 28px @shadow !important;
+    --shadow64: 0 0 8px @shadow, 0 32px 64px @shadow !important;
+    --shadow2Brand: 0 0 2px fade(@primary, 30%), 0 1px 2px fade(@primary, 25%) !important;
+    --shadow4Brand: 0 0 2px fade(@primary, 30%), 0 2px 4px fade(@primary, 25%) !important;
+    --shadow8Brand: 0 0 2px fade(@primary, 30%), 0 4px 8px fade(@primary, 25%) !important;
+    --shadow16Brand: 0 0 2px fade(@primary, 30%), 0 8px 16px fade(@primary, 25%) !important;
+    --shadow28Brand: 0 0 8px fade(@primary, 30%), 0 14px 28px fade(@primary, 25%) !important;
+    --shadow64Brand: 0 0 8px fade(@primary, 30%), 0 32px 64px fade(@primary, 25%) !important;
+    
+    // ==========================================================================
+    // Legacy Fluent UI v8 variables (still used by some components)
+    // ==========================================================================
+    --themePrimary: @primary !important;
+    --themeLighterAlt: fade(@primary, 5%) !important;
+    --themeLighter: fade(@primary, 15%) !important;
+    --themeLight: fade(@primary, 30%) !important;
+    --themeTertiary: fade(@primary, 50%) !important;
+    --themeSecondary: darken(@primary, 5%) !important;
+    --themeDarkAlt: darken(@primary, 10%) !important;
+    --themeDark: darken(@primary, 15%) !important;
+    --themeDarker: darken(@primary, 25%) !important;
+    
+    --neutralLighterAlt: @base00 !important;
+    --neutralLighter: @base01 !important;
+    --neutralLight: @base01 !important;
+    --neutralQuaternaryAlt: @base07 !important;
+    --neutralQuaternary: @base07 !important;
+    --neutralTertiaryAlt: @base03 !important;
+    --neutralTertiary: @base03 !important;
+    --neutralSecondary: @base04 !important;
+    --neutralSecondaryAlt: @base04 !important;
+    --neutralPrimaryAlt: @base04 !important;
+    --neutralPrimary: @base05 !important;
+    --neutralDark: @base06 !important;
+    --black: @base05 !important;
+    --white: @base00 !important;
+    
+    --bodyBackground: @base00 !important;
+    --bodyBackgroundHovered: @hover-overlay !important;
+    --bodyBackgroundChecked: @selection-bg !important;
+    --bodyStandoutBackground: @base01 !important;
+    --bodyFrameBackground: @base01 !important;
+    --bodyFrameDivider: @border-primary !important;
+    --bodyText: @base05 !important;
+    --bodyTextChecked: @base05 !important;
+    --bodySubtext: @base04 !important;
+    --bodyDivider: @border-primary !important;
+    
+    --inputBackground: @input-bg !important;
+    --inputBackgroundChecked: @primary !important;
+    --inputBackgroundCheckedHovered: darken(@primary, 5%) !important;
+    --inputBorder: @input-border !important;
+    --inputBorderHovered: @base03 !important;
+    --inputText: @base05 !important;
+    --inputTextHovered: @base05 !important;
+    --inputPlaceholderText: @input-placeholder !important;
+    --inputFocusBorderAlt: @primary !important;
+    --inputForegroundChecked: @base00 !important;
+    
+    --buttonBackground: @base01 !important;
+    --buttonBackgroundChecked: @base07 !important;
+    --buttonBackgroundHovered: darken(@base01, 5%) !important;
+    --buttonBackgroundCheckedHovered: darken(@base07, 5%) !important;
+    --buttonBackgroundPressed: darken(@base01, 10%) !important;
+    --buttonBackgroundDisabled: @base01 !important;
+    --buttonBorder: @border-primary !important;
+    --buttonText: @base05 !important;
+    --buttonTextHovered: @base05 !important;
+    --buttonTextChecked: @base05 !important;
+    --buttonTextCheckedHovered: @base05 !important;
+    --buttonTextPressed: @base05 !important;
+    --buttonTextDisabled: @base03 !important;
+    --buttonBorderDisabled: @border-subtle !important;
+    
+    --primaryButtonBackground: @primary !important;
+    --primaryButtonBackgroundHovered: darken(@primary, 5%) !important;
+    --primaryButtonBackgroundPressed: darken(@primary, 10%) !important;
+    --primaryButtonBackgroundDisabled: @base01 !important;
+    --primaryButtonBorder: transparent !important;
+    --primaryButtonText: @base00 !important;
+    --primaryButtonTextHovered: @base00 !important;
+    --primaryButtonTextPressed: @base00 !important;
+    --primaryButtonTextDisabled: @base03 !important;
+    
+    --accentButtonBackground: @primary !important;
+    --accentButtonText: @base00 !important;
+    
+    --menuBackground: @base07 !important;
+    --menuDivider: @border-primary !important;
+    --menuIcon: @base04 !important;
+    --menuHeader: @base05 !important;
+    --menuItemBackgroundHovered: @hover-overlay !important;
+    --menuItemBackgroundPressed: @active-overlay !important;
+    --menuItemText: @base05 !important;
+    --menuItemTextHovered: @base05 !important;
+    
+    --listBackground: @base00 !important;
+    --listText: @base05 !important;
+    --listItemBackgroundHovered: @hover-overlay !important;
+    --listItemBackgroundChecked: @selection-bg !important;
+    --listItemBackgroundCheckedHovered: fade(@primary, 25%) !important;
+    --listHeaderBackgroundHovered: @hover-overlay !important;
+    --listHeaderBackgroundPressed: @active-overlay !important;
+    
+    --link: @base0D !important;
+    --linkHovered: darken(@base0D, 10%) !important;
+    --linkPressed: darken(@base0D, 15%) !important;
+    
+    --errorText: @base08 !important;
+    --warningText: @base09 !important;
+    --successText: @base0C !important;
+    --errorBackground: fade(@base08, 15%) !important;
+    --warningBackground: fade(@base09, 15%) !important;
+    --successBackground: fade(@base0C, 15%) !important;
+    
+    --focusBorder: @primary !important;
+  }
+
+  // ============================================================================
+  // Body and App Container
+  // ============================================================================
+  body {
+    background-color: @base00 !important;
+    color: @base05 !important;
+  }
+
+  #app,
+  #appRoot,
+  .ms-Fabric,
+  [data-app-section="main"] {
+    background-color: @base00 !important;
+  }
+
+  // ============================================================================
+  // Navigation / Sidebar
+  // ============================================================================
+  nav,
+  [role="navigation"],
+  .ms-Nav,
+  [class*="leftNav"],
+  [class*="folderPane"],
+  [data-app-section="LeftNav"],
+  [class*="LeftRail"] {
+    background-color: @base01 !important;
+  }
+
+  // App Rail (left icon bar)
+  [class*="AppRail"],
+  [class*="appRail"],
+  [data-app-section="AppRail"] {
+    background-color: @base01 !important;
+  }
+
+  // ============================================================================
+  // Mail List
+  // ============================================================================
+  [class*="messageList"],
+  [class*="MessageList"],
+  [role="listbox"],
+  [class*="mailList"] {
+    background-color: @base00 !important;
+  }
+
+  // Mail list item hover
+  [class*="listItem"]:hover,
+  [class*="messageListItem"]:hover,
+  [role="option"]:hover {
+    background-color: @hover-overlay !important;
+  }
+
+  // Selected mail item
+  [class*="listItem"][aria-selected="true"],
+  [class*="messageListItem"][aria-selected="true"],
+  [role="option"][aria-selected="true"],
+  [class*="isSelected"] {
+    background-color: @selection-bg !important;
+  }
+
+  // ============================================================================
+  // Reading Pane
+  // ============================================================================
+  [class*="readingPane"],
+  [class*="ReadingPane"],
+  [data-app-section="ConversationReadingPane"],
+  [class*="ItemReadingPane"] {
+    background-color: @base00 !important;
+  }
+
+  // Email content area
+  [class*="messageBody"],
+  [class*="ItemBody"],
+  .allowTextSelection {
+    background-color: @base00 !important;
+    color: @base05 !important;
+  }
+
+  // ============================================================================
+  // Compose / Editor
+  // ============================================================================
+  [class*="ComposeForm"],
+  [class*="compose"],
+  [role="textbox"],
+  .ms-Editor,
+  [class*="editorWrapper"] {
+    background-color: @base00 !important;
+    color: @base05 !important;
+  }
+
+  // Rich text editor
+  div[contenteditable="true"] {
+    background-color: @base00 !important;
+    color: @base05 !important;
+  }
+
+  // ============================================================================
+  // Header / Command Bar
+  // ============================================================================
+  [class*="commandBar"],
+  [class*="CommandBar"],
+  .ms-CommandBar,
+  [role="menubar"] {
+    background-color: @base01 !important;
+  }
+
+  // Search box
+  [class*="searchBox"],
+  [class*="SearchBox"],
+  .ms-SearchBox {
+    background-color: @input-bg !important;
+    border-color: @input-border !important;
+
+    input {
+      color: @base05 !important;
+
+      &::placeholder {
+        color: @input-placeholder !important;
+      }
+    }
+  }
+
+  // ============================================================================
+  // Calendar
+  // ============================================================================
+  [class*="calendar"],
+  [class*="Calendar"],
+  [class*="calendarView"] {
+    background-color: @base00 !important;
+  }
+
+  // Calendar day cells
+  [class*="dayCell"],
+  [class*="CalendarDay"] {
+    &:hover {
+      background-color: @hover-overlay !important;
+    }
+  }
+
+  // Today highlight
+  [class*="today"],
+  [class*="isToday"] {
+    background-color: @primary !important;
+    color: @base00 !important;
+  }
+
+  // ============================================================================
+  // Modals and Dialogs
+  // ============================================================================
+  .ms-Modal,
+  .ms-Dialog,
+  [role="dialog"],
+  [class*="dialogContent"],
+  .ms-Panel {
+    background-color: @base00 !important;
+    color: @base05 !important;
+  }
+
+  // Dialog overlay
+  .ms-Overlay,
+  [class*="overlay"] {
+    background-color: fade(@base05, 40%) !important;
+  }
+
+  // ============================================================================
+  // Dropdown and Menus
+  // ============================================================================
+  .ms-Dropdown,
+  .ms-ContextualMenu,
+  [role="menu"],
+  [role="listbox"],
+  [class*="dropdown"] {
+    background-color: @base07 !important;
+    border-color: @border-primary !important;
+  }
+
+  .ms-Dropdown-item,
+  .ms-ContextualMenu-item,
+  [role="menuitem"],
+  [role="option"] {
+    color: @base05 !important;
+
+    &:hover {
+      background-color: @hover-overlay !important;
+    }
+  }
+
+  // ============================================================================
+  // Buttons
+  // ============================================================================
+  .ms-Button {
+    background-color: @base01 !important;
+    border-color: @border-primary !important;
+    color: @base05 !important;
+
+    &:hover {
+      background-color: darken(@base01, 5%) !important;
+    }
+
+    &--primary,
+    &.ms-Button--primary {
+      background-color: @primary !important;
+      border-color: @primary !important;
+      color: @base00 !important;
+
+      &:hover {
+        background-color: darken(@primary, 5%) !important;
+      }
+    }
+  }
+
+  // ============================================================================
+  // Checkbox and Toggle
+  // ============================================================================
+  .ms-Checkbox,
+  .ms-Toggle {
+    .ms-Checkbox-checkbox,
+    .ms-Toggle-background {
+      background-color: @base00 !important;
+      border-color: @base03 !important;
+    }
+
+    &.is-checked {
+      .ms-Checkbox-checkbox,
+      .ms-Toggle-background {
+        background-color: @primary !important;
+        border-color: @primary !important;
+      }
+    }
+  }
+
+  // ============================================================================
+  // Tooltip
+  // ============================================================================
+  .ms-Tooltip,
+  [role="tooltip"] {
+    background-color: @base01 !important;
+    color: @base05 !important;
+    border-color: @border-primary !important;
+  }
+
+  // ============================================================================
+  // Cards and Panels
+  // ============================================================================
+  .ms-Card,
+  [class*="card"],
+  [class*="Card"] {
+    .apply-card();
+  }
+
+  // People card / profile
+  [class*="personaCard"],
+  [class*="ProfileCard"] {
+    background-color: @base07 !important;
+  }
+
+  // ============================================================================
+  // Links
+  // ============================================================================
+  a {
+    color: @base0D !important;
+
+    &:hover {
+      color: darken(@base0D, 10%) !important;
+    }
+  }
+
+  // ============================================================================
+  // Scrollbar
+  // ============================================================================
+  * {
+    .apply-scrollbar();
+  }
+
+  // ============================================================================
+  // Selection highlight
+  // ============================================================================
+  ::selection {
+    background-color: fade(@primary, 60%) !important;
+    color: @base05 !important;
+  }
+
+  // ============================================================================
+  // Focus ring
+  // ============================================================================
+  *:focus-visible {
+    outline-color: @primary !important;
+  }
+
+  .ms-Fabric--isFocusVisible &:focus::after {
+    border-color: @primary !important;
+  }
+}

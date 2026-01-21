@@ -14,26 +14,12 @@ const THEMES_DIR = 'themes';
 const STYLES_DIR = 'styles';
 
 // Site configurations with metadata
+// Only exporting "all" since it combines all site styles
 const SITES = [
   {
     name: 'all',
     displayName: 'All Sites',
-    description: 'theme for all supported websites (Discord, Claude.ai, MTools)',
-  },
-  {
-    name: 'discord',
-    displayName: 'Discord',
-    description: 'theme for Discord',
-  },
-  {
-    name: 'claude',
-    displayName: 'Claude',
-    description: 'theme for Claude.ai',
-  },
-  {
-    name: 'mtools',
-    displayName: 'MTools',
-    description: 'theme for MTools API Client',
+    description: 'theme for all supported websites (Discord, Claude.ai, MTools, Outlook, Teams)',
   },
 ];
 

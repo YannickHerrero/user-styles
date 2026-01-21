@@ -1,0 +1,1109 @@
+/* ==UserStyle==
+@name         Teams - {{THEME_NAME}}
+@namespace    github.com/yherrero/stylus
+@version      1.0.0
+@description  {{THEME_NAME}} theme for Microsoft Teams Web (Base16)
+@author       yherrero
+@license      MIT
+@preprocessor less
+==/UserStyle== */
+
+// Theme variables are injected at build time
+
+@-moz-document domain("teams.microsoft.com"), domain("teams.live.com") {
+  // ============================================================================
+  // Microsoft Teams / Fluent UI CSS Custom Properties Override
+  // Comprehensive theming for Microsoft Teams Web
+  // ============================================================================
+
+  :root,
+  body,
+  .fui-FluentProvider,
+  [data-theme],
+  [class*="FluentProvider"],
+  .ts-theme-default,
+  .theme-default,
+  .client-background {
+    // ==========================================================================
+    // Fluent UI v9 Design Tokens - Neutral Colors
+    // ==========================================================================
+    
+    // Background colors
+    --colorNeutralBackground1: @base00 !important;
+    --colorNeutralBackground1Hover: @hover-overlay !important;
+    --colorNeutralBackground1Pressed: @active-overlay !important;
+    --colorNeutralBackground1Selected: @selection-bg !important;
+    --colorNeutralBackground2: @base01 !important;
+    --colorNeutralBackground2Hover: @hover-overlay !important;
+    --colorNeutralBackground2Pressed: @active-overlay !important;
+    --colorNeutralBackground2Selected: @selection-bg !important;
+    --colorNeutralBackground3: @base01 !important;
+    --colorNeutralBackground3Hover: @hover-overlay !important;
+    --colorNeutralBackground3Pressed: @active-overlay !important;
+    --colorNeutralBackground3Selected: @selection-bg !important;
+    --colorNeutralBackground4: @base07 !important;
+    --colorNeutralBackground4Hover: @hover-overlay !important;
+    --colorNeutralBackground4Pressed: @active-overlay !important;
+    --colorNeutralBackground4Selected: @selection-bg !important;
+    --colorNeutralBackground5: @base07 !important;
+    --colorNeutralBackground5Hover: @hover-overlay !important;
+    --colorNeutralBackground5Pressed: @active-overlay !important;
+    --colorNeutralBackground5Selected: @selection-bg !important;
+    --colorNeutralBackground6: @base01 !important;
+    --colorNeutralBackgroundInverted: @base05 !important;
+    --colorNeutralBackgroundStatic: @base00 !important;
+    --colorNeutralBackgroundAlpha: fade(@base00, 50%) !important;
+    --colorNeutralBackgroundAlpha2: fade(@base00, 80%) !important;
+    
+    // Subtle backgrounds
+    --colorSubtleBackground: transparent !important;
+    --colorSubtleBackgroundHover: @hover-overlay !important;
+    --colorSubtleBackgroundPressed: @active-overlay !important;
+    --colorSubtleBackgroundSelected: @selection-bg !important;
+    --colorSubtleBackgroundLightAlphaHover: fade(@base04, 10%) !important;
+    --colorSubtleBackgroundLightAlphaPressed: fade(@base04, 15%) !important;
+    --colorSubtleBackgroundLightAlphaSelected: fade(@primary, 15%) !important;
+    --colorSubtleBackgroundInverted: transparent !important;
+    --colorSubtleBackgroundInvertedHover: fade(@base00, 10%) !important;
+    --colorSubtleBackgroundInvertedPressed: fade(@base00, 20%) !important;
+    --colorSubtleBackgroundInvertedSelected: fade(@base00, 15%) !important;
+    
+    // Transparent backgrounds
+    --colorTransparentBackground: transparent !important;
+    --colorTransparentBackgroundHover: @hover-overlay !important;
+    --colorTransparentBackgroundPressed: @active-overlay !important;
+    --colorTransparentBackgroundSelected: @selection-bg !important;
+    
+    // ==========================================================================
+    // Foreground / Text Colors
+    // ==========================================================================
+    --colorNeutralForeground1: @base05 !important;
+    --colorNeutralForeground1Hover: @base05 !important;
+    --colorNeutralForeground1Pressed: @base05 !important;
+    --colorNeutralForeground1Selected: @base05 !important;
+    --colorNeutralForeground2: @base04 !important;
+    --colorNeutralForeground2Hover: @base05 !important;
+    --colorNeutralForeground2Pressed: @base05 !important;
+    --colorNeutralForeground2Selected: @base05 !important;
+    --colorNeutralForeground2BrandHover: @primary !important;
+    --colorNeutralForeground2BrandPressed: darken(@primary, 10%) !important;
+    --colorNeutralForeground2BrandSelected: @primary !important;
+    --colorNeutralForeground3: @base03 !important;
+    --colorNeutralForeground3Hover: @base04 !important;
+    --colorNeutralForeground3Pressed: @base04 !important;
+    --colorNeutralForeground3Selected: @base04 !important;
+    --colorNeutralForeground4: @base03 !important;
+    --colorNeutralForegroundDisabled: @base03 !important;
+    --colorNeutralForegroundInverted: @base00 !important;
+    --colorNeutralForegroundInvertedHover: @base00 !important;
+    --colorNeutralForegroundInvertedPressed: @base00 !important;
+    --colorNeutralForegroundInvertedSelected: @base00 !important;
+    --colorNeutralForegroundInverted2: @base00 !important;
+    --colorNeutralForegroundOnBrand: @base00 !important;
+    --colorNeutralForegroundStaticInverted: @base00 !important;
+    
+    // ==========================================================================
+    // Brand Colors (Primary accent - Teams purple mapped to theme primary)
+    // ==========================================================================
+    --colorBrandBackground: @primary !important;
+    --colorBrandBackgroundHover: darken(@primary, 5%) !important;
+    --colorBrandBackgroundPressed: darken(@primary, 10%) !important;
+    --colorBrandBackgroundSelected: darken(@primary, 7%) !important;
+    --colorBrandBackground2: fade(@primary, 15%) !important;
+    --colorBrandBackground2Hover: fade(@primary, 25%) !important;
+    --colorBrandBackground2Pressed: fade(@primary, 35%) !important;
+    --colorBrandBackgroundStatic: @primary !important;
+    --colorBrandBackgroundInverted: @base00 !important;
+    --colorBrandBackgroundInvertedHover: @base01 !important;
+    --colorBrandBackgroundInvertedPressed: @base07 !important;
+    --colorBrandBackgroundInvertedSelected: @base01 !important;
+    
+    --colorBrandForeground1: @primary !important;
+    --colorBrandForeground2: darken(@primary, 5%) !important;
+    --colorBrandForeground2Hover: darken(@primary, 10%) !important;
+    --colorBrandForeground2Pressed: darken(@primary, 15%) !important;
+    --colorBrandForegroundLink: @base0D !important;
+    --colorBrandForegroundLinkHover: darken(@base0D, 10%) !important;
+    --colorBrandForegroundLinkPressed: darken(@base0D, 15%) !important;
+    --colorBrandForegroundLinkSelected: @base0D !important;
+    --colorBrandForegroundInverted: @primary !important;
+    --colorBrandForegroundInvertedHover: lighten(@primary, 5%) !important;
+    --colorBrandForegroundInvertedPressed: lighten(@primary, 10%) !important;
+    --colorBrandForegroundOnLight: @primary !important;
+    --colorBrandForegroundOnLightHover: darken(@primary, 5%) !important;
+    --colorBrandForegroundOnLightPressed: darken(@primary, 10%) !important;
+    --colorBrandForegroundOnLightSelected: darken(@primary, 7%) !important;
+    
+    // ==========================================================================
+    // Compound Brand
+    // ==========================================================================
+    --colorCompoundBrandBackground: @primary !important;
+    --colorCompoundBrandBackgroundHover: darken(@primary, 5%) !important;
+    --colorCompoundBrandBackgroundPressed: darken(@primary, 10%) !important;
+    --colorCompoundBrandForeground1: @primary !important;
+    --colorCompoundBrandForeground1Hover: darken(@primary, 5%) !important;
+    --colorCompoundBrandForeground1Pressed: darken(@primary, 10%) !important;
+    --colorCompoundBrandStroke: @primary !important;
+    --colorCompoundBrandStrokeHover: darken(@primary, 5%) !important;
+    --colorCompoundBrandStrokePressed: darken(@primary, 10%) !important;
+    
+    // ==========================================================================
+    // Stroke / Border Colors
+    // ==========================================================================
+    --colorNeutralStroke1: @border-primary !important;
+    --colorNeutralStroke1Hover: @base03 !important;
+    --colorNeutralStroke1Pressed: @base03 !important;
+    --colorNeutralStroke1Selected: @primary !important;
+    --colorNeutralStroke2: @border-subtle !important;
+    --colorNeutralStroke3: @border-subtle !important;
+    --colorNeutralStrokeSubtle: @border-subtle !important;
+    --colorNeutralStrokeAccessible: @base04 !important;
+    --colorNeutralStrokeAccessibleHover: @base03 !important;
+    --colorNeutralStrokeAccessiblePressed: @base03 !important;
+    --colorNeutralStrokeAccessibleSelected: @primary !important;
+    --colorNeutralStrokeDisabled: @border-subtle !important;
+    --colorNeutralStrokeInvertedDisabled: fade(@base00, 40%) !important;
+    --colorNeutralStrokeOnBrand: @base00 !important;
+    --colorNeutralStrokeOnBrand2: @base00 !important;
+    --colorNeutralStrokeOnBrand2Hover: @base00 !important;
+    --colorNeutralStrokeOnBrand2Pressed: @base00 !important;
+    --colorNeutralStrokeOnBrand2Selected: @base00 !important;
+    
+    --colorBrandStroke1: @primary !important;
+    --colorBrandStroke2: fade(@primary, 50%) !important;
+    --colorBrandStroke2Hover: fade(@primary, 60%) !important;
+    --colorBrandStroke2Pressed: fade(@primary, 70%) !important;
+    --colorBrandStroke2Contrast: @primary !important;
+    
+    // ==========================================================================
+    // Status Colors
+    // ==========================================================================
+    // Danger / Error
+    --colorPaletteRedBackground1: fade(@base08, 15%) !important;
+    --colorPaletteRedBackground2: fade(@base08, 25%) !important;
+    --colorPaletteRedBackground3: @base08 !important;
+    --colorPaletteRedForeground1: @base08 !important;
+    --colorPaletteRedForeground2: @base08 !important;
+    --colorPaletteRedForeground3: @base00 !important;
+    --colorPaletteRedBorder1: fade(@base08, 40%) !important;
+    --colorPaletteRedBorder2: @base08 !important;
+    --colorPaletteRedBorderActive: @base08 !important;
+    --colorStatusDangerBackground1: fade(@base08, 15%) !important;
+    --colorStatusDangerBackground2: fade(@base08, 25%) !important;
+    --colorStatusDangerBackground3: @base08 !important;
+    --colorStatusDangerForeground1: @base08 !important;
+    --colorStatusDangerForeground2: @base08 !important;
+    --colorStatusDangerForeground3: @base00 !important;
+    --colorStatusDangerBorder1: fade(@base08, 40%) !important;
+    --colorStatusDangerBorder2: @base08 !important;
+    --colorStatusDangerBorderActive: @base08 !important;
+    
+    // Warning
+    --colorPaletteYellowBackground1: fade(@base09, 15%) !important;
+    --colorPaletteYellowBackground2: fade(@base09, 25%) !important;
+    --colorPaletteYellowBackground3: @base09 !important;
+    --colorPaletteYellowForeground1: @base09 !important;
+    --colorPaletteYellowForeground2: darken(@base09, 10%) !important;
+    --colorPaletteYellowForeground3: @base00 !important;
+    --colorPaletteYellowBorder1: fade(@base09, 40%) !important;
+    --colorPaletteYellowBorder2: @base09 !important;
+    --colorStatusWarningBackground1: fade(@base09, 15%) !important;
+    --colorStatusWarningBackground2: fade(@base09, 25%) !important;
+    --colorStatusWarningBackground3: @base09 !important;
+    --colorStatusWarningForeground1: @base09 !important;
+    --colorStatusWarningForeground2: darken(@base09, 10%) !important;
+    --colorStatusWarningForeground3: @base00 !important;
+    --colorStatusWarningBorder1: fade(@base09, 40%) !important;
+    --colorStatusWarningBorder2: @base09 !important;
+    
+    // Success
+    --colorPaletteGreenBackground1: fade(@base0C, 15%) !important;
+    --colorPaletteGreenBackground2: fade(@base0C, 25%) !important;
+    --colorPaletteGreenBackground3: @base0C !important;
+    --colorPaletteGreenForeground1: @base0C !important;
+    --colorPaletteGreenForeground2: @base0C !important;
+    --colorPaletteGreenForeground3: @base00 !important;
+    --colorPaletteGreenBorder1: fade(@base0C, 40%) !important;
+    --colorPaletteGreenBorder2: @base0C !important;
+    --colorStatusSuccessBackground1: fade(@base0C, 15%) !important;
+    --colorStatusSuccessBackground2: fade(@base0C, 25%) !important;
+    --colorStatusSuccessBackground3: @base0C !important;
+    --colorStatusSuccessForeground1: @base0C !important;
+    --colorStatusSuccessForeground2: @base0C !important;
+    --colorStatusSuccessForeground3: @base00 !important;
+    --colorStatusSuccessBorder1: fade(@base0C, 40%) !important;
+    --colorStatusSuccessBorder2: @base0C !important;
+    
+    // Blue / Info
+    --colorPaletteBlueBackground1: fade(@base0D, 15%) !important;
+    --colorPaletteBlueBackground2: fade(@base0D, 25%) !important;
+    --colorPaletteBlueBackground3: @base0D !important;
+    --colorPaletteBlueForeground1: @base0D !important;
+    --colorPaletteBlueForeground2: @base0D !important;
+    --colorPaletteBlueForeground3: @base00 !important;
+    --colorPaletteBlueBorder1: fade(@base0D, 40%) !important;
+    --colorPaletteBlueBorder2: @base0D !important;
+    
+    // Purple (Teams brand)
+    --colorPalettePurpleBackground1: fade(@base0E, 15%) !important;
+    --colorPalettePurpleBackground2: fade(@base0E, 25%) !important;
+    --colorPalettePurpleBackground3: @base0E !important;
+    --colorPalettePurpleForeground1: @base0E !important;
+    --colorPalettePurpleForeground2: @base0E !important;
+    --colorPalettePurpleForeground3: @base00 !important;
+    --colorPalettePurpleBorder1: fade(@base0E, 40%) !important;
+    --colorPalettePurpleBorder2: @base0E !important;
+    
+    // ==========================================================================
+    // Shadow tokens
+    // ==========================================================================
+    --shadow2: 0 0 2px @shadow, 0 1px 2px @shadow !important;
+    --shadow4: 0 0 2px @shadow, 0 2px 4px @shadow !important;
+    --shadow8: 0 0 2px @shadow, 0 4px 8px @shadow !important;
+    --shadow16: 0 0 2px @shadow, 0 8px 16px @shadow !important;
+    --shadow28: 0 0 8px @shadow, 0 14px 28px @shadow !important;
+    --shadow64: 0 0 8px @shadow, 0 32px 64px @shadow !important;
+    --shadow2Brand: 0 0 2px fade(@primary, 30%), 0 1px 2px fade(@primary, 25%) !important;
+    --shadow4Brand: 0 0 2px fade(@primary, 30%), 0 2px 4px fade(@primary, 25%) !important;
+    --shadow8Brand: 0 0 2px fade(@primary, 30%), 0 4px 8px fade(@primary, 25%) !important;
+    --shadow16Brand: 0 0 2px fade(@primary, 30%), 0 8px 16px fade(@primary, 25%) !important;
+    --shadow28Brand: 0 0 8px fade(@primary, 30%), 0 14px 28px fade(@primary, 25%) !important;
+    --shadow64Brand: 0 0 8px fade(@primary, 30%), 0 32px 64px fade(@primary, 25%) !important;
+    
+    // ==========================================================================
+    // Teams-specific Default Background variables
+    // These are used by Teams atomic CSS classes
+    // ==========================================================================
+    --colorDefaultBackground1: @base00 !important;
+    --colorDefaultBackground2: @base01 !important;
+    --colorDefaultBackground3: @base01 !important;
+    --colorDefaultBackground4: @base07 !important;
+    --colorDefaultBackground5: @base07 !important;
+    --colorDefaultBackground6: @base01 !important;
+    --colorDefaultBackground7: @base01 !important;
+    --colorDefaultBackground8: @base00 !important;
+    --colorDefaultBackground9: @base00 !important;
+    --colorDefaultBackground10: @base01 !important;
+    
+    // Canvas/Surface backgrounds
+    --backgroundCanvas: @base00 !important;
+    --backgroundCanvasAlt: @base01 !important;
+    --background: @base00 !important;
+    --background1: @base00 !important;
+    --background2: @base01 !important;
+    --background3: @base01 !important;
+    --background4: @base07 !important;
+    --background5: @base07 !important;
+    --surfaceBackground: @base00 !important;
+    --surfaceBackgroundAlt: @base01 !important;
+    
+    // Default foreground variables
+    --colorDefaultForeground1: @base05 !important;
+    --colorDefaultForeground2: @base04 !important;
+    --colorDefaultForeground3: @base03 !important;
+    --foreground: @base05 !important;
+    --foreground1: @base05 !important;
+    --foreground2: @base04 !important;
+    --foreground3: @base03 !important;
+    
+    // Default stroke/border variables
+    --colorDefaultStroke1: @border-primary !important;
+    --colorDefaultStroke2: @border-subtle !important;
+    --stroke: @border-primary !important;
+    --stroke1: @border-primary !important;
+    --stroke2: @border-subtle !important;
+    
+    // ==========================================================================
+    // Teams-specific legacy variables
+    // ==========================================================================
+    --siteVariables-colors-brand-500: @primary !important;
+    --siteVariables-colors-brand-600: darken(@primary, 5%) !important;
+    --siteVariables-colors-brand-700: darken(@primary, 10%) !important;
+    --siteVariables-colors-brand-800: darken(@primary, 15%) !important;
+    --siteVariables-colors-brand-900: darken(@primary, 20%) !important;
+    --siteVariables-colors-brand-400: lighten(@primary, 5%) !important;
+    --siteVariables-colors-brand-300: lighten(@primary, 10%) !important;
+    --siteVariables-colors-brand-200: lighten(@primary, 15%) !important;
+    --siteVariables-colors-brand-100: lighten(@primary, 20%) !important;
+    --siteVariables-colors-brand-50: lighten(@primary, 30%) !important;
+    
+    --siteVariables-bodyBackground: @base00 !important;
+    --siteVariables-bodyColor: @base05 !important;
+    
+    // ==========================================================================
+    // Legacy Fluent UI v8 variables
+    // ==========================================================================
+    --themePrimary: @primary !important;
+    --themeLighterAlt: fade(@primary, 5%) !important;
+    --themeLighter: fade(@primary, 15%) !important;
+    --themeLight: fade(@primary, 30%) !important;
+    --themeTertiary: fade(@primary, 50%) !important;
+    --themeSecondary: darken(@primary, 5%) !important;
+    --themeDarkAlt: darken(@primary, 10%) !important;
+    --themeDark: darken(@primary, 15%) !important;
+    --themeDarker: darken(@primary, 25%) !important;
+    
+    --neutralLighterAlt: @base00 !important;
+    --neutralLighter: @base01 !important;
+    --neutralLight: @base01 !important;
+    --neutralQuaternaryAlt: @base07 !important;
+    --neutralQuaternary: @base07 !important;
+    --neutralTertiaryAlt: @base03 !important;
+    --neutralTertiary: @base03 !important;
+    --neutralSecondary: @base04 !important;
+    --neutralSecondaryAlt: @base04 !important;
+    --neutralPrimaryAlt: @base04 !important;
+    --neutralPrimary: @base05 !important;
+    --neutralDark: @base06 !important;
+    --black: @base05 !important;
+    --white: @base00 !important;
+    
+    --bodyBackground: @base00 !important;
+    --bodyBackgroundHovered: @hover-overlay !important;
+    --bodyBackgroundChecked: @selection-bg !important;
+    --bodyStandoutBackground: @base01 !important;
+    --bodyFrameBackground: @base01 !important;
+    --bodyFrameDivider: @border-primary !important;
+    --bodyText: @base05 !important;
+    --bodyTextChecked: @base05 !important;
+    --bodySubtext: @base04 !important;
+    --bodyDivider: @border-primary !important;
+    
+    --inputBackground: @input-bg !important;
+    --inputBackgroundChecked: @primary !important;
+    --inputBackgroundCheckedHovered: darken(@primary, 5%) !important;
+    --inputBorder: @input-border !important;
+    --inputBorderHovered: @base03 !important;
+    --inputText: @base05 !important;
+    --inputTextHovered: @base05 !important;
+    --inputPlaceholderText: @input-placeholder !important;
+    --inputFocusBorderAlt: @primary !important;
+    --inputForegroundChecked: @base00 !important;
+    
+    --link: @base0D !important;
+    --linkHovered: darken(@base0D, 10%) !important;
+    --linkPressed: darken(@base0D, 15%) !important;
+    
+    --errorText: @base08 !important;
+    --warningText: @base09 !important;
+    --successText: @base0C !important;
+    --errorBackground: fade(@base08, 15%) !important;
+    --warningBackground: fade(@base09, 15%) !important;
+    --successBackground: fade(@base0C, 15%) !important;
+    
+    --focusBorder: @primary !important;
+  }
+
+  // ============================================================================
+  // Scoped CSS Variable Overrides (Catch-All)
+  // Teams sets CSS variables on specific elements, not just :root
+  // This ensures our theme variables override them everywhere
+  // ============================================================================
+  * {
+    --backgroundCanvas: @base00 !important;
+    --backgroundCanvasAlt: @base01 !important;
+    --colorDefaultBackground1: @base00 !important;
+    --colorDefaultBackground2: @base01 !important;
+    --colorDefaultBackground3: @base01 !important;
+    --colorDefaultBackground4: @base07 !important;
+    --colorDefaultBackground5: @base07 !important;
+    --colorDefaultBackground6: @base01 !important;
+    --colorDefaultBackground7: @base01 !important;
+    --colorDefaultBackground8: @base00 !important;
+    --colorDefaultBackground9: @base00 !important;
+    --colorDefaultBackground10: @base01 !important;
+    --background: @base00 !important;
+    --background1: @base00 !important;
+    --background2: @base01 !important;
+    --background3: @base01 !important;
+    --surfaceBackground: @base00 !important;
+    --colorDefaultForeground1: @base05 !important;
+    --colorDefaultForeground2: @base04 !important;
+    --colorDefaultForeground3: @base03 !important;
+    --foreground: @base05 !important;
+    --foreground1: @base05 !important;
+    --foreground2: @base04 !important;
+    --foreground3: @base03 !important;
+  }
+
+  // ============================================================================
+  // Direct Background Overrides (bypass CSS variables)
+  // Teams' CSS variables have higher specificity, so we override the
+  // background-color property directly on these elements
+  // ============================================================================
+  
+  // Chat and Channel list sidebar
+  [data-testid="simple-collab-rail"],
+  [data-shortcut-context="chat-and-channel-list"] {
+    background-color: @base01 !important;
+  }
+
+  // Chat/Entity header
+  [data-tid="entity-header"],
+  [data-shortcut-context="chat-messages-list"] {
+    background-color: @base00 !important;
+  }
+
+  // Teams atomic CSS classes that set white backgrounds
+  // These are generated class names - may need updates if Teams changes them
+  .f1g8k7os,  // colorDefaultBackground7 usage
+  .fm8gwi3 {  // backgroundCanvas usage
+    background-color: @base01 !important;
+  }
+
+  // ============================================================================
+  // Body and App Container
+  // ============================================================================
+  body,
+  .client-background,
+  .ts-app-content {
+    background-color: @base00 !important;
+    color: @base05 !important;
+  }
+
+  #app,
+  #teams-app-container,
+  .app-container,
+  .ts-app {
+    background-color: @base00 !important;
+  }
+
+  // ============================================================================
+  // Left Navigation Rail (App Bar)
+  // ============================================================================
+  [class*="app-bar"],
+  [class*="AppBar"],
+  .ts-app-bar,
+  [data-tid="app-bar"] {
+    background-color: @base01 !important;
+  }
+
+  // App bar icons
+  [class*="app-bar"] button,
+  [class*="AppBar"] button {
+    color: @base04 !important;
+
+    &:hover {
+      background-color: @hover-overlay !important;
+      color: @base05 !important;
+    }
+
+    &[aria-selected="true"],
+    &[class*="selected"],
+    &.active {
+      background-color: @selection-bg !important;
+      color: @primary !important;
+    }
+  }
+
+  // ============================================================================
+  // Left Sidebar (Teams/Channels list)
+  // ============================================================================
+  [class*="left-rail"],
+  [class*="LeftRail"],
+  .ts-left-pane,
+  [class*="team-list"],
+  [data-tid="left-rail"] {
+    background-color: @base01 !important;
+  }
+
+  // Team/channel items
+  [class*="team-list-item"],
+  [class*="channel-list-item"],
+  [data-tid*="channel"],
+  [data-tid*="team"] {
+    &:hover {
+      background-color: @hover-overlay !important;
+    }
+
+    &[aria-selected="true"],
+    &[class*="selected"],
+    &.active {
+      background-color: @selection-bg !important;
+    }
+  }
+
+  // ============================================================================
+  // Chat/Conversation Area
+  // ============================================================================
+  [class*="chat-pane"],
+  [class*="ChatPane"],
+  .ts-message-list-container,
+  [class*="message-list"],
+  [data-tid="message-pane"] {
+    background-color: @base00 !important;
+  }
+
+  // Message bubbles
+  [class*="message-body"],
+  [class*="MessageBody"],
+  .ts-message {
+    background-color: @base00 !important;
+    color: @base05 !important;
+  }
+
+  // Own messages
+  [class*="is-mine"] [class*="message-body"],
+  [class*="isMine"] [class*="MessageBody"] {
+    background-color: fade(@primary, 15%) !important;
+  }
+
+  // Message hover
+  [class*="message"]:hover,
+  .ts-message:hover {
+    background-color: @hover-overlay !important;
+  }
+
+  // ============================================================================
+  // Message Compose Box
+  // ============================================================================
+  [class*="compose"],
+  [class*="Compose"],
+  .ts-compose-box,
+  [data-tid="ckeditor"] {
+    background-color: @base01 !important;
+    border-color: @border-primary !important;
+  }
+
+  // Compose text area
+  [class*="compose"] [contenteditable="true"],
+  .ts-compose-box [contenteditable="true"],
+  [class*="ckeditor"] {
+    background-color: @base01 !important;
+    color: @base05 !important;
+  }
+
+  // Compose toolbar
+  [class*="compose-toolbar"],
+  [class*="ComposeToolbar"] {
+    background-color: @base01 !important;
+    border-color: @border-primary !important;
+  }
+
+  // ============================================================================
+  // Header / Top Bar
+  // ============================================================================
+  [class*="header"],
+  [class*="Header"],
+  .ts-header,
+  [data-tid="team-header"] {
+    background-color: @base01 !important;
+    border-color: @border-primary !important;
+  }
+
+  // Search box
+  [class*="search-box"],
+  [class*="SearchBox"],
+  .ts-search-input {
+    background-color: @input-bg !important;
+    border-color: @input-border !important;
+
+    input {
+      color: @base05 !important;
+
+      &::placeholder {
+        color: @input-placeholder !important;
+      }
+    }
+  }
+
+  // ============================================================================
+  // Right Sidebar (Roster, Details)
+  // ============================================================================
+  [class*="right-rail"],
+  [class*="RightRail"],
+  .ts-right-pane,
+  [class*="roster-pane"],
+  [data-tid="right-rail"] {
+    background-color: @base01 !important;
+  }
+
+  // Participant list
+  [class*="roster-item"],
+  [class*="participant"] {
+    &:hover {
+      background-color: @hover-overlay !important;
+    }
+  }
+
+  // ============================================================================
+  // Meetings / Calls UI
+  // ============================================================================
+  [class*="calling"],
+  [class*="Calling"],
+  [class*="meeting"],
+  [class*="Meeting"] {
+    background-color: @base00 !important;
+  }
+
+  // Call controls
+  [class*="call-controls"],
+  [class*="CallControls"] {
+    background-color: @base01 !important;
+  }
+
+  // Video grid
+  [class*="video-gallery"],
+  [class*="VideoGallery"] {
+    background-color: @base00 !important;
+  }
+
+  // ============================================================================
+  // Activity Feed
+  // ============================================================================
+  [class*="activity-feed"],
+  [class*="ActivityFeed"],
+  [data-tid="activity-feed"] {
+    background-color: @base00 !important;
+  }
+
+  // Activity items
+  [class*="activity-item"],
+  [class*="ActivityItem"] {
+    border-color: @border-subtle !important;
+
+    &:hover {
+      background-color: @hover-overlay !important;
+    }
+  }
+
+  // ============================================================================
+  // Modals and Dialogs
+  // ============================================================================
+  [role="dialog"],
+  [class*="dialog"],
+  [class*="Dialog"],
+  .ms-Dialog,
+  .ts-modal {
+    background-color: @base00 !important;
+    color: @base05 !important;
+  }
+
+  // Dialog overlay
+  [class*="overlay"],
+  .ms-Overlay {
+    background-color: fade(@base05, 40%) !important;
+  }
+
+  // ============================================================================
+  // Dropdown and Menus
+  // ============================================================================
+  [role="menu"],
+  [role="listbox"],
+  [class*="dropdown"],
+  [class*="Dropdown"],
+  .ms-ContextualMenu {
+    background-color: @base07 !important;
+    border-color: @border-primary !important;
+  }
+
+  [role="menuitem"],
+  [role="option"],
+  [class*="dropdown-item"] {
+    color: @base05 !important;
+
+    &:hover {
+      background-color: @hover-overlay !important;
+    }
+
+    &[aria-selected="true"] {
+      background-color: @selection-bg !important;
+    }
+  }
+
+  // ============================================================================
+  // Buttons
+  // ============================================================================
+  button,
+  [role="button"] {
+    &[class*="primary"],
+    &[class*="Primary"] {
+      background-color: @primary !important;
+      color: @base00 !important;
+
+      &:hover {
+        background-color: darken(@primary, 5%) !important;
+      }
+    }
+  }
+
+  // ============================================================================
+  // Tabs
+  // ============================================================================
+  [role="tablist"],
+  [class*="tab-list"],
+  [class*="TabList"] {
+    background-color: @base01 !important;
+  }
+
+  [role="tab"] {
+    color: @base04 !important;
+
+    &:hover {
+      background-color: @hover-overlay !important;
+      color: @base05 !important;
+    }
+
+    &[aria-selected="true"] {
+      color: @primary !important;
+      border-color: @primary !important;
+    }
+  }
+
+  // ============================================================================
+  // Cards
+  // ============================================================================
+  [class*="card"],
+  [class*="Card"] {
+    .apply-card();
+  }
+
+  // Adaptive cards (for bots/connectors)
+  [class*="adaptive-card"],
+  [class*="AdaptiveCard"] {
+    background-color: @base07 !important;
+    border-color: @border-primary !important;
+  }
+
+  // ============================================================================
+  // Presence indicators
+  // ============================================================================
+  [class*="presence-available"],
+  [class*="Available"] {
+    background-color: @base0C !important;
+  }
+
+  [class*="presence-busy"],
+  [class*="Busy"] {
+    background-color: @base08 !important;
+  }
+
+  [class*="presence-away"],
+  [class*="Away"] {
+    background-color: @base09 !important;
+  }
+
+  [class*="presence-offline"],
+  [class*="Offline"] {
+    background-color: @base03 !important;
+  }
+
+  // ============================================================================
+  // Links
+  // ============================================================================
+  a {
+    color: @base0D !important;
+
+    &:hover {
+      color: darken(@base0D, 10%) !important;
+    }
+  }
+
+  // ============================================================================
+  // Code blocks in messages
+  // ============================================================================
+  pre,
+  code {
+    background-color: @code-bg !important;
+    color: @base05 !important;
+  }
+
+  // ============================================================================
+  // Reactions
+  // ============================================================================
+  [class*="reaction"],
+  [class*="Reaction"] {
+    background-color: @base01 !important;
+    border-color: @border-subtle !important;
+
+    &:hover {
+      background-color: @hover-overlay !important;
+    }
+  }
+
+  // ============================================================================
+  // File previews
+  // ============================================================================
+  [class*="file-preview"],
+  [class*="FilePreview"],
+  [class*="attachment"] {
+    background-color: @base01 !important;
+    border-color: @border-primary !important;
+  }
+
+  // ============================================================================
+  // Tooltip
+  // ============================================================================
+  [role="tooltip"],
+  [class*="tooltip"],
+  [class*="Tooltip"] {
+    background-color: @base01 !important;
+    color: @base05 !important;
+    border-color: @border-primary !important;
+  }
+
+  // ============================================================================
+  // Scrollbar
+  // ============================================================================
+  * {
+    .apply-scrollbar();
+  }
+
+  // ============================================================================
+  // Selection highlight
+  // ============================================================================
+  ::selection {
+    background-color: fade(@primary, 60%) !important;
+    color: @base05 !important;
+  }
+
+  // ============================================================================
+  // Focus ring
+  // ============================================================================
+  *:focus-visible {
+    outline-color: @primary !important;
+  }
+
+  // ============================================================================
+  // Unread indicators
+  // ============================================================================
+  [class*="unread"],
+  [class*="Unread"],
+  [class*="badge"] {
+    background-color: @primary !important;
+    color: @base00 !important;
+  }
+
+  // ============================================================================
+  // Mentions
+  // ============================================================================
+  [class*="mention"],
+  [class*="Mention"] {
+    background-color: fade(@primary, 20%) !important;
+    color: @primary !important;
+  }
+
+  // ============================================================================
+  // Teams App Layout Areas (data-tid selectors)
+  // These are specific Teams layout slots that need explicit targeting
+  // ============================================================================
+  
+  // Main app layout areas
+  [data-tid="app-layout-area--header"],
+  [data-tid="app-layout-area--main"],
+  [data-tid="app-layout-area--side-rail"],
+  [data-tid="app-layout-area--footer"],
+  [data-tid="app-layout-area"] {
+    background-color: @base00 !important;
+  }
+
+  // Chat header specifically
+  [data-tid="app-layout-area--header"] {
+    background-color: @base01 !important;
+    border-color: @border-primary !important;
+    
+    * {
+      color: @base05 !important;
+    }
+  }
+
+  // Fluent UI AppLayoutArea component
+  .fui-AppLayoutArea,
+  [class*="AppLayoutArea"] {
+    background-color: @base00 !important;
+  }
+
+  // ============================================================================
+  // Chat and Channel List (Left Sidebar)
+  // ============================================================================
+  [data-testid="simple-collab-rail"],
+  [data-shortcut-context="chat-and-channel-list"],
+  [data-tid="chat-and-channel-list"],
+  [data-tid="chat-list"],
+  [data-tid="channel-list"] {
+    background-color: @base01 !important;
+    
+    // All text within sidebar
+    * {
+      color: @base05 !important;
+    }
+  }
+
+  // Slot measurer containers (Teams uses these for layout)
+  [data-tid="slot-measurer"] {
+    background-color: inherit !important;
+  }
+
+  // ============================================================================
+  // Fluent UI Flex containers used by Teams
+  // ============================================================================
+  .fui-Flex,
+  [class*="fui-Flex"] {
+    // Don't override background by default, let parent control it
+  }
+
+  // ============================================================================
+  // Teams-specific atomic CSS overrides
+  // Teams uses atomic CSS classes (f1xxxx) with background colors
+  // ============================================================================
+  
+  // Force background colors on common containers
+  [class*="f22iagw"],  // common flex container class
+  [class*="f1vx9l62"], // padding class
+  [class*="f1g8k7os"] { // another layout class
+    // These are layout utilities, inherit background from parent
+  }
+
+  // ============================================================================
+  // Chat List Items
+  // ============================================================================
+  [data-tid="chat-list-item"],
+  [data-tid="channel-list-item"],
+  [data-testid*="chat-list"],
+  [data-testid*="channel-list"] {
+    background-color: transparent !important;
+    
+    &:hover {
+      background-color: @hover-overlay !important;
+    }
+    
+    &[aria-selected="true"],
+    &[data-is-selected="true"] {
+      background-color: @selection-bg !important;
+    }
+  }
+
+  // ============================================================================
+  // Message Thread Area
+  // ============================================================================
+  [data-tid="message-pane-layout"],
+  [data-tid="message-thread"],
+  [data-testid="message-pane"] {
+    background-color: @base00 !important;
+  }
+
+  // ============================================================================
+  // Navigation Rail (App icons on far left)
+  // ============================================================================
+  [data-tid="app-rail"],
+  [data-tid="app-bar"],
+  [data-testid="app-bar"] {
+    background-color: @base01 !important;
+  }
+
+  // App rail buttons
+  [data-tid="app-rail"] button,
+  [data-tid="app-bar"] button {
+    &:hover {
+      background-color: @hover-overlay !important;
+    }
+    
+    &[aria-selected="true"],
+    &[data-is-active="true"] {
+      background-color: @selection-bg !important;
+    }
+  }
+
+  // ============================================================================
+  // Teams List View Headers
+  // ============================================================================
+  [data-tid="section-header"],
+  [data-tid="list-header"] {
+    background-color: @base01 !important;
+    color: @base04 !important;
+  }
+
+  // ============================================================================
+  // Conversation/Chat Pane
+  // ============================================================================
+  [data-tid="conversation-pane"],
+  [data-tid="chat-pane"],
+  [data-testid="conversation-pane"] {
+    background-color: @base00 !important;
+  }
+
+  // ============================================================================
+  // People Picker / Mentions Dropdown
+  // ============================================================================
+  [data-tid="people-picker"],
+  [data-tid="mention-picker"] {
+    background-color: @base07 !important;
+    border-color: @border-primary !important;
+  }
+
+  // ============================================================================
+  // Top Banner / Title Bar
+  // ============================================================================
+  [data-tid="title-bar"],
+  [data-tid="top-bar"] {
+    background-color: @base01 !important;
+  }
+
+  // ============================================================================
+  // Generic Fluent UI overrides for stubborn elements
+  // These use !important with higher specificity
+  // ============================================================================
+  
+  // White/light backgrounds that Teams applies
+  div[style*="background-color: rgb(255, 255, 255)"],
+  div[style*="background-color: white"],
+  div[style*="background: rgb(255, 255, 255)"],
+  div[style*="background: white"] {
+    background-color: @base00 !important;
+  }
+
+  // Light gray backgrounds
+  div[style*="background-color: rgb(245"],
+  div[style*="background-color: rgb(250"],
+  div[style*="background-color: rgb(248"],
+  div[style*="background: rgb(245"],
+  div[style*="background: rgb(250"],
+  div[style*="background: rgb(248"] {
+    background-color: @base01 !important;
+  }
+
+  // ============================================================================
+  // Additional Fluent Provider scoping
+  // Teams wraps sections in multiple FluentProviders
+  // ============================================================================
+  .fui-FluentProvider {
+    background-color: @base00 !important;
+    color: @base05 !important;
+    
+    // Nested FluentProviders for sidebars
+    .fui-FluentProvider {
+      background-color: inherit !important;
+    }
+  }
+
+  // ============================================================================
+  // Teams specific component overrides
+  // ============================================================================
+  
+  // New chat button area
+  [data-tid="new-chat-button"],
+  [data-testid="new-chat-button"] {
+    background-color: @primary !important;
+    color: @base00 !important;
+  }
+
+  // Filter/search in sidebar
+  [data-tid="filter-input"],
+  [data-tid="search-input"] {
+    background-color: @input-bg !important;
+    border-color: @input-border !important;
+    color: @base05 !important;
+  }
+
+  // Loading skeletons
+  [class*="skeleton"],
+  [class*="Skeleton"] {
+    background-color: @base01 !important;
+  }
+
+  // Empty state illustrations
+  [class*="empty-state"],
+  [class*="EmptyState"] {
+    background-color: @base00 !important;
+  }
+}
