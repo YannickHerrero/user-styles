@@ -1,0 +1,29 @@
+[meta]
+name = "Rose of Dune"
+id = "roseofdune"
+type = "light"
+
+[base16]
+# Base16 palette - the foundation for all colors
+base00 = "F5E6D3"  # Default Background
+base01 = "EBD1B8"  # Lighter Background (panels, cards)
+base02 = "EBD1B8"  # Selection Background
+base03 = "7A6A57"  # Comments, Muted text
+base04 = "6B5843"  # Dark Foreground (secondary text)
+base05 = "3C2B20"  # Default Foreground (primary text)
+base06 = "2B1E15"  # Light Foreground (headings, emphasis)
+base07 = "E6D1C2"  # Lightest Background (elevated surfaces)
+base08 = "B34438"  # Red - Variables, Errors, Deleted
+base09 = "D9A06B"  # Orange - Constants, Numbers, Warnings
+base0A = "D28C74"  # Yellow - Classes, Search highlight
+base0B = "B88642"  # Green - Strings, Success, Inserted
+base0C = "7CA973"  # Cyan - Regex, Escape chars, Support
+base0D = "C87C6A"  # Blue - Functions, Links
+base0E = "B36E5B"  # Purple - Keywords, Storage
+base0F = "6B5843"  # Brown - Deprecated, Embedded
+
+[overrides]
+# Optional overrides when base16 mapping doesn't fit the design
+primary = "b76e79"    # Main accent color (buttons, active states)
+accent = "AD9980"     # Secondary accent
+border = "EBD1B8"     # Explicit border color
