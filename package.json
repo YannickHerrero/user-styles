@@ -5,9 +5,10 @@
   "scripts": {
     "build": "bun run build:themes && bun run build:styles && bun run build:import",
     "build:themes": "bun scripts/generate-theme.js",
-    "build:styles": "bun run build:discord && bun run build:claude && bun run build:combined",
+    "build:styles": "bun run build:discord && bun run build:claude && bun run build:mtools && bun run build:combined",
     "build:discord": "lessc styles/discord/rose-of-dune.user.less styles/discord/rose-of-dune.user.css",
     "build:claude": "lessc styles/claude/rose-of-dune.user.less styles/claude/rose-of-dune.user.css",
+    "build:mtools": "lessc styles/mtools/rose-of-dune.user.less styles/mtools/rose-of-dune.user.css",
     "build:combined": "lessc styles/all/rose-of-dune.user.less styles/all/rose-of-dune.user.css",
     "build:import": "bun scripts/generate-import.js"
   },
@@ -20,7 +21,8 @@
     "theme",
     "rose-of-dune",
     "discord",
-    "claude"
+    "claude",
+    "mtools"
   ],
   "license": "MIT",
   "dependencies": {

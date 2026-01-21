@@ -1,0 +1,631 @@
+/* ==UserStyle==
+@name         MTools - Rose of Dune
+@namespace    github.com/yherrero/stylus
+@version      1.0.0
+@description  A soft rose-gold theme for MTools API Client with warm brown accents (Base16)
+@author       yherrero
+@license      MIT
+@preprocessor less
+==/UserStyle== */
+
+@import "../../themes/rose-of-dune.less";
+
+@-moz-document domain("mtools-rho.vercel.app"), url-prefix("http://localhost:5175") {
+  // ============================================================================
+  // CSS Custom Properties - Override Tailwind CSS 4 variables
+  // Force light theme on both :root and .dark
+  // ============================================================================
+  
+  :root,
+  .dark {
+    // Core colors
+    --background: @base00 !important;
+    --foreground: @base05 !important;
+    
+    // Card surfaces
+    --card: @card-bg !important;
+    --card-foreground: @base05 !important;
+    
+    // Popover/Dropdown surfaces
+    --popover: @base07 !important;
+    --popover-foreground: @base05 !important;
+    
+    // Primary action color
+    --primary: @primary !important;
+    --primary-foreground: @base00 !important;
+    
+    // Secondary surfaces
+    --secondary: @base01 !important;
+    --secondary-foreground: @base05 !important;
+    
+    // Muted/disabled states
+    --muted: @base01 !important;
+    --muted-foreground: @base03 !important;
+    
+    // Accent/hover states
+    --accent: @accent !important;
+    --accent-foreground: @base05 !important;
+    
+    // Destructive actions
+    --destructive: @base08 !important;
+    
+    // Borders and inputs
+    --border: @border-primary !important;
+    --input: @input-border !important;
+    --ring: @primary !important;
+    
+    // Radius (keep original)
+    --radius: 0.625rem !important;
+    
+    // Sidebar
+    --sidebar: @base01 !important;
+    --sidebar-foreground: @base05 !important;
+    --sidebar-primary: @primary !important;
+    --sidebar-primary-foreground: @base00 !important;
+    --sidebar-accent: @hover-overlay !important;
+    --sidebar-accent-foreground: @base05 !important;
+    --sidebar-border: @border-subtle !important;
+    --sidebar-ring: @primary !important;
+    
+    // Chart colors - mapped to base16 palette
+    --chart-1: @base08 !important;  // Red
+    --chart-2: @base0C !important;  // Cyan/Green
+    --chart-3: @base09 !important;  // Orange
+    --chart-4: @base0E !important;  // Purple
+    --chart-5: @base0D !important;  // Blue
+  }
+
+  // ============================================================================
+  // Body & Layout
+  // ============================================================================
+  
+  body {
+    background: @base00 !important;
+    color: @base05 !important;
+  }
+  
+  // Main content area
+  main,
+  [data-slot="sidebar-inset"] {
+    background: @base00 !important;
+  }
+
+  // ============================================================================
+  // Sidebar
+  // ============================================================================
+  
+  [data-slot="sidebar"],
+  aside {
+    background: @base01 !important;
+    border-color: @border-subtle !important;
+  }
+  
+  // Sidebar header with logo
+  [data-slot="sidebar-header"] {
+    background: @base01 !important;
+  }
+  
+  // Sidebar menu items
+  [data-slot="sidebar-menu-button"] {
+    color: @base05 !important;
+    
+    &:hover {
+      background: @hover-overlay !important;
+    }
+    
+    &[data-active="true"] {
+      background: @selection-bg !important;
+      color: @base05 !important;
+    }
+  }
+
+  // ============================================================================
+  // Buttons
+  // ============================================================================
+  
+  [data-slot="button"],
+  button {
+    // Default variant
+    &[data-variant="default"] {
+      background: @primary !important;
+      color: @base00 !important;
+      
+      &:hover {
+        background: darken(@primary, 8%) !important;
+      }
+    }
+    
+    // Secondary variant
+    &[data-variant="secondary"] {
+      background: @base01 !important;
+      color: @base05 !important;
+      
+      &:hover {
+        background: darken(@base01, 5%) !important;
+      }
+    }
+    
+    // Outline variant
+    &[data-variant="outline"] {
+      background: transparent !important;
+      border-color: @border-primary !important;
+      color: @base05 !important;
+      
+      &:hover {
+        background: @hover-overlay !important;
+      }
+    }
+    
+    // Ghost variant
+    &[data-variant="ghost"] {
+      background: transparent !important;
+      color: @base05 !important;
+      
+      &:hover {
+        background: @hover-overlay !important;
+      }
+    }
+    
+    // Destructive variant
+    &[data-variant="destructive"] {
+      background: @base08 !important;
+      color: @base00 !important;
+      
+      &:hover {
+        background: darken(@base08, 8%) !important;
+      }
+    }
+  }
+
+  // ============================================================================
+  // Form Inputs
+  // ============================================================================
+  
+  input,
+  textarea,
+  [data-slot="input"],
+  [data-slot="textarea"] {
+    background: @input-bg !important;
+    border-color: @input-border !important;
+    color: @base05 !important;
+    
+    &::placeholder {
+      color: @input-placeholder !important;
+    }
+    
+    &:focus,
+    &:focus-visible {
+      border-color: @input-focus-border !important;
+      box-shadow: 0 0 0 2px @focus-ring !important;
+      outline: none !important;
+    }
+  }
+
+  // Select trigger
+  [data-slot="select-trigger"] {
+    background: @input-bg !important;
+    border-color: @input-border !important;
+    color: @base05 !important;
+    
+    &:focus,
+    &[data-state="open"] {
+      border-color: @input-focus-border !important;
+      box-shadow: 0 0 0 2px @focus-ring !important;
+    }
+  }
+  
+  // Select content dropdown
+  [data-slot="select-content"] {
+    background: @base07 !important;
+    border-color: @border-primary !important;
+  }
+  
+  [data-slot="select-item"] {
+    color: @base05 !important;
+    
+    &:hover,
+    &:focus,
+    &[data-highlighted] {
+      background: @hover-overlay !important;
+    }
+    
+    &[data-state="checked"] {
+      background: @selection-bg !important;
+    }
+  }
+
+  // ============================================================================
+  // Tabs
+  // ============================================================================
+  
+  [data-slot="tabs-list"] {
+    background: @base01 !important;
+  }
+  
+  [data-slot="tabs-trigger"] {
+    color: @base04 !important;
+    
+    &:hover {
+      color: @base05 !important;
+    }
+    
+    &[data-state="active"] {
+      background: @base00 !important;
+      color: @base05 !important;
+    }
+  }
+  
+  [data-slot="tabs-content"] {
+    background: @base00 !important;
+  }
+
+  // ============================================================================
+  // Tables (Database views)
+  // ============================================================================
+  
+  table {
+    border-color: @border-primary !important;
+  }
+  
+  thead {
+    background: @base01 !important;
+  }
+  
+  th {
+    background: @base01 !important;
+    color: @base05 !important;
+    border-color: @border-primary !important;
+  }
+  
+  td {
+    border-color: @border-subtle !important;
+    color: @base05 !important;
+  }
+  
+  tbody tr {
+    &:hover {
+      background: @hover-overlay !important;
+    }
+  }
+
+  // ============================================================================
+  // Dialogs & Modals
+  // ============================================================================
+  
+  [data-slot="dialog-overlay"] {
+    background: fade(@base05, 50%) !important;
+  }
+  
+  [data-slot="dialog-content"],
+  [role="dialog"] {
+    background: @base00 !important;
+    border-color: @border-primary !important;
+  }
+  
+  [data-slot="dialog-header"] {
+    border-color: @border-subtle !important;
+  }
+  
+  [data-slot="dialog-footer"] {
+    border-color: @border-subtle !important;
+  }
+
+  // ============================================================================
+  // Dropdown Menus
+  // ============================================================================
+  
+  [data-slot="dropdown-menu-content"],
+  [role="menu"] {
+    background: @base07 !important;
+    border-color: @border-primary !important;
+  }
+  
+  [data-slot="dropdown-menu-item"],
+  [role="menuitem"] {
+    color: @base05 !important;
+    
+    &:hover,
+    &:focus,
+    &[data-highlighted] {
+      background: @hover-overlay !important;
+    }
+  }
+  
+  [data-slot="dropdown-menu-separator"] {
+    background: @border-subtle !important;
+  }
+
+  // ============================================================================
+  // Badges
+  // ============================================================================
+  
+  [data-slot="badge"] {
+    &[data-variant="default"] {
+      background: @primary !important;
+      color: @base00 !important;
+    }
+    
+    &[data-variant="secondary"] {
+      background: @base01 !important;
+      color: @base05 !important;
+    }
+    
+    &[data-variant="outline"] {
+      background: transparent !important;
+      border-color: @border-primary !important;
+      color: @base05 !important;
+    }
+    
+    &[data-variant="destructive"] {
+      background: @base08 !important;
+      color: @base00 !important;
+    }
+  }
+
+  // ============================================================================
+  // HTTP Method Badges - Theme colored
+  // ============================================================================
+  
+  // GET - Cyan/Green (success)
+  .bg-green-500\/10 {
+    background: fade(@base0C, 15%) !important;
+  }
+  .text-green-500 {
+    color: @base0C !important;
+  }
+  .hover\:bg-green-500\/20:hover {
+    background: fade(@base0C, 25%) !important;
+  }
+  
+  // POST - Blue (functions/links)
+  .bg-blue-500\/10 {
+    background: fade(@base0D, 15%) !important;
+  }
+  .text-blue-500 {
+    color: @base0D !important;
+  }
+  .hover\:bg-blue-500\/20:hover {
+    background: fade(@base0D, 25%) !important;
+  }
+  
+  // PUT - Orange (warnings)
+  .bg-orange-500\/10 {
+    background: fade(@base09, 15%) !important;
+  }
+  .text-orange-500 {
+    color: @base09 !important;
+  }
+  .hover\:bg-orange-500\/20:hover {
+    background: fade(@base09, 25%) !important;
+  }
+  
+  // PATCH - Yellow (classes)
+  .bg-yellow-500\/10 {
+    background: fade(@base0A, 15%) !important;
+  }
+  .text-yellow-500 {
+    color: @base0A !important;
+  }
+  .hover\:bg-yellow-500\/20:hover {
+    background: fade(@base0A, 25%) !important;
+  }
+  
+  // DELETE - Red (errors)
+  .bg-red-500\/10 {
+    background: fade(@base08, 15%) !important;
+  }
+  .text-red-500 {
+    color: @base08 !important;
+  }
+  .hover\:bg-red-500\/20:hover {
+    background: fade(@base08, 25%) !important;
+  }
+  
+  // HEAD - Purple (keywords)
+  .bg-purple-500\/10 {
+    background: fade(@base0E, 15%) !important;
+  }
+  .text-purple-500 {
+    color: @base0E !important;
+  }
+  .hover\:bg-purple-500\/20:hover {
+    background: fade(@base0E, 25%) !important;
+  }
+  
+  // OPTIONS - Gray (neutral)
+  .bg-gray-500\/10 {
+    background: fade(@base04, 15%) !important;
+  }
+  .text-gray-500 {
+    color: @base04 !important;
+  }
+  .hover\:bg-gray-500\/20:hover {
+    background: fade(@base04, 25%) !important;
+  }
+
+  // ============================================================================
+  // Checkboxes
+  // ============================================================================
+  
+  [data-slot="checkbox"] {
+    border-color: @input-border !important;
+    
+    &[data-state="checked"] {
+      background: @primary !important;
+      border-color: @primary !important;
+      color: @base00 !important;
+    }
+  }
+
+  // ============================================================================
+  // Scroll Areas
+  // ============================================================================
+  
+  [data-slot="scroll-area-thumb"] {
+    background: @scrollbar-thumb !important;
+    
+    &:hover {
+      background: @scrollbar-hover !important;
+    }
+  }
+
+  // ============================================================================
+  // Resizable Panels
+  // ============================================================================
+  
+  [data-slot="resizable-handle"],
+  [data-panel-group-direction] > div[data-resize-handle] {
+    background: @border-primary !important;
+    
+    &:hover {
+      background: @primary !important;
+    }
+  }
+
+  // ============================================================================
+  // Cards
+  // ============================================================================
+  
+  [data-slot="card"] {
+    .apply-card();
+  }
+
+  // ============================================================================
+  // Collapsible
+  // ============================================================================
+  
+  [data-slot="collapsible-trigger"] {
+    color: @base05 !important;
+    
+    &:hover {
+      background: @hover-overlay !important;
+    }
+  }
+
+  // ============================================================================
+  // Code & Monospace Elements
+  // ============================================================================
+  
+  code,
+  pre,
+  .font-mono {
+    background: @code-bg !important;
+    color: @code-text !important;
+  }
+  
+  // Inline code in markdown
+  .inline-code {
+    background: @code-bg !important;
+    color: @syntax-variable !important;
+  }
+  
+  // Monaco editor or code blocks
+  .monaco-editor,
+  [data-keybinding-context] {
+    background: @code-bg !important;
+    
+    .mtk1 { color: @base05 !important; }
+    .mtk5 { color: @syntax-keyword !important; }
+    .mtk6 { color: @syntax-string !important; }
+    .mtk7 { color: @syntax-constant !important; }
+    .mtk8 { color: @syntax-function !important; }
+    .mtk9 { color: @syntax-class !important; }
+    .mtk10 { color: @syntax-variable !important; }
+  }
+
+  // ============================================================================
+  // Links
+  // ============================================================================
+  
+  a {
+    color: @base0D !important;
+    
+    &:hover {
+      color: darken(@base0D, 10%) !important;
+    }
+  }
+
+  // ============================================================================
+  // Headings
+  // ============================================================================
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: @base06 !important;
+  }
+
+  // ============================================================================
+  // Common Tailwind utility class overrides
+  // ============================================================================
+  
+  .bg-background {
+    background: @base00 !important;
+  }
+  
+  .bg-muted {
+    background: @base01 !important;
+  }
+  
+  .bg-card {
+    background: @card-bg !important;
+  }
+  
+  .bg-popover {
+    background: @base07 !important;
+  }
+  
+  .bg-primary {
+    background: @primary !important;
+  }
+  
+  .bg-secondary {
+    background: @base01 !important;
+  }
+  
+  .bg-accent {
+    background: @accent !important;
+  }
+  
+  .bg-destructive {
+    background: @base08 !important;
+  }
+  
+  .text-foreground {
+    color: @base05 !important;
+  }
+  
+  .text-muted-foreground {
+    color: @base03 !important;
+  }
+  
+  .text-primary-foreground {
+    color: @base00 !important;
+  }
+  
+  .text-destructive {
+    color: @base08 !important;
+  }
+  
+  .border-border {
+    border-color: @border-primary !important;
+  }
+  
+  .border-input {
+    border-color: @input-border !important;
+  }
+
+  // ============================================================================
+  // Scrollbars
+  // ============================================================================
+  
+  * {
+    .apply-scrollbar();
+  }
+
+  // ============================================================================
+  // Selection highlight
+  // ============================================================================
+  
+  ::selection {
+    background-color: fade(@primary, 60%) !important;
+  }
+}

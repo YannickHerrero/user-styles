@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name         All Sites - Rose of Dune
 @namespace    github.com/yherrero/stylus
-@version      2.0.0
-@description  A soft rose-gold theme for all supported websites (Discord, Claude.ai)
+@version      2.1.0
+@description  A soft rose-gold theme for all supported websites (Discord, Claude.ai, MTools)
 @author       yherrero
 @license      MIT
 @preprocessor less
@@ -711,5 +711,295 @@
   em,
   i {
     color: #6B5843 !important;
+  }
+}
+@-moz-document domain("mtools-rho.vercel.app"), url-prefix("http://localhost:5175") {
+  :root,
+  .dark {
+    --background: #F5E6D3 !important;
+    --foreground: #3C2B20 !important;
+    --card: #E6D1C2 !important;
+    --card-foreground: #3C2B20 !important;
+    --popover: #E6D1C2 !important;
+    --popover-foreground: #3C2B20 !important;
+    --primary: #b76e79 !important;
+    --primary-foreground: #F5E6D3 !important;
+    --secondary: #EBD1B8 !important;
+    --secondary-foreground: #3C2B20 !important;
+    --muted: #EBD1B8 !important;
+    --muted-foreground: #7A6A57 !important;
+    --accent: #AD9980 !important;
+    --accent-foreground: #3C2B20 !important;
+    --destructive: #B34438 !important;
+    --border: rgba(107, 88, 67, 0.2) !important;
+    --input: rgba(107, 88, 67, 0.2) !important;
+    --ring: #b76e79 !important;
+    --sidebar: #EBD1B8 !important;
+    --sidebar-foreground: #3C2B20 !important;
+    --sidebar-primary: #b76e79 !important;
+    --sidebar-primary-foreground: #F5E6D3 !important;
+    --sidebar-accent: rgba(107, 88, 67, 0.1) !important;
+    --sidebar-accent-foreground: #3C2B20 !important;
+    --sidebar-border: rgba(107, 88, 67, 0.15) !important;
+    --sidebar-ring: #b76e79 !important;
+    --chart-1: #B34438 !important;
+    --chart-2: #7CA973 !important;
+    --chart-3: #D9A06B !important;
+    --chart-4: #B36E5B !important;
+    --chart-5: #C87C6A !important;
+  }
+  body {
+    background: #F5E6D3 !important;
+    color: #3C2B20 !important;
+  }
+  main,
+  [data-slot="sidebar-inset"] {
+    background: #F5E6D3 !important;
+  }
+  [data-slot="sidebar"],
+  aside {
+    background: #EBD1B8 !important;
+    border-color: rgba(107, 88, 67, 0.15) !important;
+  }
+  [data-slot="button"][data-variant="default"],
+  button[data-variant="default"] {
+    background: #b76e79 !important;
+    color: #F5E6D3 !important;
+  }
+  [data-slot="button"][data-variant="default"]:hover,
+  button[data-variant="default"]:hover {
+    background: #a95460 !important;
+  }
+  [data-slot="button"][data-variant="secondary"],
+  button[data-variant="secondary"] {
+    background: #EBD1B8 !important;
+    color: #3C2B20 !important;
+  }
+  [data-slot="button"][data-variant="secondary"]:hover,
+  button[data-variant="secondary"]:hover {
+    background: #e5c4a4 !important;
+  }
+  [data-slot="button"][data-variant="outline"],
+  button[data-variant="outline"] {
+    background: transparent !important;
+    border-color: rgba(107, 88, 67, 0.2) !important;
+    color: #3C2B20 !important;
+  }
+  [data-slot="button"][data-variant="outline"]:hover,
+  button[data-variant="outline"]:hover {
+    background: rgba(107, 88, 67, 0.1) !important;
+  }
+  [data-slot="button"][data-variant="ghost"],
+  button[data-variant="ghost"] {
+    background: transparent !important;
+    color: #3C2B20 !important;
+  }
+  [data-slot="button"][data-variant="ghost"]:hover,
+  button[data-variant="ghost"]:hover {
+    background: rgba(107, 88, 67, 0.1) !important;
+  }
+  [data-slot="button"][data-variant="destructive"],
+  button[data-variant="destructive"] {
+    background: #B34438 !important;
+    color: #F5E6D3 !important;
+  }
+  [data-slot="button"][data-variant="destructive"]:hover,
+  button[data-variant="destructive"]:hover {
+    background: #94382e !important;
+  }
+  input,
+  textarea,
+  [data-slot="input"],
+  [data-slot="textarea"] {
+    background: #E6D1C2 !important;
+    border-color: rgba(107, 88, 67, 0.2) !important;
+    color: #3C2B20 !important;
+  }
+  input::placeholder,
+  textarea::placeholder,
+  [data-slot="input"]::placeholder,
+  [data-slot="textarea"]::placeholder {
+    color: #7A6A57 !important;
+  }
+  input:focus,
+  textarea:focus,
+  [data-slot="input"]:focus,
+  [data-slot="textarea"]:focus,
+  input:focus-visible,
+  textarea:focus-visible,
+  [data-slot="input"]:focus-visible,
+  [data-slot="textarea"]:focus-visible {
+    border-color: #b76e79 !important;
+    box-shadow: 0 0 0 2px rgba(183, 110, 121, 0.5) !important;
+  }
+  [data-slot="select-trigger"] {
+    background: #E6D1C2 !important;
+    border-color: rgba(107, 88, 67, 0.2) !important;
+    color: #3C2B20 !important;
+  }
+  [data-slot="select-content"] {
+    background: #E6D1C2 !important;
+    border-color: rgba(107, 88, 67, 0.2) !important;
+  }
+  [data-slot="select-item"] {
+    color: #3C2B20 !important;
+  }
+  [data-slot="select-item"]:hover,
+  [data-slot="select-item"][data-highlighted] {
+    background: rgba(107, 88, 67, 0.1) !important;
+  }
+  [data-slot="tabs-list"] {
+    background: #EBD1B8 !important;
+  }
+  [data-slot="tabs-trigger"] {
+    color: #6B5843 !important;
+  }
+  [data-slot="tabs-trigger"][data-state="active"] {
+    background: #F5E6D3 !important;
+    color: #3C2B20 !important;
+  }
+  table {
+    border-color: rgba(107, 88, 67, 0.2) !important;
+  }
+  thead,
+  th {
+    background: #EBD1B8 !important;
+    color: #3C2B20 !important;
+  }
+  td {
+    border-color: rgba(107, 88, 67, 0.15) !important;
+    color: #3C2B20 !important;
+  }
+  tbody tr:hover {
+    background: rgba(107, 88, 67, 0.1) !important;
+  }
+  [data-slot="dialog-content"],
+  [role="dialog"] {
+    background: #F5E6D3 !important;
+    border-color: rgba(107, 88, 67, 0.2) !important;
+  }
+  [data-slot="dropdown-menu-content"],
+  [role="menu"] {
+    background: #E6D1C2 !important;
+    border-color: rgba(107, 88, 67, 0.2) !important;
+  }
+  [data-slot="dropdown-menu-item"],
+  [role="menuitem"] {
+    color: #3C2B20 !important;
+  }
+  [data-slot="dropdown-menu-item"]:hover,
+  [role="menuitem"]:hover,
+  [data-slot="dropdown-menu-item"][data-highlighted],
+  [role="menuitem"][data-highlighted] {
+    background: rgba(107, 88, 67, 0.1) !important;
+  }
+  .bg-green-500\/10 {
+    background: rgba(124, 169, 115, 0.15) !important;
+  }
+  .text-green-500 {
+    color: #7CA973 !important;
+  }
+  .bg-blue-500\/10 {
+    background: rgba(200, 124, 106, 0.15) !important;
+  }
+  .text-blue-500 {
+    color: #C87C6A !important;
+  }
+  .bg-orange-500\/10 {
+    background: rgba(217, 160, 107, 0.15) !important;
+  }
+  .text-orange-500 {
+    color: #D9A06B !important;
+  }
+  .bg-yellow-500\/10 {
+    background: rgba(210, 140, 116, 0.15) !important;
+  }
+  .text-yellow-500 {
+    color: #D28C74 !important;
+  }
+  .bg-red-500\/10 {
+    background: rgba(179, 68, 56, 0.15) !important;
+  }
+  .text-red-500 {
+    color: #B34438 !important;
+  }
+  .bg-purple-500\/10 {
+    background: rgba(179, 110, 91, 0.15) !important;
+  }
+  .text-purple-500 {
+    color: #B36E5B !important;
+  }
+  .bg-gray-500\/10 {
+    background: rgba(107, 88, 67, 0.15) !important;
+  }
+  .text-gray-500 {
+    color: #6B5843 !important;
+  }
+  [data-slot="checkbox"] {
+    border-color: rgba(107, 88, 67, 0.2) !important;
+  }
+  [data-slot="checkbox"][data-state="checked"] {
+    background: #b76e79 !important;
+    border-color: #b76e79 !important;
+    color: #F5E6D3 !important;
+  }
+  code,
+  pre,
+  .font-mono {
+    background: #EBD1B8 !important;
+    color: #B34438 !important;
+  }
+  .inline-code {
+    background: #EBD1B8 !important;
+    color: #B34438 !important;
+  }
+  a {
+    color: #C87C6A !important;
+  }
+  a:hover {
+    color: #ba5b45 !important;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #2B1E15 !important;
+  }
+  .bg-background {
+    background: #F5E6D3 !important;
+  }
+  .bg-muted {
+    background: #EBD1B8 !important;
+  }
+  .bg-card {
+    background: #E6D1C2 !important;
+  }
+  .text-foreground {
+    color: #3C2B20 !important;
+  }
+  .text-muted-foreground {
+    color: #7A6A57 !important;
+  }
+  .border-border {
+    border-color: rgba(107, 88, 67, 0.2) !important;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #EBD1B8;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: rgba(107, 88, 67, 0.4);
+    border-radius: 4px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(107, 88, 67, 0.6);
+  }
+  ::selection {
+    background-color: rgba(183, 110, 121, 0.6) !important;
   }
 }

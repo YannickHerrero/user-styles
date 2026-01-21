@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name         All Sites - Rose of Dune
 @namespace    github.com/yherrero/stylus
-@version      2.0.0
-@description  A soft rose-gold theme for all supported websites (Discord, Claude.ai)
+@version      2.1.0
+@description  A soft rose-gold theme for all supported websites (Discord, Claude.ai, MTools)
 @author       yherrero
 @license      MIT
 @preprocessor less
@@ -590,4 +590,125 @@
   h1, h2, h3, h4, h5, h6 { color: @base06 !important; }
   strong, b { color: @base05 !important; }
   em, i { color: @base04 !important; }
+}
+
+// ============================================================================
+// MTools API Client
+// ============================================================================
+@-moz-document domain("mtools-rho.vercel.app"), url-prefix("http://localhost:5175") {
+  // CSS Custom Properties - Force light theme
+  :root, .dark {
+    --background: @base00 !important;
+    --foreground: @base05 !important;
+    --card: @card-bg !important;
+    --card-foreground: @base05 !important;
+    --popover: @base07 !important;
+    --popover-foreground: @base05 !important;
+    --primary: @primary !important;
+    --primary-foreground: @base00 !important;
+    --secondary: @base01 !important;
+    --secondary-foreground: @base05 !important;
+    --muted: @base01 !important;
+    --muted-foreground: @base03 !important;
+    --accent: @accent !important;
+    --accent-foreground: @base05 !important;
+    --destructive: @base08 !important;
+    --border: @border-primary !important;
+    --input: @input-border !important;
+    --ring: @primary !important;
+    --sidebar: @base01 !important;
+    --sidebar-foreground: @base05 !important;
+    --sidebar-primary: @primary !important;
+    --sidebar-primary-foreground: @base00 !important;
+    --sidebar-accent: @hover-overlay !important;
+    --sidebar-accent-foreground: @base05 !important;
+    --sidebar-border: @border-subtle !important;
+    --sidebar-ring: @primary !important;
+    --chart-1: @base08 !important;
+    --chart-2: @base0C !important;
+    --chart-3: @base09 !important;
+    --chart-4: @base0E !important;
+    --chart-5: @base0D !important;
+  }
+
+  body { background: @base00 !important; color: @base05 !important; }
+  main, [data-slot="sidebar-inset"] { background: @base00 !important; }
+  [data-slot="sidebar"], aside { background: @base01 !important; border-color: @border-subtle !important; }
+  
+  // Buttons
+  [data-slot="button"], button {
+    &[data-variant="default"] { background: @primary !important; color: @base00 !important; &:hover { background: darken(@primary, 8%) !important; } }
+    &[data-variant="secondary"] { background: @base01 !important; color: @base05 !important; &:hover { background: darken(@base01, 5%) !important; } }
+    &[data-variant="outline"] { background: transparent !important; border-color: @border-primary !important; color: @base05 !important; &:hover { background: @hover-overlay !important; } }
+    &[data-variant="ghost"] { background: transparent !important; color: @base05 !important; &:hover { background: @hover-overlay !important; } }
+    &[data-variant="destructive"] { background: @base08 !important; color: @base00 !important; &:hover { background: darken(@base08, 8%) !important; } }
+  }
+  
+  // Form inputs
+  input, textarea, [data-slot="input"], [data-slot="textarea"] {
+    background: @input-bg !important;
+    border-color: @input-border !important;
+    color: @base05 !important;
+    &::placeholder { color: @input-placeholder !important; }
+    &:focus, &:focus-visible { border-color: @input-focus-border !important; box-shadow: 0 0 0 2px @focus-ring !important; }
+  }
+  
+  // Select
+  [data-slot="select-trigger"] { background: @input-bg !important; border-color: @input-border !important; color: @base05 !important; }
+  [data-slot="select-content"] { background: @base07 !important; border-color: @border-primary !important; }
+  [data-slot="select-item"] { color: @base05 !important; &:hover, &[data-highlighted] { background: @hover-overlay !important; } }
+  
+  // Tabs
+  [data-slot="tabs-list"] { background: @base01 !important; }
+  [data-slot="tabs-trigger"] { color: @base04 !important; &[data-state="active"] { background: @base00 !important; color: @base05 !important; } }
+  
+  // Tables
+  table { border-color: @border-primary !important; }
+  thead, th { background: @base01 !important; color: @base05 !important; }
+  td { border-color: @border-subtle !important; color: @base05 !important; }
+  tbody tr:hover { background: @hover-overlay !important; }
+  
+  // Dialogs & Menus
+  [data-slot="dialog-content"], [role="dialog"] { background: @base00 !important; border-color: @border-primary !important; }
+  [data-slot="dropdown-menu-content"], [role="menu"] { background: @base07 !important; border-color: @border-primary !important; }
+  [data-slot="dropdown-menu-item"], [role="menuitem"] { color: @base05 !important; &:hover, &[data-highlighted] { background: @hover-overlay !important; } }
+  
+  // HTTP Method badges - Theme colors
+  .bg-green-500\/10 { background: fade(@base0C, 15%) !important; }
+  .text-green-500 { color: @base0C !important; }
+  .bg-blue-500\/10 { background: fade(@base0D, 15%) !important; }
+  .text-blue-500 { color: @base0D !important; }
+  .bg-orange-500\/10 { background: fade(@base09, 15%) !important; }
+  .text-orange-500 { color: @base09 !important; }
+  .bg-yellow-500\/10 { background: fade(@base0A, 15%) !important; }
+  .text-yellow-500 { color: @base0A !important; }
+  .bg-red-500\/10 { background: fade(@base08, 15%) !important; }
+  .text-red-500 { color: @base08 !important; }
+  .bg-purple-500\/10 { background: fade(@base0E, 15%) !important; }
+  .text-purple-500 { color: @base0E !important; }
+  .bg-gray-500\/10 { background: fade(@base04, 15%) !important; }
+  .text-gray-500 { color: @base04 !important; }
+  
+  // Checkbox
+  [data-slot="checkbox"] { border-color: @input-border !important; &[data-state="checked"] { background: @primary !important; border-color: @primary !important; color: @base00 !important; } }
+  
+  // Code
+  code, pre, .font-mono { background: @code-bg !important; color: @code-text !important; }
+  .inline-code { background: @code-bg !important; color: @syntax-variable !important; }
+  
+  // Links
+  a { color: @base0D !important; &:hover { color: darken(@base0D, 10%) !important; } }
+  h1, h2, h3, h4, h5, h6 { color: @base06 !important; }
+  
+  // Common utility overrides
+  .bg-background { background: @base00 !important; }
+  .bg-muted { background: @base01 !important; }
+  .bg-card { background: @card-bg !important; }
+  .text-foreground { color: @base05 !important; }
+  .text-muted-foreground { color: @base03 !important; }
+  .border-border { border-color: @border-primary !important; }
+  
+  // Scrollbars & Selection
+  * { .apply-scrollbar(); }
+  ::selection { background-color: fade(@primary, 60%) !important; }
 }

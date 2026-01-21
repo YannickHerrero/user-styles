@@ -13,7 +13,7 @@ const styles = [
   {
     path: 'styles/all/rose-of-dune.user.css',
     name: 'All Sites - Rose of Dune',
-    description: 'A soft rose-gold theme for all supported websites (Discord, Claude.ai)',
+    description: 'A soft rose-gold theme for all supported websites (Discord, Claude.ai, MTools)',
   },
   {
     path: 'styles/discord/rose-of-dune.user.css',
@@ -24,6 +24,11 @@ const styles = [
     path: 'styles/claude/rose-of-dune.user.css',
     name: 'Claude - Rose of Dune',
     description: 'A soft rose-gold theme for Claude.ai with warm brown accents',
+  },
+  {
+    path: 'styles/mtools/rose-of-dune.user.css',
+    name: 'MTools - Rose of Dune',
+    description: 'A soft rose-gold theme for MTools API Client with warm brown accents',
   },
 ];
 
