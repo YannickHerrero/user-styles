@@ -1,34 +1,39 @@
 #!/usr/bin/env bun
 
 /**
- * Generates import.json for Stylus browser extension
+ * Generates [theme].json files for Stylus browser extension import
+ * One JSON file per theme, containing all site styles for that theme
  * Run with: bun scripts/generate-import.js
  */
 
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'fs';
+import { join } from 'path';
+import { parse } from 'smol-toml';
 
-// Style definitions - add new styles here
-// Uses compiled CSS files (not LESS) so Stylus can import them directly
-const styles = [
+const THEMES_DIR = 'themes';
+const STYLES_DIR = 'styles';
+
+// Site configurations with metadata
+const SITES = [
   {
-    path: 'styles/all/rose-of-dune.user.css',
-    name: 'All Sites - Rose of Dune',
-    description: 'A soft rose-gold theme for all supported websites (Discord, Claude.ai, MTools)',
+    name: 'all',
+    displayName: 'All Sites',
+    description: 'theme for all supported websites (Discord, Claude.ai, MTools)',
   },
   {
-    path: 'styles/discord/rose-of-dune.user.css',
-    name: 'Discord - Rose of Dune',
-    description: 'A soft rose-gold theme for Discord with warm brown accents',
+    name: 'discord',
+    displayName: 'Discord',
+    description: 'theme for Discord',
   },
   {
-    path: 'styles/claude/rose-of-dune.user.css',
-    name: 'Claude - Rose of Dune',
-    description: 'A soft rose-gold theme for Claude.ai with warm brown accents',
+    name: 'claude',
+    displayName: 'Claude',
+    description: 'theme for Claude.ai',
   },
   {
-    path: 'styles/mtools/rose-of-dune.user.css',
-    name: 'MTools - Rose of Dune',
-    description: 'A soft rose-gold theme for MTools API Client with warm brown accents',
+    name: 'mtools',
+    displayName: 'MTools',
+    description: 'theme for MTools API Client',
   },
 ];
 
@@ -37,20 +42,53 @@ const author = 'yherrero';
 const namespace = 'github.com/yherrero/stylus';
 const version = '1.0.0';
 
-function buildStyleEntry(styleDef, id) {
-  let source = readFileSync(styleDef.path, 'utf-8');
+/**
+ * Get all theme definitions from TOML files
+ */
+function getThemes() {
+  const files = readdirSync(THEMES_DIR).filter(f => f.endsWith('.toml'));
+  
+  return files.map(file => {
+    const tomlPath = join(THEMES_DIR, file);
+    const content = readFileSync(tomlPath, 'utf-8');
+    const theme = parse(content);
+    
+    return {
+      slug: file.replace('.toml', ''),
+      name: theme.meta.name,
+      id: theme.meta.id,
+      type: theme.meta.type,
+    };
+  });
+}
+
+/**
+ * Build a style entry for the import JSON
+ */
+function buildStyleEntry(theme, site, id) {
+  const cssPath = join(STYLES_DIR, site.name, `${theme.slug}.user.css`);
+  
+  if (!existsSync(cssPath)) {
+    console.warn(`  Warning: ${cssPath} not found, skipping`);
+    return null;
+  }
+  
+  let source = readFileSync(cssPath, 'utf-8');
   
   // Remove @preprocessor line since we're using compiled CSS
   source = source.replace(/@preprocessor\s+less\n?/g, '');
   
+  const styleName = `${site.displayName} - ${theme.name}`;
+  const styleDescription = `${theme.name} ${site.description}`;
+  
   return {
     id: id,
     enabled: true,
-    name: styleDef.name,
-    description: styleDef.description,
+    name: styleName,
+    description: styleDescription,
     author: author,
     usercssData: {
-      name: styleDef.name,
+      name: styleName,
       namespace: namespace,
       version: version,
     },
@@ -58,12 +96,56 @@ function buildStyleEntry(styleDef, id) {
   };
 }
 
-// Build the import.json structure
-// First element can be settings or a style - Stylus detects automatically
-const importData = styles.map((style, index) => buildStyleEntry(style, index + 1));
+/**
+ * Generate import JSON for a single theme
+ */
+function generateThemeImport(theme) {
+  const styles = [];
+  let id = 1;
+  
+  for (const site of SITES) {
+    const entry = buildStyleEntry(theme, site, id);
+    if (entry) {
+      styles.push(entry);
+      id++;
+    }
+  }
+  
+  return styles;
+}
 
-// Write the file
-writeFileSync('import.json', JSON.stringify(importData));
+/**
+ * Main process
+ */
+function main() {
+  console.log('Generating import JSON files...\n');
+  
+  const themes = getThemes();
+  
+  if (themes.length === 0) {
+    console.log('No theme files found in themes/');
+    return;
+  }
+  
+  console.log(`Found ${themes.length} theme(s)\n`);
+  
+  for (const theme of themes) {
+    console.log(`Processing ${theme.name}...`);
+    
+    const importData = generateThemeImport(theme);
+    
+    if (importData.length === 0) {
+      console.log(`  No styles found, skipping`);
+      continue;
+    }
+    
+    const outputPath = `${theme.slug}.json`;
+    writeFileSync(outputPath, JSON.stringify(importData, null, 2));
+    
+    console.log(`  Generated ${outputPath} with ${importData.length} styles`);
+  }
+  
+  console.log('\nDone!');
+}
 
-console.log(`Generated import.json with ${styles.length} styles:`);
-styles.forEach(s => console.log(`  - ${s.name}`));
+main();

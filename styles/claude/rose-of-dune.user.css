@@ -2,10 +2,9 @@
 @name         Claude - Rose of Dune
 @namespace    github.com/yherrero/stylus
 @version      2.0.0
-@description  A soft rose-gold theme for Claude.ai with warm brown accents (Base16)
+@description  Rose of Dune theme for Claude.ai (Base16)
 @author       yherrero
 @license      MIT
-@preprocessor less
 ==/UserStyle== */
 @-moz-document domain("claude.ai") {
   :root,

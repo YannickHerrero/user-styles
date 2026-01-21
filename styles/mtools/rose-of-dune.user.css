@@ -2,10 +2,9 @@
 @name         MTools - Rose of Dune
 @namespace    github.com/yherrero/stylus
 @version      1.0.0
-@description  A soft rose-gold theme for MTools API Client with warm brown accents (Base16)
+@description  Rose of Dune theme for MTools API Client (Base16)
 @author       yherrero
 @license      MIT
-@preprocessor less
 ==/UserStyle== */
 @-moz-document domain("mtools-rho.vercel.app"), url-prefix("http://localhost:5175") {
   :root,

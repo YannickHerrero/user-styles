@@ -1,15 +1,11 @@
 {
   "name": "stylus",
   "version": "1.0.0",
-  "description": "Custom userstyles for browser apps using the Rose of Dune color scheme",
+  "description": "Custom userstyles for browser apps with Base16 theme support",
   "scripts": {
     "build": "bun run build:themes && bun run build:styles && bun run build:import",
     "build:themes": "bun scripts/generate-theme.js",
-    "build:styles": "bun run build:discord && bun run build:claude && bun run build:mtools && bun run build:combined",
-    "build:discord": "lessc styles/discord/rose-of-dune.user.less styles/discord/rose-of-dune.user.css",
-    "build:claude": "lessc styles/claude/rose-of-dune.user.less styles/claude/rose-of-dune.user.css",
-    "build:mtools": "lessc styles/mtools/rose-of-dune.user.less styles/mtools/rose-of-dune.user.css",
-    "build:combined": "lessc styles/all/rose-of-dune.user.less styles/all/rose-of-dune.user.css",
+    "build:styles": "bun scripts/build-styles.js",
     "build:import": "bun scripts/generate-import.js"
   },
   "devDependencies": {
@@ -19,10 +15,11 @@
     "userstyles",
     "stylus",
     "theme",
-    "rose-of-dune",
+    "base16",
     "discord",
     "claude",
-    "mtools"
+    "mtools",
+    "catppuccin"
   ],
   "license": "MIT",
   "dependencies": {

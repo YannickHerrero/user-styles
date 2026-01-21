@@ -1,0 +1,488 @@
+/* ==UserStyle==
+@name         Discord - Catppuccin Mocha
+@namespace    github.com/yherrero/stylus
+@version      2.0.0
+@description  Catppuccin Mocha theme for Discord (Base16)
+@author       yherrero
+@license      MIT
+==/UserStyle== */
+@-moz-document domain("discord.com") {
+  .theme-dark,
+  .theme-light {
+    --brand-100: #ffffff !important;
+    --brand-130: #ffffff !important;
+    --brand-160: #ffffff !important;
+    --brand-200: #ffffff !important;
+    --brand-230: #ffffff !important;
+    --brand-260: #ffffff !important;
+    --brand-300: #ffffff !important;
+    --brand-330: #ffffff !important;
+    --brand-360: #ffffff !important;
+    --brand-400: #f4ecfd !important;
+    --brand-430: #e6d5fb !important;
+    --brand-460: #d9bdf9 !important;
+    --brand-500: #cba6f7 !important;
+    --brand-530: #bd8ff5 !important;
+    --brand-560: #b077f3 !important;
+    --brand-600: #a260f1 !important;
+    --brand-630: #9448ef !important;
+    --brand-660: #8731ec !important;
+    --brand-700: #791aea !important;
+    --brand-730: #7314e3 !important;
+    --brand-760: #6d13d7 !important;
+    --brand-800: #6712cb !important;
+    --brand-830: #6111c0 !important;
+    --brand-860: #5b10b4 !important;
+    --brand-900: #550fa8 !important;
+    --brand-05a: rgba(203, 166, 247, 0.05) !important;
+    --brand-10a: rgba(203, 166, 247, 0.1) !important;
+    --brand-15a: rgba(203, 166, 247, 0.15) !important;
+    --brand-20a: rgba(203, 166, 247, 0.2) !important;
+    --brand-25a: rgba(203, 166, 247, 0.25) !important;
+    --brand-30a: rgba(203, 166, 247, 0.3) !important;
+    --brand-35a: rgba(203, 166, 247, 0.35) !important;
+    --brand-40a: rgba(203, 166, 247, 0.4) !important;
+    --brand-45a: rgba(203, 166, 247, 0.45) !important;
+    --brand-50a: rgba(203, 166, 247, 0.5) !important;
+    --brand-55a: rgba(203, 166, 247, 0.55) !important;
+    --brand-60a: rgba(203, 166, 247, 0.6) !important;
+    --brand-65a: rgba(203, 166, 247, 0.65) !important;
+    --brand-70a: rgba(203, 166, 247, 0.7) !important;
+    --brand-75a: rgba(203, 166, 247, 0.75) !important;
+    --brand-80a: rgba(203, 166, 247, 0.8) !important;
+    --brand-85a: rgba(203, 166, 247, 0.85) !important;
+    --brand-90a: rgba(203, 166, 247, 0.9) !important;
+    --brand-95a: rgba(203, 166, 247, 0.95) !important;
+    --brand-experiment: #cba6f7 !important;
+    --brand-experiment-360: #ffffff !important;
+    --brand-experiment-400: #f4ecfd !important;
+    --brand-experiment-430: #e6d5fb !important;
+    --brand-experiment-460: #d9bdf9 !important;
+    --brand-experiment-500: #cba6f7 !important;
+    --brand-experiment-530: #bd8ff5 !important;
+    --brand-experiment-560: #b077f3 !important;
+    --brand-experiment-600: #a260f1 !important;
+    --brand-experiment-630: #9448ef !important;
+    --brand-experiment-660: #8731ec !important;
+    --app-frame-background: #181825 !important;
+    --background-base-lowest: #181825 !important;
+    --background-base-lower: #1e1e2e !important;
+    --background-base-low: #1e1e2e !important;
+    --background-surface-high: #1e1e2e !important;
+    --background-surface-higher: #1e1e2e !important;
+    --background-surface-highest: #1e1e2e !important;
+    --bg-surface-raised: #1e1e2e !important;
+    --background-gradient-highest: #1e1e2e !important;
+    --background-primary: #1e1e2e !important;
+    --background-secondary: #1e1e2e !important;
+    --background-secondary-alt: #1e1e2e !important;
+    --background-tertiary: #1e1e2e !important;
+    --background-accent: #89b4fa !important;
+    --background-floating: #b4befe !important;
+    --background-mobile-primary: #1e1e2e !important;
+    --background-mobile-secondary: #181825 !important;
+    --home-background: #1e1e2e !important;
+    --background-modifier-hover: rgba(88, 91, 112, 0.1) !important;
+    --background-modifier-active: rgba(88, 91, 112, 0.2) !important;
+    --background-modifier-selected: rgba(203, 166, 247, 0.2) !important;
+    --background-modifier-accent: rgba(88, 91, 112, 0.1) !important;
+    --background-mod-muted: rgba(88, 91, 112, 0.05) !important;
+    --background-mod-normal: rgba(88, 91, 112, 0.15) !important;
+    --background-mod-subtle: rgba(88, 91, 112, 0.25) !important;
+    --background-mod-strong: rgba(88, 91, 112, 0.45) !important;
+    --background-feedback-positive: rgba(148, 226, 213, 0.1) !important;
+    --background-feedback-critical: rgba(243, 139, 168, 0.1) !important;
+    --background-feedback-warning: rgba(250, 179, 135, 0.1) !important;
+    --background-feedback-info: rgba(137, 180, 250, 0.1) !important;
+    --text-default: #cdd6f4 !important;
+    --text-normal: #cdd6f4 !important;
+    --text-muted: #45475a !important;
+    --text-link: #89b4fa !important;
+    --text-link-low-saturation: #89b4fa !important;
+    --text-brand: #cba6f7 !important;
+    --text-strong: #cdd6f4 !important;
+    --text-subtle: #585b70 !important;
+    --text-positive: #94e2d5 !important;
+    --text-warning: #fab387 !important;
+    --text-danger: #f38ba8 !important;
+    --text-feedback-positive: #94e2d5 !important;
+    --text-feedback-critical: #f38ba8 !important;
+    --text-feedback-warning: #fab387 !important;
+    --text-feedback-info: #89b4fa !important;
+    --header-primary: #cdd6f4 !important;
+    --header-secondary: #585b70 !important;
+    --interactive-normal: #585b70 !important;
+    --interactive-hover: #cdd6f4 !important;
+    --interactive-active: #cdd6f4 !important;
+    --interactive-muted: #45475a !important;
+    --interactive-icon-default: #cdd6f4 !important;
+    --interactive-icon-hover: #cdd6f4 !important;
+    --interactive-icon-active: #cdd6f4 !important;
+    --interactive-text-default: #cdd6f4 !important;
+    --interactive-text-hover: #cdd6f4 !important;
+    --interactive-text-active: #cdd6f4 !important;
+    --interactive-background-hover: rgba(88, 91, 112, 0.15) !important;
+    --interactive-background-selected: rgba(69, 71, 90, 0.2) !important;
+    --interactive-background-active: rgba(205, 214, 244, 0.17) !important;
+    --icon-muted: #45475a !important;
+    --icon-default: #cdd6f4 !important;
+    --icon-strong: #cdd6f4 !important;
+    --icon-subtle: #585b70 !important;
+    --icon-feedback-positive: #94e2d5 !important;
+    --icon-feedback-warning: #fab387 !important;
+    --icon-feedback-critical: #f38ba8 !important;
+    --icon-feedback-info: #89b4fa !important;
+    --channels-default: #585b70 !important;
+    --channel-icon: #45475a !important;
+    --channel-text-area-placeholder: rgba(205, 214, 244, 0.5) !important;
+    --channeltextarea-background: #181825 !important;
+    --custom-channel-members-bg: #181825 !important;
+    --chat-background: #1e1e2e !important;
+    --chat-background-default: #1e1e2e !important;
+    --chat-border: rgba(88, 91, 112, 0.2) !important;
+    --chat-text-muted: #45475a !important;
+    --chat-input-container-background: #181825 !important;
+    --message-background-hover: rgba(24, 24, 37, 0.3) !important;
+    --message-mentioned-background-default: rgba(250, 179, 135, 0.1) !important;
+    --message-mentioned-background-hover: rgba(250, 179, 135, 0.08) !important;
+    --message-reacted-background-default: rgba(203, 166, 247, 0.3) !important;
+    --message-reacted-text-default: #cba6f7 !important;
+    --message-highlight-background-default: rgba(203, 166, 247, 0.08) !important;
+    --message-highlight-background-hover: rgba(203, 166, 247, 0.06) !important;
+    --message-automod-background-default: rgba(243, 139, 168, 0.05) !important;
+    --message-automod-background-hover: rgba(243, 139, 168, 0.1) !important;
+    --border-muted: #181825 !important;
+    --border-strong: #181825 !important;
+    --border-normal: rgba(88, 91, 112, 0.2) !important;
+    --border-subtle: #1e1e2e !important;
+    --control-primary-background-default: #cba6f7 !important;
+    --control-primary-background-hover: #b683f4 !important;
+    --control-primary-background-active: #a96cf2 !important;
+    --control-secondary-background-default: #181825 !important;
+    --control-secondary-background-hover: #0e0e16 !important;
+    --control-secondary-background-active: #09090e !important;
+    --control-secondary-text-default: #cdd6f4 !important;
+    --control-secondary-text-hover: #cdd6f4 !important;
+    --control-secondary-border-default: #181825 !important;
+    --control-critical-primary-background-default: #f38ba8 !important;
+    --control-critical-primary-background-hover: #f17497 !important;
+    --control-critical-primary-background-active: #ee5d85 !important;
+    --control-critical-primary-text-default: #1e1e2e !important;
+    --control-critical-primary-text-hover: #1e1e2e !important;
+    --control-critical-secondary-text-default: #cdd6f4 !important;
+    --control-critical-secondary-border-default: #f38ba8 !important;
+    --control-critical-secondary-background-default: transparent !important;
+    --control-critical-secondary-background-hover: #f27f9f !important;
+    --control-critical-secondary-text-hover: #1e1e2e !important;
+    --control-critical-secondary-border-hover: #f27f9f !important;
+    --control-critical-secondary-background-active: #f17497 !important;
+    --control-critical-secondary-text-active: #1e1e2e !important;
+    --control-critical-secondary-border-active: #f27f9f !important;
+    --control-connected-background-default: #94e2d5 !important;
+    --control-connected-background-hover: #80ddcd !important;
+    --control-connected-background-active: #76dac9 !important;
+    --control-connected-border-default: #94e2d5 !important;
+    --control-connected-border-hover: #8adfd1 !important;
+    --control-connected-border-active: #8adfd1 !important;
+    --control-brand-foreground: #cba6f7 !important;
+    --control-brand-foreground-new: #cba6f7 !important;
+    --button-danger-background: #f38ba8 !important;
+    --button-danger-background-hover: #ef668c !important;
+    --button-danger-background-active: #ed547e !important;
+    --button-positive-background: #94e2d5 !important;
+    --button-positive-background-hover: #74d9c8 !important;
+    --button-positive-background-active: #64d5c2 !important;
+    --button-secondary-background: #181825 !important;
+    --button-secondary-background-hover: #0e0e16 !important;
+    --button-secondary-background-active: #08080c !important;
+    --button-outline-danger-text: #f38ba8 !important;
+    --button-outline-danger-border: #f38ba8 !important;
+    --button-outline-danger-background-hover: rgba(243, 139, 168, 0.15) !important;
+    --button-outline-positive-text: #94e2d5 !important;
+    --button-outline-positive-border: #94e2d5 !important;
+    --button-outline-positive-background-hover: rgba(148, 226, 213, 0.15) !important;
+    --button-outline-primary-text: #cdd6f4 !important;
+    --button-outline-brand-text: #cdd6f4 !important;
+    --button-outline-brand-background-hover: #c49af6 !important;
+    --button-outline-brand-border-active: #c49af6 !important;
+    --redesign-button-positive-background: #94e2d5 !important;
+    --redesign-button-positive-pressed-background: #80ddcd !important;
+    --redesign-button-secondary-background: #181825 !important;
+    --redesign-button-secondary-pressed-background: #0e0e16 !important;
+    --input-background: #b4befe !important;
+    --input-background-default: #b4befe !important;
+    --input-text-default: #cdd6f4 !important;
+    --input-placeholder-text: #45475a !important;
+    --input-placeholder-text-default: #585b70 !important;
+    --input-border-default: #45475a !important;
+    --modal-background: #1e1e2e !important;
+    --modal-footer-background: #1e1e2e !important;
+    --card-background-default: #1e1e2e !important;
+    --custom-status-bubble-background: #181825 !important;
+    --custom-status-bubble-background-color: #181825 !important;
+    --status-danger: #f38ba8 !important;
+    --status-positive: #94e2d5 !important;
+    --status-warning: #fab387 !important;
+    --status-positive-background: #94e2d5 !important;
+    --status-positive-text: #1e1e2e !important;
+    --status-warning-background: #fab387 !important;
+    --status-warning-text: #1e1e2e !important;
+    --status-danger-background: rgba(243, 139, 168, 0.2) !important;
+    --status-danger-text: #f38ba8 !important;
+    --info-positive-background: rgba(148, 226, 213, 0.15) !important;
+    --info-positive-foreground: #94e2d5 !important;
+    --info-positive-text: #94e2d5 !important;
+    --info-warning-background: rgba(250, 179, 135, 0.15) !important;
+    --info-warning-foreground: #fab387 !important;
+    --info-warning-text: #fab387 !important;
+    --info-danger-background: rgba(243, 139, 168, 0.15) !important;
+    --info-danger-foreground: #f38ba8 !important;
+    --info-danger-text: #f38ba8 !important;
+    --info-help-background: rgba(137, 180, 250, 0.15) !important;
+    --info-help-foreground: #89b4fa !important;
+    --info-help-text: #89b4fa !important;
+    --mention-foreground: #cba6f7 !important;
+    --mention-background: rgba(203, 166, 247, 0.3) !important;
+    --scrollbar-thin-thumb: #cba6f7 !important;
+    --scrollbar-thin-track: transparent !important;
+    --scrollbar-auto-thumb: #cba6f7 !important;
+    --scrollbar-auto-track: #181825 !important;
+    --scrollbar-auto-scrollbar-color-thumb: #cba6f7 !important;
+    --scrollbar-auto-scrollbar-color-track: #181825 !important;
+    --focus-primary: #cba6f7 !important;
+    --__adaptive-focus-ring-color: #cba6f7 !important;
+    --spoiler-revealed-background: #181825 !important;
+    --spoiler-hidden-background: #585b70 !important;
+    --__spoiler-background-color--hidden: #585b70 !important;
+    --__spoiler-warning-background-color: #63677e !important;
+    --background-code: #1e1e2e !important;
+    --textbox-markdown-syntax: #45475a !important;
+    --checkbox-border-default: #45475a !important;
+    --elevation-stroke: 0 0 0 1px rgba(88, 91, 112, 0.15) !important;
+    --elevation-low: 0 1px 2px rgba(205, 214, 244, 0.1) !important;
+    --elevation-medium: 0 4px 8px rgba(205, 214, 244, 0.1) !important;
+    --elevation-high: 0 8px 16px rgba(205, 214, 244, 0.1) !important;
+    --primary-100: #585b70 !important;
+    --primary-200: #45475a !important;
+    --primary-300: #585b70 !important;
+    --primary-400: #585b70 !important;
+    --primary-630: #1e1e2e !important;
+    --primary-700: #1e1e2e !important;
+    --primary-800: #1e1e2e !important;
+    --white: #cdd6f4 !important;
+    --white-400: #cdd6f4 !important;
+    --white-500: #cdd6f4 !important;
+    --white-600: #585b70 !important;
+    --white-700: #45475a !important;
+    --black-500: #1e1e2e !important;
+    --green-360: #94e2d5 !important;
+    --green-300: #94e2d5 !important;
+    --yellow-360: #fab387 !important;
+    --yellow-300: #fab387 !important;
+    --red-400: #f38ba8 !important;
+    --red-430: #ee5d85 !important;
+    --red-500: #ec4674 !important;
+    --blue-500: #5895f8 !important;
+    --blue-530: #4085f7 !important;
+    --opacity-blurple-8: rgba(203, 166, 247, 0.08) !important;
+    --opacity-blurple-16: rgba(203, 166, 247, 0.16) !important;
+    --opacity-blurple-24: rgba(203, 166, 247, 0.24) !important;
+    --opacity-blurple-32: rgba(203, 166, 247, 0.32) !important;
+    --opacity-blurple-60: rgba(203, 166, 247, 0.6) !important;
+    --blurple-50: #cba6f7 !important;
+    --guild-boosting-pink: #f9e2af !important;
+    --guild-boosting-blue: #89b4fa !important;
+    --guild-boosting-purple: #cba6f7 !important;
+    --premium-perk-yellow: #fab387 !important;
+    --premium-perk-purple: #cba6f7 !important;
+    --premium-perk-dark-blue: #5895f8 !important;
+    --premium-perk-light-blue: #a1c4fb !important;
+    --premium-perk-blue: #89b4fa !important;
+    --premium-perk-green: #94e2d5 !important;
+    --premium-perk-pink: #f9e2af !important;
+    --premium-perk-orange: #fab387 !important;
+    --premium-tier-0-blue: #89b4fa !important;
+    --premium-tier-0-purple: #cba6f7 !important;
+    --premium-tier-1-blue-for-gradients: #89b4fa !important;
+    --premium-tier-1-dark-blue-for-gradients: #71a4f9 !important;
+    --premium-tier-2-purple-for-gradients: #b077f3 !important;
+    --premium-tier-2-purple-for-gradients-2: #cba6f7 !important;
+    --premium-tier-2-pink-for-gradients: #f9e2af !important;
+    --user-profile-overlay-background: #181825 !important;
+    --user-profile-overlay-background-hover: #181825 !important;
+    --badge-background-default: #cba6f7 !important;
+    --badge-text-default: #181825 !important;
+    --badge-text-brand: #1e1e2e !important;
+    --twitch: #b077f3 !important;
+    --playstation: #5895f8 !important;
+    --spotify: #94e2d5 !important;
+    --notice-background-critical: #f38ba8 !important;
+    --notice-background-info: #89b4fa !important;
+    --notice-background-positive: #94e2d5 !important;
+    --notice-background-warning: #fab387 !important;
+    --notice-text-critical: #181825 !important;
+    --notice-text-info: #181825 !important;
+    --notice-text-positive: #181825 !important;
+    --notice-text-warning: #181825 !important;
+    --logo-primary: #cdd6f4 !important;
+    --search-popout-option-non-text-color: #45475a !important;
+    --__header-bar-background: #1e1e2e !important;
+    --deprecated-card-bg: #b4befe !important;
+    --deprecated-card-editable-bg: #b4befe !important;
+    --deprecated-store-bg: #1e1e2e !important;
+    --deprecated-quickswitcher-input-background: #b4befe !important;
+    --deprecated-quickswitcher-input-placeholder: #45475a !important;
+    --deprecated-text-input-bg: #b4befe !important;
+    --deprecated-text-input-border: rgba(88, 91, 112, 0.2) !important;
+    --deprecated-text-input-border-hover: #89b4fa !important;
+    --deprecated-text-input-border-disabled: rgba(88, 91, 112, 0.15) !important;
+    --deprecated-text-input-prefix: #45475a !important;
+    --activity-card-background: #b4befe !important;
+    --plum-23: #1e1e2e !important;
+  }
+  ::selection {
+    background-color: rgba(203, 166, 247, 0.6) !important;
+  }
+  .hljs-keyword {
+    color: #cba6f7 !important;
+  }
+  .hljs-string {
+    color: #a6e3a1 !important;
+  }
+  .hljs-function {
+    color: #89b4fa !important;
+  }
+  .hljs-comment {
+    color: #45475a !important;
+  }
+  .hljs-number {
+    color: #fab387 !important;
+  }
+  .hljs-class {
+    color: #f9e2af !important;
+  }
+  .hljs-variable {
+    color: #f38ba8 !important;
+  }
+  .hljs-regexp {
+    color: #94e2d5 !important;
+  }
+  .hljs-built_in {
+    color: #89b4fa !important;
+  }
+  .hljs-literal {
+    color: #fab387 !important;
+  }
+  .hljs-type {
+    color: #f9e2af !important;
+  }
+  .hljs-params {
+    color: #cdd6f4 !important;
+  }
+  .hljs-meta {
+    color: #cba6f7 !important;
+  }
+  .hljs-title {
+    color: #89b4fa !important;
+  }
+  .hljs-attr {
+    color: #f38ba8 !important;
+  }
+  .hljs-selector-tag {
+    color: #cba6f7 !important;
+  }
+  .hljs-selector-class {
+    color: #f9e2af !important;
+  }
+  .hljs-selector-id {
+    color: #f38ba8 !important;
+  }
+  pre,
+  code {
+    background: #181825 !important;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #181825;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: rgba(88, 91, 112, 0.4);
+    border-radius: 4px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(88, 91, 112, 0.6);
+  }
+  nav[aria-label*="Servers"],
+  nav[aria-label*="serveurs"],
+  nav[aria-label*="Encadre"],
+  [class*="guilds"][class*="wrapper"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  nav[aria-label*="Servers"]:hover,
+  nav[aria-label*="serveurs"]:hover,
+  nav[aria-label*="Encadre"]:hover,
+  [class*="guilds"][class*="wrapper"]:hover {
+    opacity: 1;
+  }
+  [class*="message"] [class*="avatar"],
+  [class*="message"] [class*="Avatar"],
+  [class*="chatContent"] [class*="avatar"],
+  [class*="chatContent"] [class*="Avatar"] {
+    display: none !important;
+  }
+  img,
+  video,
+  [class*="avatar"],
+  [class*="Avatar"],
+  [class*="guildIcon"],
+  [class*="serverIcon"],
+  [class*="emoji"],
+  [class*="Emoji"],
+  [class*="stickerAsset"],
+  [class*="imageWrapper"],
+  [class*="videoWrapper"],
+  [class*="embedVideo"],
+  [class*="embedImage"],
+  [class*="embedThumbnail"],
+  [data-type="gif"],
+  [data-type="sticker"] {
+    opacity: 0.25;
+    transition: opacity 0.2s ease;
+  }
+  img:hover,
+  video:hover,
+  [class*="avatar"]:hover,
+  [class*="Avatar"]:hover,
+  [class*="guildIcon"]:hover,
+  [class*="serverIcon"]:hover,
+  [class*="emoji"]:hover,
+  [class*="Emoji"]:hover,
+  [class*="stickerAsset"]:hover,
+  [data-type="gif"]:hover,
+  [data-type="sticker"]:hover {
+    opacity: 1;
+  }
+  [class*="imageWrapper"]:hover,
+  [class*="imageWrapper"]:hover img,
+  [class*="imageWrapper"]:hover video,
+  [class*="videoWrapper"]:hover,
+  [class*="videoWrapper"]:hover video,
+  [class*="videoWrapper"]:hover img,
+  [class*="embedVideo"]:hover,
+  [class*="embedVideo"]:hover video,
+  [class*="embedVideo"]:hover img,
+  [class*="embedImage"]:hover,
+  [class*="embedImage"]:hover img,
+  [class*="embedThumbnail"]:hover,
+  [class*="embedThumbnail"]:hover img,
+  [class*="embed"]:hover [class*="imageWrapper"],
+  [class*="embed"]:hover [class*="imageWrapper"] img,
+  [class*="embed"]:hover img,
+  [class*="embed"]:hover video {
+    opacity: 1;
+  }
+}

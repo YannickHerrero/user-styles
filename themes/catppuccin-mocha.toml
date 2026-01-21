@@ -1,0 +1,25 @@
+[meta]
+name = "Catppuccin Mocha"
+id = "catppuccinmocha"
+type = "dark"
+
+[base16]
+# Base16 palette (Neovim, syntax highlighting)
+base00 = "1e1e2e"  # Default Background (base)
+base01 = "181825"  # Lighter Background (mantle)
+base02 = "313244"  # Selection Background (surface0)
+base03 = "45475a"  # Comments, Invisibles (surface1)
+base04 = "585b70"  # Dark Foreground (surface2)
+base05 = "cdd6f4"  # Default Foreground (text)
+base06 = "f5e0dc"  # Light Foreground (rosewater)
+base07 = "b4befe"  # Lightest Foreground (lavender)
+base08 = "f38ba8"  # Variables, Errors (red)
+base09 = "fab387"  # Integers, Constants (peach)
+base0A = "f9e2af"  # Classes, Search BG (yellow)
+base0B = "a6e3a1"  # Strings (green)
+base0C = "94e2d5"  # Support, Regex (teal)
+base0D = "89b4fa"  # Functions, Methods (blue)
+base0E = "cba6f7"  # Keywords (mauve)
+base0F = "f2cdcd"  # Deprecated, Embedded (flamingo)
+
+# No overrides - use base16 defaults (primary=base0E, accent=base0D, border=base01)

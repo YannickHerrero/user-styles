@@ -2,10 +2,17 @@
 @name         All Sites - Rose of Dune
 @namespace    github.com/yherrero/stylus
 @version      2.1.0
-@description  A soft rose-gold theme for all supported websites (Discord, Claude.ai, MTools)
+@description  Rose of Dune theme for all supported websites (Discord, Claude.ai, MTools)
 @author       yherrero
 @license      MIT
-@preprocessor less
+==/UserStyle== */
+/* ==UserStyle==
+@name         Discord - Rose of Dune
+@namespace    github.com/yherrero/stylus
+@version      2.0.0
+@description  Rose of Dune theme for Discord (Base16)
+@author       yherrero
+@license      MIT
 ==/UserStyle== */
 @-moz-document domain("discord.com") {
   .theme-dark,
@@ -65,8 +72,8 @@
     --brand-experiment-600: #914853 !important;
     --brand-experiment-630: #803f49 !important;
     --brand-experiment-660: #6f373f !important;
-    --app-frame-background: #F2E0CB !important;
-    --background-base-lowest: #F2E0CB !important;
+    --app-frame-background: #EBD1B8 !important;
+    --background-base-lowest: #EBD1B8 !important;
     --background-base-lower: #F5E6D3 !important;
     --background-base-low: #F5E6D3 !important;
     --background-surface-high: #F5E6D3 !important;
@@ -170,6 +177,21 @@
     --control-critical-primary-background-active: #8c352c !important;
     --control-critical-primary-text-default: #F5E6D3 !important;
     --control-critical-primary-text-hover: #F5E6D3 !important;
+    --control-critical-secondary-text-default: #3C2B20 !important;
+    --control-critical-secondary-border-default: #B34438 !important;
+    --control-critical-secondary-background-default: transparent !important;
+    --control-critical-secondary-background-hover: #a94035 !important;
+    --control-critical-secondary-text-hover: #F5E6D3 !important;
+    --control-critical-secondary-border-hover: #a94035 !important;
+    --control-critical-secondary-background-active: #a03d32 !important;
+    --control-critical-secondary-text-active: #F5E6D3 !important;
+    --control-critical-secondary-border-active: #a94035 !important;
+    --control-connected-background-default: #7CA973 !important;
+    --control-connected-background-hover: #6d9f63 !important;
+    --control-connected-background-active: #67985e !important;
+    --control-connected-border-default: #7CA973 !important;
+    --control-connected-border-hover: #75a46b !important;
+    --control-connected-border-active: #75a46b !important;
     --control-brand-foreground: #b76e79 !important;
     --control-brand-foreground-new: #b76e79 !important;
     --button-danger-background: #B34438 !important;
@@ -187,8 +209,14 @@
     --button-outline-positive-text: #7CA973 !important;
     --button-outline-positive-border: #7CA973 !important;
     --button-outline-positive-background-hover: rgba(124, 169, 115, 0.15) !important;
+    --button-outline-primary-text: #3C2B20 !important;
+    --button-outline-brand-text: #3C2B20 !important;
+    --button-outline-brand-background-hover: #b36571 !important;
+    --button-outline-brand-border-active: #b36571 !important;
     --redesign-button-positive-background: #7CA973 !important;
+    --redesign-button-positive-pressed-background: #6d9f63 !important;
     --redesign-button-secondary-background: #EBD1B8 !important;
+    --redesign-button-secondary-pressed-background: #e5c4a4 !important;
     --input-background: #E6D1C2 !important;
     --input-background-default: #E6D1C2 !important;
     --input-text-default: #3C2B20 !important;
@@ -198,6 +226,8 @@
     --modal-background: #F5E6D3 !important;
     --modal-footer-background: #F5E6D3 !important;
     --card-background-default: #F5E6D3 !important;
+    --custom-status-bubble-background: #EBD1B8 !important;
+    --custom-status-bubble-background-color: #EBD1B8 !important;
     --status-danger: #B34438 !important;
     --status-positive: #7CA973 !important;
     --status-warning: #D9A06B !important;
@@ -231,6 +261,8 @@
     --__adaptive-focus-ring-color: #b76e79 !important;
     --spoiler-revealed-background: #EBD1B8 !important;
     --spoiler-hidden-background: #6B5843 !important;
+    --__spoiler-background-color--hidden: #6B5843 !important;
+    --__spoiler-warning-background-color: #7b654d !important;
     --background-code: #F5E6D3 !important;
     --textbox-markdown-syntax: #7A6A57 !important;
     --checkbox-border-default: #7A6A57 !important;
@@ -271,10 +303,19 @@
     --guild-boosting-purple: #B36E5B !important;
     --premium-perk-yellow: #D9A06B !important;
     --premium-perk-purple: #B36E5B !important;
+    --premium-perk-dark-blue: #ba5b45 !important;
+    --premium-perk-light-blue: #cf8c7d !important;
     --premium-perk-blue: #C87C6A !important;
     --premium-perk-green: #7CA973 !important;
     --premium-perk-pink: #D28C74 !important;
     --premium-perk-orange: #D9A06B !important;
+    --premium-tier-0-blue: #C87C6A !important;
+    --premium-tier-0-purple: #B36E5B !important;
+    --premium-tier-1-blue-for-gradients: #C87C6A !important;
+    --premium-tier-1-dark-blue-for-gradients: #c16c57 !important;
+    --premium-tier-2-purple-for-gradients: #965745 !important;
+    --premium-tier-2-purple-for-gradients-2: #B36E5B !important;
+    --premium-tier-2-pink-for-gradients: #D28C74 !important;
     --user-profile-overlay-background: #EBD1B8 !important;
     --user-profile-overlay-background-hover: #EBD1B8 !important;
     --badge-background-default: #b76e79 !important;
@@ -343,10 +384,25 @@
   .hljs-type {
     color: #D28C74 !important;
   }
+  .hljs-params {
+    color: #3C2B20 !important;
+  }
+  .hljs-meta {
+    color: #B36E5B !important;
+  }
   .hljs-title {
     color: #C87C6A !important;
   }
   .hljs-attr {
+    color: #B34438 !important;
+  }
+  .hljs-selector-tag {
+    color: #B36E5B !important;
+  }
+  .hljs-selector-class {
+    color: #D28C74 !important;
+  }
+  .hljs-selector-id {
     color: #B34438 !important;
   }
   pre,
@@ -369,14 +425,14 @@
   }
   nav[aria-label*="Servers"],
   nav[aria-label*="serveurs"],
-  nav[aria-label*="Encadré"],
+  nav[aria-label*="Encadre"],
   [class*="guilds"][class*="wrapper"] {
     opacity: 0;
     transition: opacity 0.3s ease;
   }
   nav[aria-label*="Servers"]:hover,
   nav[aria-label*="serveurs"]:hover,
-  nav[aria-label*="Encadré"]:hover,
+  nav[aria-label*="Encadre"]:hover,
   [class*="guilds"][class*="wrapper"]:hover {
     opacity: 1;
   }
@@ -438,6 +494,14 @@
     opacity: 1;
   }
 }
+/* ==UserStyle==
+@name         Claude - Rose of Dune
+@namespace    github.com/yherrero/stylus
+@version      2.0.0
+@description  Rose of Dune theme for Claude.ai (Base16)
+@author       yherrero
+@license      MIT
+==/UserStyle== */
 @-moz-document domain("claude.ai") {
   :root,
   :root[data-mode="dark"],
@@ -712,7 +776,18 @@
   i {
     color: #6B5843 !important;
   }
+  ::selection {
+    background-color: rgba(183, 110, 121, 0.6) !important;
+  }
 }
+/* ==UserStyle==
+@name         MTools - Rose of Dune
+@namespace    github.com/yherrero/stylus
+@version      1.0.0
+@description  Rose of Dune theme for MTools API Client (Base16)
+@author       yherrero
+@license      MIT
+==/UserStyle== */
 @-moz-document domain("mtools-rho.vercel.app"), url-prefix("http://localhost:5175") {
   :root,
   .dark {
@@ -734,6 +809,7 @@
     --border: rgba(107, 88, 67, 0.2) !important;
     --input: rgba(107, 88, 67, 0.2) !important;
     --ring: #b76e79 !important;
+    --radius: 0.625rem !important;
     --sidebar: #EBD1B8 !important;
     --sidebar-foreground: #3C2B20 !important;
     --sidebar-primary: #b76e79 !important;
@@ -760,6 +836,19 @@
   aside {
     background: #EBD1B8 !important;
     border-color: rgba(107, 88, 67, 0.15) !important;
+  }
+  [data-slot="sidebar-header"] {
+    background: #EBD1B8 !important;
+  }
+  [data-slot="sidebar-menu-button"] {
+    color: #3C2B20 !important;
+  }
+  [data-slot="sidebar-menu-button"]:hover {
+    background: rgba(107, 88, 67, 0.1) !important;
+  }
+  [data-slot="sidebar-menu-button"][data-active="true"] {
+    background: rgba(183, 110, 121, 0.2) !important;
+    color: #3C2B20 !important;
   }
   [data-slot="button"][data-variant="default"],
   button[data-variant="default"] {
@@ -831,11 +920,17 @@
   [data-slot="textarea"]:focus-visible {
     border-color: #b76e79 !important;
     box-shadow: 0 0 0 2px rgba(183, 110, 121, 0.5) !important;
+    outline: none !important;
   }
   [data-slot="select-trigger"] {
     background: #E6D1C2 !important;
     border-color: rgba(107, 88, 67, 0.2) !important;
     color: #3C2B20 !important;
+  }
+  [data-slot="select-trigger"]:focus,
+  [data-slot="select-trigger"][data-state="open"] {
+    border-color: #b76e79 !important;
+    box-shadow: 0 0 0 2px rgba(183, 110, 121, 0.5) !important;
   }
   [data-slot="select-content"] {
     background: #E6D1C2 !important;
@@ -845,8 +940,12 @@
     color: #3C2B20 !important;
   }
   [data-slot="select-item"]:hover,
+  [data-slot="select-item"]:focus,
   [data-slot="select-item"][data-highlighted] {
     background: rgba(107, 88, 67, 0.1) !important;
+  }
+  [data-slot="select-item"][data-state="checked"] {
+    background: rgba(183, 110, 121, 0.2) !important;
   }
   [data-slot="tabs-list"] {
     background: #EBD1B8 !important;
@@ -854,17 +953,26 @@
   [data-slot="tabs-trigger"] {
     color: #6B5843 !important;
   }
+  [data-slot="tabs-trigger"]:hover {
+    color: #3C2B20 !important;
+  }
   [data-slot="tabs-trigger"][data-state="active"] {
     background: #F5E6D3 !important;
     color: #3C2B20 !important;
   }
+  [data-slot="tabs-content"] {
+    background: #F5E6D3 !important;
+  }
   table {
     border-color: rgba(107, 88, 67, 0.2) !important;
   }
-  thead,
+  thead {
+    background: #EBD1B8 !important;
+  }
   th {
     background: #EBD1B8 !important;
     color: #3C2B20 !important;
+    border-color: rgba(107, 88, 67, 0.2) !important;
   }
   td {
     border-color: rgba(107, 88, 67, 0.15) !important;
@@ -873,10 +981,19 @@
   tbody tr:hover {
     background: rgba(107, 88, 67, 0.1) !important;
   }
+  [data-slot="dialog-overlay"] {
+    background: rgba(60, 43, 32, 0.5) !important;
+  }
   [data-slot="dialog-content"],
   [role="dialog"] {
     background: #F5E6D3 !important;
     border-color: rgba(107, 88, 67, 0.2) !important;
+  }
+  [data-slot="dialog-header"] {
+    border-color: rgba(107, 88, 67, 0.15) !important;
+  }
+  [data-slot="dialog-footer"] {
+    border-color: rgba(107, 88, 67, 0.15) !important;
   }
   [data-slot="dropdown-menu-content"],
   [role="menu"] {
@@ -889,9 +1006,31 @@
   }
   [data-slot="dropdown-menu-item"]:hover,
   [role="menuitem"]:hover,
+  [data-slot="dropdown-menu-item"]:focus,
+  [role="menuitem"]:focus,
   [data-slot="dropdown-menu-item"][data-highlighted],
   [role="menuitem"][data-highlighted] {
     background: rgba(107, 88, 67, 0.1) !important;
+  }
+  [data-slot="dropdown-menu-separator"] {
+    background: rgba(107, 88, 67, 0.15) !important;
+  }
+  [data-slot="badge"][data-variant="default"] {
+    background: #b76e79 !important;
+    color: #F5E6D3 !important;
+  }
+  [data-slot="badge"][data-variant="secondary"] {
+    background: #EBD1B8 !important;
+    color: #3C2B20 !important;
+  }
+  [data-slot="badge"][data-variant="outline"] {
+    background: transparent !important;
+    border-color: rgba(107, 88, 67, 0.2) !important;
+    color: #3C2B20 !important;
+  }
+  [data-slot="badge"][data-variant="destructive"] {
+    background: #B34438 !important;
+    color: #F5E6D3 !important;
   }
   .bg-green-500\/10 {
     background: rgba(124, 169, 115, 0.15) !important;
@@ -899,11 +1038,17 @@
   .text-green-500 {
     color: #7CA973 !important;
   }
+  .hover\:bg-green-500\/20:hover {
+    background: rgba(124, 169, 115, 0.25) !important;
+  }
   .bg-blue-500\/10 {
     background: rgba(200, 124, 106, 0.15) !important;
   }
   .text-blue-500 {
     color: #C87C6A !important;
+  }
+  .hover\:bg-blue-500\/20:hover {
+    background: rgba(200, 124, 106, 0.25) !important;
   }
   .bg-orange-500\/10 {
     background: rgba(217, 160, 107, 0.15) !important;
@@ -911,11 +1056,17 @@
   .text-orange-500 {
     color: #D9A06B !important;
   }
+  .hover\:bg-orange-500\/20:hover {
+    background: rgba(217, 160, 107, 0.25) !important;
+  }
   .bg-yellow-500\/10 {
     background: rgba(210, 140, 116, 0.15) !important;
   }
   .text-yellow-500 {
     color: #D28C74 !important;
+  }
+  .hover\:bg-yellow-500\/20:hover {
+    background: rgba(210, 140, 116, 0.25) !important;
   }
   .bg-red-500\/10 {
     background: rgba(179, 68, 56, 0.15) !important;
@@ -923,17 +1074,26 @@
   .text-red-500 {
     color: #B34438 !important;
   }
+  .hover\:bg-red-500\/20:hover {
+    background: rgba(179, 68, 56, 0.25) !important;
+  }
   .bg-purple-500\/10 {
     background: rgba(179, 110, 91, 0.15) !important;
   }
   .text-purple-500 {
     color: #B36E5B !important;
   }
+  .hover\:bg-purple-500\/20:hover {
+    background: rgba(179, 110, 91, 0.25) !important;
+  }
   .bg-gray-500\/10 {
     background: rgba(107, 88, 67, 0.15) !important;
   }
   .text-gray-500 {
     color: #6B5843 !important;
+  }
+  .hover\:bg-gray-500\/20:hover {
+    background: rgba(107, 88, 67, 0.25) !important;
   }
   [data-slot="checkbox"] {
     border-color: rgba(107, 88, 67, 0.2) !important;
@@ -943,6 +1103,32 @@
     border-color: #b76e79 !important;
     color: #F5E6D3 !important;
   }
+  [data-slot="scroll-area-thumb"] {
+    background: rgba(107, 88, 67, 0.4) !important;
+  }
+  [data-slot="scroll-area-thumb"]:hover {
+    background: rgba(107, 88, 67, 0.6) !important;
+  }
+  [data-slot="resizable-handle"],
+  [data-panel-group-direction] > div[data-resize-handle] {
+    background: rgba(107, 88, 67, 0.2) !important;
+  }
+  [data-slot="resizable-handle"]:hover,
+  [data-panel-group-direction] > div[data-resize-handle]:hover {
+    background: #b76e79 !important;
+  }
+  [data-slot="card"] {
+    background: #E6D1C2;
+    border: 1px solid rgba(107, 88, 67, 0.15);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(60, 43, 32, 0.1);
+  }
+  [data-slot="collapsible-trigger"] {
+    color: #3C2B20 !important;
+  }
+  [data-slot="collapsible-trigger"]:hover {
+    background: rgba(107, 88, 67, 0.1) !important;
+  }
   code,
   pre,
   .font-mono {
@@ -951,6 +1137,38 @@
   }
   .inline-code {
     background: #EBD1B8 !important;
+    color: #B34438 !important;
+  }
+  .monaco-editor,
+  [data-keybinding-context] {
+    background: #EBD1B8 !important;
+  }
+  .monaco-editor .mtk1,
+  [data-keybinding-context] .mtk1 {
+    color: #3C2B20 !important;
+  }
+  .monaco-editor .mtk5,
+  [data-keybinding-context] .mtk5 {
+    color: #B36E5B !important;
+  }
+  .monaco-editor .mtk6,
+  [data-keybinding-context] .mtk6 {
+    color: #B88642 !important;
+  }
+  .monaco-editor .mtk7,
+  [data-keybinding-context] .mtk7 {
+    color: #D9A06B !important;
+  }
+  .monaco-editor .mtk8,
+  [data-keybinding-context] .mtk8 {
+    color: #C87C6A !important;
+  }
+  .monaco-editor .mtk9,
+  [data-keybinding-context] .mtk9 {
+    color: #D28C74 !important;
+  }
+  .monaco-editor .mtk10,
+  [data-keybinding-context] .mtk10 {
     color: #B34438 !important;
   }
   a {
@@ -976,13 +1194,37 @@
   .bg-card {
     background: #E6D1C2 !important;
   }
+  .bg-popover {
+    background: #E6D1C2 !important;
+  }
+  .bg-primary {
+    background: #b76e79 !important;
+  }
+  .bg-secondary {
+    background: #EBD1B8 !important;
+  }
+  .bg-accent {
+    background: #AD9980 !important;
+  }
+  .bg-destructive {
+    background: #B34438 !important;
+  }
   .text-foreground {
     color: #3C2B20 !important;
   }
   .text-muted-foreground {
     color: #7A6A57 !important;
   }
+  .text-primary-foreground {
+    color: #F5E6D3 !important;
+  }
+  .text-destructive {
+    color: #B34438 !important;
+  }
   .border-border {
+    border-color: rgba(107, 88, 67, 0.2) !important;
+  }
+  .border-input {
     border-color: rgba(107, 88, 67, 0.2) !important;
   }
   *::-webkit-scrollbar {

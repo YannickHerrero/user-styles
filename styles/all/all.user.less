@@ -1,0 +1,18 @@
+/* ==UserStyle==
+@name         All Sites - {{THEME_NAME}}
+@namespace    github.com/yherrero/stylus
+@version      2.1.0
+@description  {{THEME_NAME}} theme for all supported websites (Discord, Claude.ai, MTools)
+@author       yherrero
+@license      MIT
+@preprocessor less
+==/UserStyle== */
+
+// Theme variables are injected at build time
+
+// Import site-specific styles
+// Note: Each file contains its own @-moz-document block, so they don't conflict
+
+@import "../discord/discord.user.less";
+@import "../claude/claude.user.less";
+@import "../mtools/mtools.user.less";

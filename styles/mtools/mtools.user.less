@@ -1,19 +1,19 @@
 /* ==UserStyle==
-@name         MTools - Rose of Dune
+@name         MTools - {{THEME_NAME}}
 @namespace    github.com/yherrero/stylus
 @version      1.0.0
-@description  A soft rose-gold theme for MTools API Client with warm brown accents (Base16)
+@description  {{THEME_NAME}} theme for MTools API Client (Base16)
 @author       yherrero
 @license      MIT
 @preprocessor less
 ==/UserStyle== */
 
-@import "../../themes/rose-of-dune.less";
+// Theme variables are injected at build time
 
 @-moz-document domain("mtools-rho.vercel.app"), url-prefix("http://localhost:5175") {
   // ============================================================================
   // CSS Custom Properties - Override Tailwind CSS 4 variables
-  // Force light theme on both :root and .dark
+  // Force theme on both :root and .dark
   // ============================================================================
   
   :root,

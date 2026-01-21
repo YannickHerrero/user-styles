@@ -1,0 +1,286 @@
+/* ==UserStyle==
+@name         Claude - Catppuccin Mocha
+@namespace    github.com/yherrero/stylus
+@version      2.0.0
+@description  Catppuccin Mocha theme for Claude.ai (Base16)
+@author       yherrero
+@license      MIT
+==/UserStyle== */
+@-moz-document domain("claude.ai") {
+  :root,
+  :root[data-mode="dark"],
+  :root[data-mode="light"],
+  [data-theme="claude"][data-mode="light"],
+  [data-theme="claude"][data-mode="dark"] {
+    --accent-brand: #cba6f7 !important;
+    --accent-main-000: #cba6f7 !important;
+    --accent-main-100: #cba6f7 !important;
+    --accent-main-200: #bd8ff5 !important;
+    --accent-main-900: #e6d5fb !important;
+    --accent-pro-000: #89b4fa !important;
+    --accent-pro-100: #89b4fa !important;
+    --accent-pro-200: #71a4f9 !important;
+    --accent-pro-900: #bad3fc !important;
+    --accent-secondary-000: #cba6f7 !important;
+    --accent-secondary-100: #cba6f7 !important;
+    --accent-secondary-200: #bd8ff5 !important;
+    --accent-secondary-900: #e6d5fb !important;
+    --bg-000: #181825 !important;
+    --bg-100: #1e1e2e !important;
+    --bg-200: #1e1e2e !important;
+    --bg-300: #181825 !important;
+    --bg-400: #181825 !important;
+    --bg-500: #12121c !important;
+    --border-000: #1e1e2e !important;
+    --border-100: rgba(88, 91, 112, 0.15) !important;
+    --border-200: rgba(88, 91, 112, 0.2) !important;
+    --border-300: rgba(88, 91, 112, 0.2) !important;
+    --border-400: #89b4fa !important;
+    --border-500: #89b4fa !important;
+    --danger-000: #f8b9cb !important;
+    --danger-100: #f38ba8 !important;
+    --danger-200: #f17497 !important;
+    --danger-900: rgba(243, 139, 168, 0.2) !important;
+    --oncolor-000: #181825 !important;
+    --oncolor-100: #181825 !important;
+    --oncolor-200: #1e1e2e !important;
+    --oncolor-300: #b4befe !important;
+    --text-000: #cdd6f4 !important;
+    --text-100: #cdd6f4 !important;
+    --text-200: #cdd6f4 !important;
+    --text-300: #585b70 !important;
+    --text-400: #45475a !important;
+    --text-500: #45475a !important;
+    --ring-color: #cba6f7 !important;
+    --focus-ring-color: rgba(203, 166, 247, 0.5) !important;
+  }
+  .bg-bg-100,
+  .bg-bg-200 {
+    background-color: #1e1e2e !important;
+  }
+  .bg-bg-000,
+  .bg-bg-300 {
+    background-color: #181825 !important;
+  }
+  #__next,
+  [data-testid="app-root"],
+  .flex.min-h-screen,
+  .min-h-screen {
+    background-color: #1e1e2e !important;
+  }
+  body {
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+  }
+  nav {
+    background: #181825 !important;
+  }
+  nav.\!bg-bg-200,
+  .bg-bg-200 {
+    background: #181825 !important;
+  }
+  main {
+    background: #1e1e2e !important;
+  }
+  .code-block__code {
+    background: #181825 !important;
+  }
+  .code-block__code code span {
+    color: #cdd6f4 !important;
+  }
+  .code-block__code code span.token[style*="color: rgb(152, 195, 121)"],
+  .code-block__code code span.token.string {
+    color: #a6e3a1 !important;
+  }
+  .code-block__code code span.token[style*="color: rgb(209, 154, 102)"],
+  .code-block__code code span.token.keyword,
+  .code-block__code code span.token.attr-name {
+    color: #cba6f7 !important;
+  }
+  .code-block__code code span.token[style*="color: rgb(97, 175, 239)"],
+  .code-block__code code span.token.function,
+  .code-block__code code span.token.tag {
+    color: #89b4fa !important;
+  }
+  .code-block__code code span.token[style*="color: rgb(224, 108, 117)"],
+  .code-block__code code span.token.important,
+  .code-block__code code span.token.deleted {
+    color: #f38ba8 !important;
+  }
+  .code-block__code code span.token[style*="color: rgb(198, 120, 221)"],
+  .code-block__code code span.token.class-name,
+  .code-block__code code span.token.builtin {
+    color: #f9e2af !important;
+  }
+  .code-block__code code span.token[style*="color: rgb(171, 178, 191)"],
+  .code-block__code code span.token.comment {
+    color: #45475a !important;
+  }
+  .code-block__code code span.token.number {
+    color: #fab387 !important;
+  }
+  .code-block__code code span.token.operator {
+    color: #585b70 !important;
+  }
+  .code-block__code code span.token.punctuation {
+    color: #45475a !important;
+  }
+  .code-block__code code span.token.regex {
+    color: #94e2d5 !important;
+  }
+  code:not(pre code),
+  code.text-danger-000 {
+    background: #181825 !important;
+    color: #f38ba8 !important;
+    padding: 0.125rem 0.375rem;
+    border-radius: 4px;
+  }
+  div.bg-black\/80 {
+    background: #181825 !important;
+  }
+  div.text-white {
+    color: #cdd6f4 !important;
+  }
+  div.text-\[\#D97757\] {
+    color: #cba6f7 !important;
+  }
+  div.text-always-white svg {
+    color: #1e1e2e !important;
+  }
+  button.bg-accent-pro-100 > span.inline-block {
+    color: #1e1e2e !important;
+  }
+  button.bg-accent-secondary-900 span.text-text-000 {
+    color: #1e1e2e !important;
+  }
+  button.bg-accent-secondary-900 span.text-text-300 {
+    color: #181825 !important;
+  }
+  button.bg-accent-secondary-900 div.bg-accent-secondary-000 {
+    background: #b077f3 !important;
+  }
+  div.\!text-danger-000.\[\&\[data-highlighted\]\]\:bg-danger-900[data-highlighted] {
+    background: rgba(243, 139, 168, 0.2) !important;
+  }
+  input[type="checkbox"] + div.bg-bg-000 {
+    background: #cdd6f4 !important;
+  }
+  a {
+    color: #89b4fa !important;
+  }
+  a:hover {
+    color: #5895f8 !important;
+  }
+  input,
+  textarea {
+    background: #b4befe !important;
+    border-color: rgba(88, 91, 112, 0.2) !important;
+    color: #cdd6f4 !important;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: #45475a !important;
+  }
+  input:focus,
+  textarea:focus {
+    border-color: #cba6f7 !important;
+    box-shadow: 0 0 0 2px rgba(203, 166, 247, 0.5) !important;
+  }
+  .ProseMirror {
+    background: #181825 !important;
+    color: #cdd6f4 !important;
+  }
+  .ProseMirror::placeholder,
+  .ProseMirror .placeholder {
+    color: #45475a !important;
+  }
+  [data-testid="human-turn"] {
+    background: #181825 !important;
+  }
+  [data-testid="assistant-turn"] {
+    background: #1e1e2e !important;
+  }
+  .hover\:bg-bg-300:hover {
+    background: rgba(88, 91, 112, 0.1) !important;
+  }
+  .bg-bg-300 {
+    background: rgba(203, 166, 247, 0.2) !important;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #181825;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: rgba(88, 91, 112, 0.4);
+    border-radius: 4px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(88, 91, 112, 0.6);
+  }
+  [role="dialog"] {
+    background: #1e1e2e !important;
+    border-color: rgba(88, 91, 112, 0.2) !important;
+  }
+  [role="menu"],
+  [role="listbox"] {
+    background: #b4befe !important;
+    border-color: rgba(88, 91, 112, 0.2) !important;
+  }
+  [role="menuitem"]:hover,
+  [role="option"]:hover {
+    background: rgba(88, 91, 112, 0.1) !important;
+  }
+  .artifact-container,
+  [data-testid="artifact"] {
+    background: #b4befe !important;
+    border-color: rgba(88, 91, 112, 0.2) !important;
+  }
+  table {
+    border-color: rgba(88, 91, 112, 0.2) !important;
+  }
+  table th {
+    background: #181825 !important;
+    color: #cdd6f4 !important;
+    border-color: rgba(88, 91, 112, 0.2) !important;
+  }
+  table td {
+    border-color: rgba(88, 91, 112, 0.15) !important;
+  }
+  table tr:hover {
+    background: rgba(88, 91, 112, 0.1) !important;
+  }
+  blockquote {
+    border-left-color: #89b4fa !important;
+    background: rgba(137, 180, 250, 0.08) !important;
+    color: #585b70 !important;
+  }
+  hr {
+    border-color: rgba(88, 91, 112, 0.2) !important;
+  }
+  ul,
+  ol {
+    color: #cdd6f4 !important;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #f5e0dc !important;
+  }
+  strong,
+  b {
+    color: #cdd6f4 !important;
+  }
+  em,
+  i {
+    color: #585b70 !important;
+  }
+  ::selection {
+    background-color: rgba(203, 166, 247, 0.6) !important;
+  }
+}

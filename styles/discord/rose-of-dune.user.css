@@ -2,10 +2,9 @@
 @name         Discord - Rose of Dune
 @namespace    github.com/yherrero/stylus
 @version      2.0.0
-@description  A soft rose-gold theme for Discord with warm brown accents (Base16)
+@description  Rose of Dune theme for Discord (Base16)
 @author       yherrero
 @license      MIT
-@preprocessor less
 ==/UserStyle== */
 @-moz-document domain("discord.com") {
   .theme-dark,
@@ -65,8 +64,8 @@
     --brand-experiment-600: #914853 !important;
     --brand-experiment-630: #803f49 !important;
     --brand-experiment-660: #6f373f !important;
-    --app-frame-background: #F2E0CB !important;
-    --background-base-lowest: #F2E0CB !important;
+    --app-frame-background: #EBD1B8 !important;
+    --background-base-lowest: #EBD1B8 !important;
     --background-base-lower: #F5E6D3 !important;
     --background-base-low: #F5E6D3 !important;
     --background-surface-high: #F5E6D3 !important;
@@ -418,14 +417,14 @@
   }
   nav[aria-label*="Servers"],
   nav[aria-label*="serveurs"],
-  nav[aria-label*="Encadré"],
+  nav[aria-label*="Encadre"],
   [class*="guilds"][class*="wrapper"] {
     opacity: 0;
     transition: opacity 0.3s ease;
   }
   nav[aria-label*="Servers"]:hover,
   nav[aria-label*="serveurs"]:hover,
-  nav[aria-label*="Encadré"]:hover,
+  nav[aria-label*="Encadre"]:hover,
   [class*="guilds"][class*="wrapper"]:hover {
     opacity: 1;
   }
