@@ -84,7 +84,7 @@ Import all styles for a theme at once using the theme's JSON file:
 
 ## Base16 Color System
 
-All themes use the [Base16](http://chriskempson.com/projects/base16/) color system - 16 colors that map consistently across all styles:
+All themes use the [Base16](https://github.com/chriskempson/base16) color system - 16 colors that map consistently across all styles:
 
 | Base | Usage |
 |------|-------|
@@ -295,7 +295,7 @@ The generated LESS file provides semantic mappings:
 
 - Color scheme inspired by [omarchy-roseofdune-theme](https://github.com/HANCORE-linux/omarchy-roseofdune-theme)
 - Project structure inspired by [catppuccin/userstyles](https://github.com/catppuccin/userstyles)
-- Built on [Base16](http://chriskempson.com/projects/base16/) color system
+- Built on [Base16](https://github.com/chriskempson/base16) color system
 
 ## License
 
