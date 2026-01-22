@@ -21,6 +21,7 @@ const SITES = [
   { name: 'mtools', file: 'mtools.user.less' },
   { name: 'teams', file: 'teams.user.less' },
   { name: 'reddit', file: 'reddit.user.less' },
+  { name: 'github', file: 'github.user.less' },
   { name: 'all', file: 'all.user.less' },
 ];
 

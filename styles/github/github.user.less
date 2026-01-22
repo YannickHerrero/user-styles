@@ -1,0 +1,745 @@
+/* ==UserStyle==
+@name         GitHub - {{THEME_NAME}}
+@namespace    github.com/yherrero/stylus
+@version      1.0.0
+@description  {{THEME_NAME}} theme for GitHub (Base16)
+@author       yherrero
+@license      MIT
+@preprocessor less
+==/UserStyle== */
+
+// Theme variables are injected at build time
+
+@-moz-document regexp("https:\/\/github\.com(?!(\/home$|\/features($|\/.*)|\/organizations\/plan)).*$"),
+  domain("gist.github.com"),
+  domain("docs.github.com"),
+  domain("viewscreen.githubusercontent.com") {
+
+  // ============================================================================
+  // GitHub CSS Custom Properties - Comprehensive Override
+  // Ported from catppuccin/userstyles with Base16 color mapping
+  // ============================================================================
+
+  // Color aliases for easier mapping from Catppuccin
+  @crust: darken(@bg-primary, 5%);
+  @mantle: @bg-secondary;
+  @base: @bg-primary;
+  @surface0: fade(@base04, 15%);
+  @surface1: fade(@base04, 25%);
+  @surface2: fade(@base04, 35%);
+  @overlay0: fade(@base04, 45%);
+  @overlay1: fade(@base04, 55%);
+  @overlay2: fade(@base04, 65%);
+  @subtext0: @text-muted;
+  @subtext1: @text-secondary;
+  @text: @text-primary;
+  @red: @base08;
+  @peach: @base09;
+  @yellow: @base09;
+  @green: @base0C;
+  @teal: @base0C;
+  @blue: @base0D;
+  @sapphire: @base0D;
+  @sky: lighten(@base0D, 10%);
+  @lavender: @base0E;
+  @mauve: @base0E;
+  @pink: @base0A;
+  @flamingo: @base0A;
+  @rosewater: @base0A;
+
+  // ==========================================================================
+  // Main theme mixin - contains all CSS variable overrides
+  // ==========================================================================
+  .github-theme() {
+    accent-color: @primary;
+    color: @text;
+
+    // ========================================================================
+    // Social & Notifications
+    // ========================================================================
+    --color-social-reaction-bg-reacted-hover: fade(@primary, 30%);
+    --color-notifications-button-hover-bg: fade(@primary, 60%);
+    --color-workflow-card-header-shadow: rgba(27, 31, 35, 0.04);
+    --color-icon-directory: var(--fgColor-muted, var(--color-fg-muted));
+
+    // ========================================================================
+    // Contribution Calendar
+    // ========================================================================
+    --color-calendar-halloween-graph-day-L1-bg: fade(@primary, 40%) !important;
+    --color-calendar-halloween-graph-day-L2-bg: fade(@primary, 60%) !important;
+    --color-calendar-halloween-graph-day-L3-bg: fade(@primary, 80%) !important;
+    --color-calendar-halloween-graph-day-L4-bg: @primary !important;
+    --color-calendar-winter-graph-day-L1-bg: fade(@primary, 40%) !important;
+    --color-calendar-winter-graph-day-L2-bg: fade(@primary, 60%) !important;
+    --color-calendar-winter-graph-day-L3-bg: fade(@primary, 80%) !important;
+    --color-calendar-winter-graph-day-L4-bg: @primary !important;
+    --color-calendar-graph-day-bg: @surface0 !important;
+    --color-calendar-graph-day-border: transparent !important;
+    --color-calendar-graph-day-L1-bg: fade(@primary, 40%) !important;
+    --color-calendar-graph-day-L2-bg: fade(@primary, 60%) !important;
+    --color-calendar-graph-day-L3-bg: fade(@primary, 80%) !important;
+    --color-calendar-graph-day-L4-bg: @primary !important;
+    --color-calendar-graph-day-L2-border: transparent !important;
+    --color-calendar-graph-day-L3-border: transparent !important;
+    --color-calendar-graph-day-L4-border: transparent !important;
+    --contribution-default-bgColor-0: fade(@primary, 10%) !important;
+    --contribution-default-bgColor-1: fade(@primary, 40%) !important;
+    --contribution-default-bgColor-2: fade(@primary, 60%) !important;
+    --contribution-default-bgColor-3: fade(@primary, 80%) !important;
+    --contribution-default-bgColor-4: @primary !important;
+
+    // ========================================================================
+    // User Mentions & Dashboard
+    // ========================================================================
+    --color-user-mention-fg: @primary;
+    --color-user-mention-bg: fade(@primary, 30%);
+    --color-dashboard-feed-bg: var(--color-scale-gray-9);
+    --color-mktg-btn-shadow-outline: rgba(255, 255, 255, 0.25) 0 0 0 1px inset;
+    --color-marketing-icon-secondary: var(--color-scale-blue-5);
+
+    // ========================================================================
+    // Project Views
+    // ========================================================================
+    --color-project-header-bg: var(--color-scale-gray-9);
+    --color-project-sidebar-bg: var(--color-scale-gray-8);
+    --color-project-gradient-in: var(--color-scale-gray-8);
+    --color-project-gradient-out: rgba(22, 27, 34, 0);
+
+    // ========================================================================
+    // Diff & Code
+    // ========================================================================
+    --color-diff-blob-selected-line-highlight-mix-blend-mode: screen;
+    --topicTag-borderColor: #0000;
+    --highlight-neutral-bgColor: fade(@yellow, 30%);
+    --page-header-bgColor: @crust;
+    --diffBlob-additionNum-bgColor: fade(@green, 30%);
+    --diffBlob-additionNum-fgColor: @text;
+    --diffBlob-additionLine-bgColor: fade(@green, 15%);
+    --diffBlob-additionWord-bgColor: fade(@green, 30%);
+    --diffBlob-additionWord-fgColor: @text;
+    --diffBlob-deletionNum-bgColor: fade(@red, 30%);
+    --diffBlob-deletionNum-fgColor: @text;
+    --diffBlob-deletionLine-bgColor: fade(@red, 15%);
+    --diffBlob-deletionWord-bgColor: fade(@red, 30%);
+    --diffBlob-deletionWord-fgColor: @text;
+    --diffBlob-hunkNum-bgColor-rest: fade(@primary, 40%);
+    --diffBlob-hunkNum-bgColor-hover: fade(@primary, 75%);
+    --diffBlob-hunkLine-bgColor: fade(@primary, 25%);
+    --diffBlob-expander-iconColor: @subtext0;
+    --diffBlob-emptyNum-bgColor: @mantle;
+    --diffBlob-emptyLine-bgColor: @mantle;
+
+    // ========================================================================
+    // CodeMirror Editor
+    // ========================================================================
+    --codeMirror-fgColor: @text;
+    --codeMirror-bgColor: @base;
+    --codeMirror-gutters-bgColor: @base;
+    --codeMirror-gutterMarker-fgColor-default: @base;
+    --codeMirror-gutterMarker-fgColor-muted: @overlay0;
+    --codeMirror-lineNumber-fgColor: @overlay1;
+    --codeMirror-cursor-fgColor: @text;
+    --codeMirror-selection-bgColor: fade(@blue, 40%);
+    --codeMirror-activeline-bgColor: fade(@overlay1, 40%);
+    --codeMirror-matchingBracket-fgColor: @text;
+    --codeMirror-lines-bgColor: @base;
+    --codeMirror-syntax-fgColor-comment: @overlay2;
+    --codeMirror-syntax-fgColor-constant: @blue;
+    --codeMirror-syntax-fgColor-entity: @blue;
+    --codeMirror-syntax-fgColor-keyword: @mauve;
+    --codeMirror-syntax-fgColor-storage: @peach;
+    --codeMirror-syntax-fgColor-string: @green;
+    --codeMirror-syntax-fgColor-support: @sky;
+    --codeMirror-syntax-fgColor-variable: @peach;
+
+    // ========================================================================
+    // Header
+    // ========================================================================
+    --header-fgColor-default: @text;
+    --header-fgColor-logo: @text;
+    --header-bgColor: @crust;
+    --header-borderColor-divider: @subtext0;
+    --headerSearch-bgColor: @mantle;
+    --headerSearch-borderColor: @surface0;
+
+    // ========================================================================
+    // Avatar
+    // ========================================================================
+    --avatar-bgColor: fade(@text, 26%);
+    --avatar-borderColor: @surface0;
+    --avatar-shadow: 0px 0px 0px 2px @crust;
+    --avatarStack-fade-bgColor-default: @surface1;
+    --avatarStack-fade-bgColor-muted: @surface0;
+
+    // ========================================================================
+    // Controls
+    // ========================================================================
+    --control-bgColor-rest: @surface0;
+    --control-bgColor-hover: @surface1;
+    --control-bgColor-active: @surface1;
+    --control-bgColor-disabled: fade(@mantle, 60%);
+    --control-bgColor-selected: @mantle;
+    --control-fgColor-rest: @text;
+    --control-fgColor-placeholder: @overlay1;
+    --control-fgColor-disabled: fade(@subtext0, 70%);
+    --control-borderColor-rest: @surface1;
+    --control-borderColor-emphasis: @overlay1;
+    --control-borderColor-disabled: fade(@surface1, 75%);
+    --control-borderColor-selected: @text;
+    --control-borderColor-success: @green;
+    --control-borderColor-danger: @red;
+    --control-borderColor-warning: @yellow;
+    --control-iconColor-rest: @subtext0;
+    --control-transparent-bgColor-rest: #0000;
+    --control-transparent-bgColor-hover: fade(@surface2, 20%);
+    --control-transparent-bgColor-active: fade(@overlay0, 50%);
+    --control-transparent-bgColor-disabled: fade(@surface0, 70%);
+    --control-transparent-bgColor-selected: fade(@surface1, 8%);
+    --control-transparent-borderColor-rest: #0000;
+    --control-transparent-borderColor-hover: #0000;
+    --control-transparent-borderColor-active: #0000;
+    --control-danger-fgColor-rest: @red;
+    --control-danger-fgColor-hover: @crust;
+    --control-danger-bgColor-hover: fade(@red, 80%);
+    --control-danger-bgColor-active: @red;
+    --control-checked-bgColor-rest: @primary;
+    --control-checked-bgColor-hover: lighten(@primary, 5%);
+    --control-checked-bgColor-active: lighten(@primary, 5%);
+    --control-checked-bgColor-disabled: @overlay1;
+    --control-checked-fgColor-rest: @crust;
+    --control-checked-fgColor-disabled: @crust;
+    --control-checked-borderColor-rest: @primary;
+    --control-checked-borderColor-hover: @primary;
+    --control-checked-borderColor-active: @primary;
+    --control-checked-borderColor-disabled: @surface0;
+
+    // ========================================================================
+    // Control Track (Toggle switches)
+    // ========================================================================
+    --controlTrack-bgColor-rest: @surface0;
+    --controlTrack-bgColor-hover: @surface1;
+    --controlTrack-bgColor-active: @surface2;
+    --controlTrack-bgColor-disabled: @overlay1;
+    --controlTrack-fgColor-rest: @subtext0;
+    --controlTrack-fgColor-disabled: @text;
+    --controlTrack-borderColor-rest: #0000;
+    --controlTrack-borderColor-disabled: @overlay1;
+    --controlKnob-bgColor-rest: @base;
+    --controlKnob-bgColor-disabled: fade(@surface0, 70%);
+    --controlKnob-bgColor-checked: @text;
+    --controlKnob-borderColor-rest: @surface2;
+    --controlKnob-borderColor-disabled: fade(@surface0, 70%);
+    --controlKnob-borderColor-checked: @blue;
+
+    // ========================================================================
+    // Buttons - Default
+    // ========================================================================
+    --button-default-fgColor-rest: @text;
+    --button-default-bgColor-rest: @surface0;
+    --button-default-bgColor-hover: @surface1;
+    --button-default-bgColor-active: @surface2;
+    --button-default-bgColor-selected: @surface2;
+    --button-default-bgColor-disabled: fade(@surface0, 70%);
+    --button-default-borderColor-rest: @surface1;
+    --button-default-borderColor-hover: @surface1;
+    --button-default-borderColor-active: @surface1;
+    --button-default-borderColor-disabled: fade(@surface0, 70%);
+    --button-default-shadow-resting: 0px 0px 0px 0px #000;
+
+    // ========================================================================
+    // Buttons - Primary
+    // ========================================================================
+    --button-primary-fgColor-rest: @base;
+    --button-primary-fgColor-disabled: fade(@base, 60%);
+    --button-primary-iconColor-rest: @base;
+    --button-primary-bgColor-rest: @green;
+    --button-primary-bgColor-hover: lighten(@green, 5%);
+    --button-primary-bgColor-active: saturate(@green, 5%);
+    --button-primary-bgColor-disabled: fade(@green, 70%);
+    --button-primary-borderColor-rest: @green;
+    --button-primary-borderColor-hover: @green;
+    --button-primary-borderColor-active: @green;
+    --button-primary-borderColor-disabled: fade(@green, 70%);
+    --button-primary-shadow-selected: 0px 0px 0px 0px #000;
+
+    // ========================================================================
+    // Buttons - Invisible
+    // ========================================================================
+    --button-invisible-fgColor-rest: @text;
+    --button-invisible-fgColor-hover: lighten(@primary, 10%);
+    --button-invisible-fgColor-disabled: @overlay1;
+    --button-invisible-iconColor-rest: @overlay2;
+    --button-invisible-iconColor-hover: @text;
+    --button-invisible-iconColor-disabled: @overlay1;
+    --button-invisible-bgColor-rest: #0000;
+    --button-invisible-bgColor-hover: fade(@surface1, 12%);
+    --button-invisible-bgColor-active: fade(@surface1, 20%);
+    --button-invisible-bgColor-disabled: fade(@surface1, 70%);
+    --button-invisible-borderColor-rest: #0000;
+    --button-invisible-borderColor-hover: #0000;
+    --button-invisible-borderColor-disabled: fade(@surface1, 70%);
+
+    // ========================================================================
+    // Buttons - Outline
+    // ========================================================================
+    --button-outline-fgColor-rest: @blue;
+    --button-outline-fgColor-hover: lighten(@blue, 10%);
+    --button-outline-fgColor-active: @text;
+    --button-outline-fgColor-disabled: fade(@blue, 50%);
+    --button-outline-bgColor-rest: @text;
+    --button-outline-bgColor-hover: @surface1;
+    --button-outline-bgColor-active: darken(@blue, 20%);
+    --button-outline-bgColor-disabled: @base;
+    --button-outline-borderColor-hover: fade(@text, 10%);
+    --button-outline-borderColor-selected: fade(@text, 10%);
+    --button-outline-shadow-selected: 0px 0px 0px 0px #000;
+
+    // ========================================================================
+    // Buttons - Danger
+    // ========================================================================
+    --button-danger-fgColor-rest: @red;
+    --button-danger-fgColor-hover: @base;
+    --button-danger-fgColor-active: @base;
+    --button-danger-fgColor-disabled: fade(@red, 50%);
+    --button-danger-iconColor-rest: @red;
+    --button-danger-iconColor-hover: @crust;
+    --button-danger-bgColor-rest: @surface0;
+    --button-danger-bgColor-hover: @red;
+    --button-danger-bgColor-active: darken(@red, 5%);
+    --button-danger-bgColor-disabled: @base;
+    --button-danger-borderColor-rest: @surface1;
+    --button-danger-borderColor-hover: @red;
+    --button-danger-borderColor-active: darken(@red, 5%);
+    --button-danger-shadow-selected: 0px 0px 0px 0px #000;
+
+    // ========================================================================
+    // Buttons - Misc
+    // ========================================================================
+    --button-inactive-fgColor: @subtext0;
+    --button-inactive-bgColor: @surface0;
+    --button-star-iconColor: @yellow;
+
+    // ========================================================================
+    // Button Counters
+    // ========================================================================
+    --buttonCounter-default-bgColor-rest: @surface1;
+    --buttonCounter-invisible-bgColor-rest: @surface1;
+    --buttonCounter-primary-bgColor-rest: fade(@green, 20%);
+    --buttonCounter-outline-bgColor-rest: fade(@blue, 20%);
+    --buttonCounter-outline-bgColor-hover: fade(@blue, 20%);
+    --buttonCounter-outline-bgColor-disabled: fade(@blue, 5%);
+    --buttonCounter-outline-fgColor-rest: @blue;
+    --buttonCounter-outline-fgColor-hover: lighten(@blue, 10%);
+    --buttonCounter-outline-fgColor-disabled: fade(@blue, 50%);
+    --buttonCounter-danger-bgColor-hover: fade(@text, 20%);
+    --buttonCounter-danger-bgColor-disabled: fade(@red, 5%);
+    --buttonCounter-danger-bgColor-rest: fade(@red, 20%);
+    --buttonCounter-danger-fgColor-rest: @red;
+    --buttonCounter-danger-fgColor-hover: @text;
+    --buttonCounter-danger-fgColor-disabled: fade(@red, 50%);
+
+    // ========================================================================
+    // Focus & Selection
+    // ========================================================================
+    --focus-outlineColor: @primary;
+    --selection-bgColor: fade(@primary, 30%);
+
+    // ========================================================================
+    // Menu & Overlay
+    // ========================================================================
+    --menu-bgColor-active: @mantle;
+    --overlay-bgColor: @base;
+    --overlay-borderColor: @surface0;
+    --overlay-backdrop-bgColor: fade(@mantle, 40%);
+    --selectMenu-borderColor: @overlay1;
+    --selectMenu-bgColor-active: darken(@blue, 30%);
+
+    // ========================================================================
+    // Navigation
+    // ========================================================================
+    --sideNav-bgColor-selected: @surface0;
+    --skeletonLoader-bgColor: @mantle;
+    --timelineBadge-bgColor: @mantle;
+    --treeViewItem-leadingVisual-iconColor-rest: @subtext0;
+    --underlineNav-borderColor-active: @primary;
+    --underlineNav-borderColor-hover: fade(@overlay1, 40%);
+    --underlineNav-iconColor-rest: @subtext0;
+
+    // ========================================================================
+    // Reactions
+    // ========================================================================
+    --reactionButton-selected-bgColor-rest: fade(@primary, 20%);
+    --reactionButton-selected-bgColor-hover: fade(@primary, 35%);
+    --reactionButton-selected-fgColor-rest: @primary;
+    --reactionButton-selected-fgColor-hover: @primary;
+
+    // ========================================================================
+    // Foreground Colors
+    // ========================================================================
+    --fgColor-default: @text;
+    --fgColor-muted: @subtext1;
+    --fgColor-onEmphasis: @base;
+    --fgColor-white: @text;
+    --fgColor-disabled: @surface2;
+    --fgColor-link: @primary;
+    --fgColor-neutral: @subtext1;
+    --fgColor-accent: @primary;
+    --fgColor-success: @green;
+    --fgColor-attention: @yellow;
+    --fgColor-severe: @peach;
+    --fgColor-danger: @red;
+    --fgColor-open: @green;
+    --fgColor-closed: @red;
+    --fgColor-done: @mauve;
+    --fgColor-sponsors: @pink;
+
+    // ========================================================================
+    // Background Colors
+    // ========================================================================
+    --bgColor-default: @base;
+    --bgColor-muted: @mantle;
+    --bgColor-inset: @crust;
+    --bgColor-emphasis: @overlay2;
+    --bgColor-inverse: @text;
+    --bgColor-disabled: fade(@surface0, 70%);
+    --bgColor-transparent: #0000;
+    --bgColor-neutral-muted: fade(@surface0, 40%);
+    --bgColor-neutral-emphasis: @subtext0;
+    --bgColor-accent-muted: fade(@primary, 20%);
+    --bgColor-accent-emphasis: @primary;
+    --bgColor-success-muted: fade(@green, 15%);
+    --bgColor-success-emphasis: @green;
+    --bgColor-attention-muted: fade(@yellow, 15%);
+    --bgColor-attention-emphasis: @yellow;
+    --bgColor-severe-muted: fade(@peach, 26%);
+    --bgColor-severe-emphasis: @peach;
+    --bgColor-danger-muted: fade(@red, 26%);
+    --bgColor-danger-emphasis: @red;
+    --bgColor-open-muted: fade(@green, 10%);
+    --bgColor-open-emphasis: @green;
+    --bgColor-closed-muted: fade(@red, 15%);
+    --bgColor-closed-emphasis: @red;
+    --bgColor-done-muted: fade(@mauve, 15%);
+    --bgColor-done-emphasis: @mauve;
+    --bgColor-sponsors-muted: fade(@pink, 10%);
+    --bgColor-sponsors-emphasis: @pink;
+
+    // ========================================================================
+    // Border Colors
+    // ========================================================================
+    --borderColor-default: @surface1;
+    --borderColor-muted: @surface0;
+    --borderColor-emphasis: @overlay1;
+    --borderColor-disabled: fade(@surface0, 70%);
+    --borderColor-transparent: #0000;
+    --borderColor-neutral-muted: fade(@overlay1, 40%);
+    --borderColor-neutral-emphasis: @overlay1;
+    --borderColor-accent-muted: fade(@primary, 50%);
+    --borderColor-accent-emphasis: @primary;
+    --borderColor-success-muted: darken(@green, 5%);
+    --borderColor-success-emphasis: @green;
+    --borderColor-attention-muted: fade(@flamingo, 30%);
+    --borderColor-attention-emphasis: @flamingo;
+    --borderColor-severe-muted: @peach;
+    --borderColor-severe-emphasis: darken(@peach, 10%);
+    --borderColor-danger-muted: @red;
+    --borderColor-danger-emphasis: @red;
+    --borderColor-open-muted: darken(@green, 5%);
+    --borderColor-open-emphasis: @green;
+    --borderColor-closed-muted: @red;
+    --borderColor-closed-emphasis: @red;
+    --borderColor-done-muted: @lavender;
+    --borderColor-done-emphasis: @mauve;
+    --borderColor-sponsors-muted: fade(@pink, 40%);
+    --borderColor-sponsors-emphasis: @pink;
+
+    // ========================================================================
+    // ANSI Colors (Universal set)
+    // ========================================================================
+    --color-ansi-black: @surface1;
+    --color-ansi-black-bright: @surface2;
+    --color-ansi-gray: @surface2;
+    --color-ansi-white: @subtext1;
+    --color-ansi-white-bright: @subtext0;
+    --color-ansi-red: @red;
+    --color-ansi-red-bright: @red;
+    --color-ansi-green: @green;
+    --color-ansi-green-bright: @green;
+    --color-ansi-yellow: @yellow;
+    --color-ansi-yellow-bright: @yellow;
+    --color-ansi-blue: @blue;
+    --color-ansi-blue-bright: @blue;
+    --color-ansi-magenta: @pink;
+    --color-ansi-magenta-bright: @pink;
+    --color-ansi-cyan: @teal;
+    --color-ansi-cyan-bright: @teal;
+
+    // ========================================================================
+    // Prettylights Syntax Highlighting
+    // ========================================================================
+    --color-prettylights-syntax-comment: @overlay2;
+    --color-prettylights-syntax-constant: @blue;
+    --color-prettylights-syntax-constant-other-reference-link: @blue;
+    --color-prettylights-syntax-entity: @blue;
+    --color-prettylights-syntax-storage-modifier-import: @peach;
+    --color-prettylights-syntax-entity-tag: @blue;
+    --color-prettylights-syntax-keyword: @mauve;
+    --color-prettylights-syntax-string: @green;
+    --color-prettylights-syntax-variable: @peach;
+    --color-prettylights-syntax-invalid-illegal-text: @red;
+    --color-prettylights-syntax-invalid-illegal-bg: fade(@red, 15%);
+    --color-prettylights-syntax-markup-heading: @red;
+    --color-prettylights-syntax-markup-italic: @yellow;
+    --color-prettylights-syntax-markup-bold: @yellow;
+    --color-prettylights-syntax-markup-deleted-text: @text;
+    --color-prettylights-syntax-markup-deleted-bg: fade(@red, 40%);
+    --color-prettylights-syntax-markup-inserted-text: @text;
+    --color-prettylights-syntax-markup-inserted-bg: fade(@green, 40%);
+    --color-prettylights-syntax-markup-changed-text: @text;
+    --color-prettylights-syntax-markup-changed-bg: fade(@yellow, 40%);
+    --color-prettylights-syntax-markup-ignored-text: @text;
+
+    // ========================================================================
+    // Color Scale
+    // ========================================================================
+    --bgColor-white: @base;
+    --color-scale-white: @base;
+    --color-scale-gray-3: @overlay2;
+    --color-scale-gray-5: @overlay0;
+    --color-scale-gray-6: @surface1;
+    --color-scale-gray-7: @surface1;
+    --color-scale-gray-8: @surface0;
+    --color-scale-gray-9: @mantle;
+    --color-scale-blue-2: @sky;
+    --color-scale-blue-5: @blue;
+    --color-scale-green-3: @green;
+    --color-scale-green-4: @green;
+    --color-scale-yellow-3: @peach;
+    --color-scale-orange-4: @peach;
+    --color-scale-red-4: @red;
+
+    // ========================================================================
+    // Shadows
+    // ========================================================================
+    --shadow-inset: inset 0px 1px 0px 0px @crust;
+    --shadow-resting-xsmall: 0px 1px 0px 0px @crust;
+    --shadow-resting-small: 0px 1px 0px 0px @crust, 0px 1px 3px 0px @crust;
+    --shadow-resting-medium: 0px 3px 6px 0px @crust;
+    --shadow-floating-small: 0px 0px 0px 1px @base, 0px 6px 12px -3px @crust, 0px 6px 18px 0px @crust;
+    --shadow-floating-medium: 0px 0px 0px 1px @surface0, 0px 8px 16px -4px @crust, 0px 4px 32px -4px @crust, 0px 24px 48px -12px @crust, 0px 48px 96px -24px @crust;
+    --shadow-floating-large: 0px 0px 0px 1px @surface0, 0px 24px 48px 0px @crust;
+    --shadow-floating-xlarge: 0px 0px 0px 1px @surface0, 0px 32px 64px 0px @crust;
+    --shadow-floating-legacy: 0px 6px 12px -3px @crust, 0px 6px 18px 0px @crust;
+    --outline-focus: @blue solid 2px;
+
+    // ========================================================================
+    // Enhanced Repo Insights
+    // ========================================================================
+    --data-blue-color-emphasis: @primary;
+    --data-red-color-emphasis: @red;
+    --data-green-color-emphasis: @green;
+
+    // ========================================================================
+    // Copilot Chat
+    // ========================================================================
+    --display-green-fgColor: @green;
+    --display-teal-fgColor: @teal;
+    --display-purple-fgColor: @mauve;
+    --display-blue-fgColor: @blue;
+    --display-pink-fgColor: @pink;
+    --display-gray-fgColor: @subtext0;
+
+    // ========================================================================
+    // docs.github.com
+    // ========================================================================
+    --color-fg-default: @text;
+    --color-canvas-default: @base;
+    --color-canvas-subtle: @mantle;
+
+    // ========================================================================
+    // Tooltips
+    // ========================================================================
+    --tooltip-fgColor: @base;
+    --tooltip-bgColor: @overlay2;
+
+    // ========================================================================
+    // Refined GitHub extension
+    // ========================================================================
+    --rgh-heat-color: @peach;
+  }
+
+  // ==========================================================================
+  // Apply theme to :root (highest priority)
+  // ==========================================================================
+  :root {
+    .github-theme();
+  }
+
+  // ==========================================================================
+  // Theme detection - Auto mode
+  // ==========================================================================
+  [data-color-mode="auto"] {
+    @media (prefers-color-scheme: light) {
+      &[data-light-theme="light"],
+      &[data-light-theme="dark"] {
+        .github-theme();
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      &[data-dark-theme="light"],
+      &[data-dark-theme="dark"] {
+        .github-theme();
+        header[data-color-mode] {
+          .github-theme();
+        }
+      }
+    }
+  }
+
+  // ==========================================================================
+  // Theme detection - Manual mode
+  // ==========================================================================
+  [data-color-mode="light"][data-light-theme="dark"],
+  [data-color-mode="dark"][data-dark-theme="dark"],
+  [data-color-mode="light"][data-light-theme="light"],
+  [data-color-mode="dark"][data-dark-theme="light"] {
+    .github-theme();
+  }
+
+  // ==========================================================================
+  // Element-specific overrides
+  // ==========================================================================
+
+  // CodeMirror placeholder
+  .cm-placeholder {
+    color: @subtext0;
+  }
+
+  // Progress bar
+  .turbo-progress-bar {
+    background-color: @primary;
+  }
+
+  // Form select dropdown arrow
+  .form-select {
+    @svg: escape(
+      '<svg width="16" height="16" viewBox="0 0 16 16" fill="@{subtext0}" xmlns="http://www.w3.org/2000/svg"><path d="m4.427 9.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 9H4.604a.25.25 0 0 0-.177.427M4.423 6.47 7.82 3.072a.25.25 0 0 1 .354 0L11.57 6.47a.25.25 0 0 1-.177.427H4.6a.25.25 0 0 1-.177-.427"/></svg>'
+    );
+    background-image: url("data:image/svg+xml,@{svg}");
+  }
+
+  // Header (logged out)
+  .header-search-button {
+    svg {
+      fill: @text !important;
+    }
+  }
+
+  .HeaderMenu-toggle-bar {
+    border-color: @text;
+  }
+
+  // Notification indicator
+  .notification-indicator .mail-status {
+    background-image: linear-gradient(@primary, darken(@primary, 5%));
+  }
+
+  // Actions check steps - ANSI colors
+  .CheckStep {
+    .ansifg-r {
+      color: var(--color-ansi-red);
+    }
+    .ansifg-y {
+      color: var(--color-ansi-yellow);
+    }
+    .ansifg-g {
+      color: var(--color-ansi-green);
+    }
+    .ansifg-b {
+      color: var(--color-ansi-blue);
+    }
+    .ansifg-c {
+      color: var(--color-ansi-cyan);
+    }
+    .ansifg-m {
+      color: var(--color-ansi-magenta);
+    }
+    .ansifg-gr {
+      color: var(--color-ansi-gray);
+    }
+  }
+
+  // Activity overview graph
+  .js-activity-overview-graph .js-highlight-blob {
+    fill: @primary;
+    stroke: @primary;
+  }
+
+  // Subnav selected link
+  .subnav-link.selected {
+    border-bottom-color: @primary;
+  }
+
+  // Pull request check in progress indicator
+  [stroke="#DBAB0A" i] {
+    stroke: fade(@yellow, 70%) !important;
+  }
+  [fill="#DBAB0A" i] {
+    fill: @yellow !important;
+  }
+
+  // Issue timeline icons
+  [class*="prc-Timeline-TimelineBadge"],
+  .TimelineItem-Badge {
+    // Completed
+    path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],
+    // Duplicate / Not planned
+    path[d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM3.965 13.096a6.5 6.5 0 0 0 9.131-9.131ZM1.5 8a6.474 6.474 0 0 0 1.404 4.035l9.131-9.131A6.499 6.499 0 0 0 1.5 8Z"],
+    // Reopen
+    path[d="M5.029 2.217a6.5 6.5 0 0 1 9.437 5.11.75.75 0 1 0 1.492-.154 8 8 0 0 0-14.315-4.03L.427 1.927A.25.25 0 0 0 0 2.104V5.75A.25.25 0 0 0 .25 6h3.646a.25.25 0 0 0 .177-.427L2.715 4.215a6.491 6.491 0 0 1 2.314-1.998ZM1.262 8.169a.75.75 0 0 0-1.22.658 8.001 8.001 0 0 0 14.315 4.03l1.216 1.216a.25.25 0 0 0 .427-.177V10.25a.25.25 0 0 0-.25-.25h-3.646a.25.25 0 0 0-.177.427l1.358 1.358a6.501 6.501 0 0 1-11.751-3.11.75.75 0 0 0-.272-.506Z"],
+    path[d="M9.06 9.06a1.5 1.5 0 1 1-2.12-2.12 1.5 1.5 0 0 1 2.12 2.12Z"] {
+      fill: @base;
+    }
+  }
+
+  // Customer Terms & Agreements Page
+  .enterprise-customer-agreement {
+    color: @text !important;
+
+    &:hover {
+      .octicon,
+      h3 {
+        color: @primary !important;
+      }
+    }
+  }
+
+  // Copilot Chat buttons
+  react-app[app-name="copilot-immersive-v1"],
+  copilot-dashboard-entrypoint {
+    button {
+      color: @text;
+    }
+  }
+
+  // ==========================================================================
+  // Scrollbar Styling
+  // ==========================================================================
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: @scrollbar-track;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: @scrollbar-thumb;
+    border-radius: 4px;
+
+    &:hover {
+      background: @scrollbar-hover;
+    }
+  }
+}
