@@ -30,7 +30,7 @@ All themes support the following websites:
 | GitHub | `github.com` |
 | Reddit | `reddit.com` |
 | Microsoft Teams | `teams.microsoft.com` |
-| MTools | `mtools.epam.com` |
+| MTools | `mtools-rho.vercel.app` |
 
 ## Available Styles
 
