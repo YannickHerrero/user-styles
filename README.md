@@ -1,8 +1,28 @@
 # Stylus - Custom Userstyles
 
-Custom browser userstyles using the **Rose of Dune** color scheme. A soft rose-gold theme with warm brown accents, inspired by the gentle glow of desert dunes at dusk.
+Custom browser userstyles built on the **Base16** color system for consistent theming across all supported websites.
 
-Built on the **Base16** color system for consistent theming across all supported websites.
+**Easy to extend:** Add a new theme by creating a single TOML file with 16 colors - the build system handles everything else.
+
+## Available Themes
+
+| Theme | Type | Description |
+|-------|------|-------------|
+| **Rose of Dune** | Light | Soft rose-gold with warm brown accents, inspired by desert dunes at dusk |
+| **Catppuccin Mocha** | Dark | Soothing pastel theme with rich, warm colors |
+
+## Supported Websites
+
+All themes support the following websites:
+
+| Website | Domain |
+|---------|--------|
+| Discord | `discord.com` |
+| Claude | `claude.ai` |
+| GitHub | `github.com` |
+| Reddit | `reddit.com` |
+| Microsoft Teams | `teams.microsoft.com` |
+| MTools | `mtools.epam.com` |
 
 ## Available Styles
 
@@ -12,16 +32,21 @@ Install a single style that themes all supported websites:
 
 | Theme | Install |
 |-------|---------|
-| Rose of Dune (all sites) | [rose-of-dune.user.css](styles/all/rose-of-dune.user.css) |
+| Rose of Dune | [rose-of-dune.user.css](styles/all/rose-of-dune.user.css) |
+| Catppuccin Mocha | [catppuccin-mocha.user.css](styles/all/catppuccin-mocha.user.css) |
 
 ### Individual Styles
 
 Or install styles separately per website:
 
-| Website | Install |
-|---------|---------|
-| [Discord](https://discord.com) | [rose-of-dune.user.css](styles/discord/rose-of-dune.user.css) |
-| [Claude.ai](https://claude.ai) | [rose-of-dune.user.css](styles/claude/rose-of-dune.user.css) |
+| Website | Rose of Dune | Catppuccin Mocha |
+|---------|--------------|------------------|
+| Discord | [Install](styles/discord/rose-of-dune.user.css) | [Install](styles/discord/catppuccin-mocha.user.css) |
+| Claude | [Install](styles/claude/rose-of-dune.user.css) | [Install](styles/claude/catppuccin-mocha.user.css) |
+| GitHub | [Install](styles/github/rose-of-dune.user.css) | [Install](styles/github/catppuccin-mocha.user.css) |
+| Reddit | [Install](styles/reddit/rose-of-dune.user.css) | [Install](styles/reddit/catppuccin-mocha.user.css) |
+| Teams | [Install](styles/teams/rose-of-dune.user.css) | [Install](styles/teams/catppuccin-mocha.user.css) |
+| MTools | [Install](styles/mtools/rose-of-dune.user.css) | [Install](styles/mtools/catppuccin-mocha.user.css) |
 
 ## Installation
 
@@ -33,12 +58,14 @@ Install the [Stylus browser extension](https://github.com/openstyles/stylus):
 
 ### Quick Install (Recommended)
 
-Import all styles at once using the `import.json` file:
+Import all styles for a theme at once using the theme's JSON file:
 
 1. Open Stylus extension settings (click the gear icon)
 2. Scroll down to "Backup" section
-3. Click "Import" and select the `import.json` file from this repo
-4. All styles will be imported and enabled
+3. Click "Import" and select a theme file:
+   - `rose-of-dune.json` - Light theme
+   - `catppuccin-mocha.json` - Dark theme
+4. All styles for that theme will be imported and enabled
 
 ### Installing Individual Styles
 
@@ -47,36 +74,30 @@ Import all styles at once using the `import.json` file:
 3. Stylus will automatically detect the userstyle and offer to install it
 4. Click "Install style"
 
-### Manual Installation
+## Base16 Color System
 
-1. Open Stylus extension
-2. Click "Write new style" 
-3. Copy the contents of the desired `.user.less` file
-4. Paste into the editor
-5. Save
+All themes use the [Base16](http://chriskempson.com/projects/base16/) color system - 16 colors that map consistently across all styles:
 
-## Color Palette (Base16)
+| Base | Usage |
+|------|-------|
+| base00 | Default Background |
+| base01 | Lighter Background (panels, cards) |
+| base02 | Selection Background |
+| base03 | Comments, Muted text |
+| base04 | Dark Foreground (secondary text) |
+| base05 | Default Foreground (primary text) |
+| base06 | Light Foreground (headings) |
+| base07 | Lightest Background (elevated) |
+| base08 | Red - Errors, Variables |
+| base09 | Orange - Warnings, Constants |
+| base0A | Yellow - Classes, Search |
+| base0B | Green - Strings, Success |
+| base0C | Cyan - Regex, Support |
+| base0D | Blue - Functions, Links |
+| base0E | Purple - Keywords |
+| base0F | Brown - Deprecated |
 
-The theme is built on the Base16 color system:
-
-| Base | Hex | Usage |
-|------|-----|-------|
-| base00 | `#F5E6D3` | Default Background |
-| base01 | `#EBD1B8` | Lighter Background (panels, cards) |
-| base02 | `#EBD1B8` | Selection Background |
-| base03 | `#7A6A57` | Comments, Muted text |
-| base04 | `#6B5843` | Dark Foreground (secondary text) |
-| base05 | `#3C2B20` | Default Foreground (primary text) |
-| base06 | `#2B1E15` | Light Foreground (headings) |
-| base07 | `#E6D1C2` | Lightest Background (elevated) |
-| base08 | `#B34438` | Red - Errors, Variables |
-| base09 | `#D9A06B` | Orange - Warnings, Constants |
-| base0A | `#D28C74` | Yellow - Classes, Search |
-| base0B | `#B88642` | Green - Strings, Success |
-| base0C | `#7CA973` | Cyan - Regex, Support |
-| base0D | `#C87C6A` | Blue - Functions, Links |
-| base0E | `#B36E5B` | Purple - Keywords |
-| base0F | `#6B5843` | Brown - Deprecated |
+This means any Base16-compatible color scheme can be added as a theme.
 
 ## Development
 
@@ -84,34 +105,45 @@ The theme is built on the Base16 color system:
 
 ```
 stylus/
-├── themes/
-│   ├── rose-of-dune.toml        # Theme definition (source of truth)
-│   └── rose-of-dune.less        # Generated LESS (do not edit)
+├── themes/                      # Theme definitions (Base16)
+│   ├── rose-of-dune.toml        # Light theme (source of truth)
+│   ├── rose-of-dune.less        # Generated LESS (do not edit)
+│   ├── catppuccin-mocha.toml    # Dark theme (source of truth)
+│   └── catppuccin-mocha.less    # Generated LESS (do not edit)
 ├── styles/
 │   ├── all/                     # Combined all-in-one style
-│   │   ├── rose-of-dune.user.less
-│   │   └── rose-of-dune.user.css
+│   │   └── all.user.less        # Imports all site styles
 │   ├── discord/
-│   │   ├── rose-of-dune.user.less
-│   │   └── rose-of-dune.user.css
-│   └── claude/
-│       ├── rose-of-dune.user.less
-│       └── rose-of-dune.user.css
+│   │   └── discord.user.less    # Site-specific styling
+│   ├── claude/
+│   │   └── claude.user.less
+│   ├── github/
+│   │   └── github.user.less
+│   ├── reddit/
+│   │   └── reddit.user.less
+│   ├── teams/
+│   │   └── teams.user.less
+│   └── mtools/
+│       └── mtools.user.less
 ├── scripts/
 │   ├── generate-theme.js        # TOML -> LESS converter
-│   └── generate-import.js       # Generates import.json
-├── import.json                  # Import this in Stylus
+│   ├── build-styles.js          # Builds CSS for all theme+site combos
+│   └── generate-import.js       # Generates [theme].json files
+├── rose-of-dune.json            # Stylus import file (light theme)
+├── catppuccin-mocha.json        # Stylus import file (dark theme)
 ├── package.json
 └── README.md
 ```
 
-### Build Order
+### Build Pipeline
 
 ```
-1. TOML -> LESS    (generate-theme.js)
-2. LESS -> CSS     (lessc)
-3. CSS -> JSON     (generate-import.js)
+1. TOML -> LESS         (generate-theme.js)
+2. Theme + Site -> CSS  (build-styles.js)
+3. CSS -> JSON          (generate-import.js)
 ```
+
+The build system automatically generates CSS for every theme + site combination. Adding a new theme TOML file will automatically create styles for all 6 websites.
 
 ### Building
 
@@ -119,27 +151,29 @@ stylus/
 # Install dependencies
 bun install
 
-# Build everything (themes -> styles -> import.json)
+# Build everything (themes -> styles -> JSON files)
 bun run build
 
 # Build only themes (TOML -> LESS)
 bun run build:themes
 
-# Build only styles (LESS -> CSS)
+# Build only styles (LESS -> CSS for all theme+site combos)
 bun run build:styles
 
-# Build only import.json
+# Build only import JSON files
 bun run build:import
 ```
 
 ### Creating a New Theme
 
-1. Copy an existing theme TOML:
+Adding a new theme is simple - just create a TOML file with your Base16 colors:
+
+1. Copy an existing theme:
    ```bash
-   cp themes/rose-of-dune.toml themes/my-theme.toml
+   cp themes/catppuccin-mocha.toml themes/my-theme.toml
    ```
 
-2. Edit the base16 colors in `themes/my-theme.toml`:
+2. Edit `themes/my-theme.toml`:
    ```toml
    [meta]
    name = "My Theme"
@@ -149,64 +183,69 @@ bun run build:import
    [base16]
    base00 = "1a1b26"  # Background
    base01 = "24283b"  # Lighter background
-   # ... edit all 16 colors
+   base02 = "292e42"  # Selection
+   # ... all 16 colors (base00-base0F)
    
-   [overrides]
-   primary = "7aa2f7"  # Optional accent override
+   [overrides]        # Optional
+   primary = "7aa2f7" # Custom accent color
    ```
 
-3. Create site styles that import the new theme:
-   ```bash
-   cp styles/discord/rose-of-dune.user.less styles/discord/my-theme.user.less
-   ```
-
-4. Update the import path in the new file:
-   ```less
-   @import "../../themes/my-theme.less";
-   ```
-
-5. Add build scripts to `package.json` and run:
+3. Build:
    ```bash
    bun run build
    ```
 
+That's it! The build system automatically:
+- Generates LESS variables from your TOML
+- Compiles CSS for all 6 websites
+- Creates `my-theme.json` for easy Stylus import
+
 ### Adding a New Website
 
-1. Create a new directory:
+1. Create the site directory and LESS file:
    ```bash
-   mkdir styles/github
+   mkdir styles/newsite
    ```
 
-2. Create the LESS source file `styles/github/rose-of-dune.user.less`:
+2. Create `styles/newsite/newsite.user.less`:
    ```less
    /* ==UserStyle==
-   @name         GitHub - Rose of Dune
+   @name         New Site - {{THEME_NAME}}
    @namespace    github.com/yherrero/stylus
    @version      1.0.0
-   @description  Rose of Dune theme for GitHub
+   @description  {{THEME_NAME}} theme for New Site
    @author       yherrero
    @license      MIT
    @preprocessor less
    ==/UserStyle== */
 
-   @import "../../themes/rose-of-dune.less";
+   // Theme variables are injected at build time
 
-   @-moz-document domain("github.com") {
+   @-moz-document domain("newsite.com") {
      // Use semantic variables: @bg-primary, @text-primary, etc.
      // Use base16 directly for syntax: @base08, @syntax-keyword, etc.
    }
    ```
 
-3. Add build script to `package.json`:
-   ```json
-   "build:github": "lessc styles/github/rose-of-dune.user.less styles/github/rose-of-dune.user.css"
+3. Register the site in `scripts/build-styles.js`:
+   ```js
+   const SITES = [
+     // ... existing sites
+     { name: 'newsite', file: 'newsite.user.less' },
+   ];
    ```
 
-4. Update `build:styles` to include the new target
+4. Add to the all-in-one style in `styles/all/all.user.less`:
+   ```less
+   @import "../newsite/newsite.user.less";
+   ```
 
-5. Add to `scripts/generate-import.js` styles array
+5. Build:
+   ```bash
+   bun run build
+   ```
 
-6. Run `bun run build`
+The build system will automatically generate CSS for every theme + your new site combination.
 
 ### Base16 Semantic Variables
 
