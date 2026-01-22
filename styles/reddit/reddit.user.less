@@ -1,0 +1,1190 @@
+/* ==UserStyle==
+@name         Reddit - {{THEME_NAME}}
+@namespace    github.com/yherrero/stylus
+@version      1.1.0
+@description  {{THEME_NAME}} theme for Reddit (Base16)
+@author       yherrero
+@license      MIT
+@preprocessor less
+==/UserStyle== */
+
+// Theme variables are injected at build time
+
+@-moz-document domain("reddit.com") {
+  // ============================================================================
+  // Reddit CSS Custom Properties - Comprehensive Override
+  // Ported from catppuccin/userstyles with Base16 color mapping
+  // ============================================================================
+
+  // Color aliases for easier mapping from Catppuccin
+  @crust: darken(@bg-primary, 5%);
+  @mantle: @bg-secondary;
+  @base: @bg-primary;
+  @surface0: fade(@base04, 15%);
+  @surface1: fade(@base04, 25%);
+  @surface2: fade(@base04, 35%);
+  @overlay0: fade(@base04, 45%);
+  @overlay1: fade(@base04, 55%);
+  @overlay2: fade(@base04, 65%);
+  @subtext0: @text-muted;
+  @subtext1: @text-secondary;
+  @text: @text-primary;
+  @red: @base08;
+  @peach: @base09;
+  @yellow: @base09;
+  @green: @base0C;
+  @teal: @base0C;
+  @blue: @base0D;
+  @lavender: @base0E;
+  @rosewater: @base0A;
+
+  // ==========================================================================
+  // Main theme mixin - contains all CSS variable overrides
+  // ==========================================================================
+  .reddit-theme() {
+    // ==========================================================================
+    // BETA Reddit UI Variables
+    // ==========================================================================
+    --color-pizzaRed: @red !important;
+    --color-global-brand-orangered: @peach !important;
+    --color-global-focus: @surface1 !important;
+    --color-interactive-content-disabled: @subtext0 !important;
+    --color-interactive-background-disabled: fade(@surface2, 70%) !important;
+    --color-interactive-pressed: @surface2 !important;
+    --color-neutral-content: @text !important;
+    --color-neutral-content-disabled: @subtext0 !important;
+    --color-neutral-content-weak: @subtext0 !important;
+    --color-neutral-content-strong: @text !important;
+    --color-global-white: @crust !important;
+    --color-neutral-background: @base !important;
+    --color-neutral-background-selected: @surface0 !important;
+    --color-neutral-background-weak: @mantle !important;
+    --color-neutral-background-medium: @base !important;
+    --color-neutral-background-strong: @crust !important;
+    --color-neutral-background-hover: @surface0 !important;
+    --color-neutral-border: @surface0 !important;
+    --color-neutral-border-medium: @surface0 !important;
+    --color-neutral-border-weak: @surface0 !important;
+    --color-neutral-border-strong: @surface2 !important;
+    --color-primary: @primary !important;
+    --color-primary-hover: lighten(@primary, 10%) !important;
+    --color-primary-visited: @lavender !important;
+    --color-primary-background: @primary !important;
+    --color-primary-background-hover: darken(@primary, 5%) !important;
+    --color-primary-background-selected: darken(@primary, 5%) !important;
+    --color-primary-onBackground: @base !important;
+    --color-primary-onBackground-selected: @crust !important;
+    --color-secondary: @subtext0 !important;
+    --color-secondary-hover: @subtext1 !important;
+    --color-secondary-weak: @subtext0 !important;
+    --color-secondary-onBackground: @text !important;
+    --color-secondary-background: @mantle !important;
+    --color-secondary-background-hover: @surface1 !important;
+    --color-secondary-background-selected: @surface1 !important;
+    --color-secondary-plain: @subtext0 !important;
+    --color-secondary-plain-hover: @subtext1 !important;
+    --color-secondary-plain-weak: @subtext0 !important;
+    --color-danger-background: @red !important;
+    --color-danger-background-disabled: fade(@red, 20%) !important;
+    --color-danger-background-hover: fade(@red, 98%) !important;
+    --color-danger-onBackground: @text !important;
+    --color-danger-content: @red !important;
+    --color-danger-content-default: @crust !important;
+    --color-danger-content-hover: darken(@red, 2%) !important;
+    --color-success-content: @green !important;
+    --color-success-hover: darken(@green, 2%) !important;
+    --color-success-onBackground: @crust !important;
+    --color-success-background: @green !important;
+    --color-success-background-hover: darken(@green, 2%) !important;
+    --color-warning-content: @yellow !important;
+    --color-warning-content-hover: darken(@yellow, 2%) !important;
+    --color-warning-onBackground: @base !important;
+    --color-warning-background: @yellow !important;
+    --color-warning-background-hover: darken(@yellow, 2%) !important;
+    --color-upvote-content: @primary !important;
+    --color-upvote-disabled: @subtext0 !important;
+    --color-upvote-onBackground: @text !important;
+    --color-upvote-background: @base !important;
+    --color-upvote-background-hover: darken(@primary, 5%) !important;
+    --color-upvote-background-disabled: @base !important;
+    --color-downvote-content: @text !important;
+    --color-downvote-content-weak: @text !important;
+    --color-downvote-disabled: @subtext0 !important;
+    --color-downvote-onBackground: @text !important;
+    --color-downvote-background: @base !important;
+    --color-downvote-background-hover: darken(@blue, 5%) !important;
+    --color-downvote-background-disabled: @mantle !important;
+    --color-tone-1: @text !important;
+    --color-tone-2: @subtext0 !important;
+    --color-tone-3: @overlay2 !important;
+    --color-tone-4: @surface0 !important;
+    --color-tone-5: @surface1 !important;
+    --color-tone-6: @surface2 !important;
+    --color-tone-7: @base !important;
+    --color-avatar-gradient: @primary !important;
+    --color-transparent-background-hover: fade(@surface0, 30%) !important;
+    --color-opacity-50: fade(@base, 50%) !important;
+    --color-online: @green !important;
+    --color-favorite: @primary !important;
+    --color-brand-background: @primary !important;
+    --color-brand-background-hover: darken(@primary, 5%) !important;
+    --color-brand-onBackground: @crust !important;
+    --color-global-orangered: @primary !important;
+    --color-action-upvote: @primary !important;
+    --color-action-downvote: @blue !important;
+    --color-banner-error-text: @base !important;
+
+    --shreddit-color-wordmark: @primary !important;
+
+    // ==========================================================================
+    // Classic Reddit UI Variables (newCommunityTheme)
+    // ==========================================================================
+    --newCommunityTheme-actionIcon: @subtext0 !important;
+    --newCommunityTheme-actionIconAlpha20: fade(@crust, 80%) !important;
+    --newCommunityTheme-actionIconAlpha50: fade(@crust, 80%) !important;
+    --newCommunityTheme-actionIconShaded80: @subtext0 !important;
+    --newCommunityTheme-actionIconTinted80: @subtext1 !important;
+    --newCommunityTheme-active: @primary !important;
+    --newCommunityTheme-activeAlpha10: fade(@crust, 80%) !important;
+    --newCommunityTheme-activeAlpha20: fade(@crust, 80%) !important;
+    --newCommunityTheme-activeAlpha50: fade(@crust, 80%) !important;
+    --newCommunityTheme-activeLight60: @primary !important;
+    --newCommunityTheme-activeShaded80: @primary !important;
+    --newCommunityTheme-activeShaded90: @primary !important;
+    --newCommunityTheme-activeTinted05: @text !important;
+    --newCommunityTheme-banner-backgroundColor: @primary !important;
+    --newCommunityTheme-banner-iconColor: @primary !important;
+    --newCommunityTheme-body: @mantle !important;
+    --newCommunityTheme-bodyAlpha50: @surface0 !important;
+    --newCommunityTheme-bodyAlpha70: @surface1 !important;
+    --newCommunityTheme-bodyAlpha80: @surface2 !important;
+    --newCommunityTheme-bodyFade: @subtext0 !important;
+    --newCommunityTheme-bodyShaded80: @mantle !important;
+    --newCommunityTheme-bodyText: @text !important;
+    --newCommunityTheme-bodyTextAlpha03: @mantle !important;
+    --newCommunityTheme-bodyTextAlpha20: @surface1 !important;
+    --newCommunityTheme-bodyTextShaded20: @surface0 !important;
+    --newCommunityTheme-bodyTextTinted20: @subtext0 !important;
+    --newCommunityTheme-bodyTinted50: @overlay1 !important;
+    --newCommunityTheme-bodyTinted80: @overlay0 !important;
+    --newCommunityTheme-button: @text !important;
+    --newCommunityTheme-buttonAlpha05: fade(@crust, 80%) !important;
+    --newCommunityTheme-buttonAlpha10: fade(@crust, 80%) !important;
+    --newCommunityTheme-buttonAlpha20: fade(@crust, 80%) !important;
+    --newCommunityTheme-buttonAlpha40: @subtext0 !important;
+    --newCommunityTheme-buttonAlpha50: @subtext1 !important;
+    --newCommunityTheme-buttonAlpha80: @subtext1 !important;
+    --newCommunityTheme-buttonShaded80: @overlay0 !important;
+    --newCommunityTheme-buttonTinted20: @primary !important;
+    --newCommunityTheme-buttonTinted50: @primary !important;
+    --newCommunityTheme-buttonTinted80: @primary !important;
+    --newCommunityTheme-canvas: @crust !important;
+    --newCommunityTheme-checkbox: @text !important;
+    --newCommunityTheme-errorText: @red !important;
+    --newCommunityTheme-field: @surface0 !important;
+    --newCommunityTheme-fieldFade: fade(@surface1, 70%) !important;
+    --newCommunityTheme-flair: @primary !important;
+    --newCommunityTheme-highlight: @base !important;
+    --newCommunityTheme-inactive: @subtext0 !important;
+    --newCommunityTheme-lightText: @text !important;
+    --newCommunityTheme-lightTextAlpha75: @subtext1 !important;
+    --newCommunityTheme-line: fade(@surface1, 70%) !important;
+    --newCommunityTheme-lineShaded80: fade(@surface1, 70%) !important;
+    --newCommunityTheme-lineShaded90: fade(@surface1, 70%) !important;
+    --newCommunityTheme-lineShadedNinety: fade(@surface1, 70%) !important;
+    --newCommunityTheme-linkText: @primary !important;
+    --newCommunityTheme-linkTextAlpha80: @primary !important;
+    --newCommunityTheme-linkTextShaded80: @primary !important;
+    --newCommunityTheme-linkTextTinted80: @primary !important;
+    --newCommunityTheme-linkTextWithBody: @primary !important;
+    --newCommunityTheme-menu: @mantle !important;
+    --newCommunityTheme-menuActiveText: @text !important;
+    --newCommunityTheme-menuButtonBackground-active: @base !important;
+    --newCommunityTheme-menuButtonBackground-focus: @base !important;
+    --newCommunityTheme-menuButtonBackground-hover: @base !important;
+    --newCommunityTheme-menuInactiveText: @text !important;
+    --newCommunityTheme-metaText: @subtext0 !important;
+    --newCommunityTheme-metaTextAlpha50: @subtext0 !important;
+    --newCommunityTheme-metaTextShaded80: @subtext0 !important;
+    --newCommunityTheme-monospaceColor: @primary !important;
+    --newCommunityTheme-navBar-activeLink: @text !important;
+    --newCommunityTheme-navBar-activeSubmenuCaret: @text !important;
+    --newCommunityTheme-navBar-activeSubmenuLink: @text !important;
+    --newCommunityTheme-navBar-backgroundColor: @mantle !important;
+    --newCommunityTheme-navBar-hoverLink: @text !important;
+    --newCommunityTheme-navBar-inactiveLink: @text !important;
+    --newCommunityTheme-navBar-inactiveSubmenuCaret: @text !important;
+    --newCommunityTheme-navBar-inactiveSubmenuLink: @text !important;
+    --newCommunityTheme-navBar-submenuBackgroundColor: @mantle !important;
+    --newCommunityTheme-navIcon: @text !important;
+    --newCommunityTheme-navIconFaded10: fade(@crust, 80%) !important;
+    --newCommunityTheme-nsfw: @red !important;
+    --newCommunityTheme-nsfwBlocking-bgcolor: @crust !important;
+    --newCommunityTheme-nsfwBlocking-color: @text !important;
+    --newCommunityTheme-nsfwBlocking-contentTitleBgColor: @base !important;
+    --newCommunityTheme-nsfwBlocking-mainCtaBgColor: @mantle !important;
+    --newCommunityTheme-pageHeader: @surface2 !important;
+    --newCommunityTheme-placeholder: @surface0 !important;
+    --newCommunityTheme-post: @mantle !important;
+    --newCommunityTheme-postError: @red !important;
+    --newCommunityTheme-postFlairText: @crust !important;
+    --newCommunityTheme-postIcon: @primary !important;
+    --newCommunityTheme-postLine: fade(@surface1, 70%) !important;
+    --newCommunityTheme-postLineShaded80: fade(@surface1, 70%) !important;
+    --newCommunityTheme-postLineShaded90: fade(@surface1, 70%) !important;
+    --newCommunityTheme-postTinted20: @base !important;
+    --newCommunityTheme-postTransparent20: @base !important;
+    --newCommunityTheme-primaryButtonShadedEighty: @overlay1 !important;
+    --newCommunityTheme-primaryButtonTintedEighty: @overlay1 !important;
+    --newCommunityTheme-primaryButtonTintedFifty: @overlay0 !important;
+    --newCommunityTheme-primaryButtonTintedSixty: @overlay0 !important;
+    --newCommunityTheme-quarantine: @yellow !important;
+    --newCommunityTheme-report: @surface1 !important;
+    --newCommunityTheme-search-syntaxHighlightBackgroundColor: @primary !important;
+    --newCommunityTheme-search-syntaxHighlightColor: @base !important;
+    --newCommunityTheme-titleText: @text !important;
+    --newCommunityTheme-upsell-appleIcon: @subtext1 !important;
+    --newCommunityTheme-upsell-ssoButtonBorderColor: fade(@surface1, 70%) !important;
+    --newCommunityTheme-upsell-ssoButtonTextColor: @text !important;
+    --newCommunityTheme-voteText-base: @subtext0 !important;
+    --newCommunityTheme-voteText-downvote: @blue !important;
+    --newCommunityTheme-voteText-downvoteShaded80: @blue !important;
+    --newCommunityTheme-voteText-downvoteTinted80: @blue !important;
+    --newCommunityTheme-voteText-upvote: @red !important;
+    --newCommunityTheme-voteText-upvoteShaded80: @red !important;
+    --newCommunityTheme-voteText-upvoteTinted80: @red !important;
+    --newCommunityTheme-widgetColors-appleIcon: @overlay0 !important;
+    --newCommunityTheme-widgetColors-lineColor: fade(@surface1, 70%) !important;
+    --newCommunityTheme-widgetColors-sidebarWidgetBackgroundColor: @mantle !important;
+    --newCommunityTheme-widgetColors-sidebarWidgetBorderColor: fade(@surface1, 70%) !important;
+    --newCommunityTheme-widgetColors-sidebarWidgetHeaderColor: @crust !important;
+    --newCommunityTheme-widgetColors-sidebarWidgetHeaderColorAlpha60: @mantle !important;
+    --newCommunityTheme-widgetColors-sidebarWidgetTextColor: @text !important;
+    --newCommunityTheme-widgetColors-sidebarWidgetTextColorShaded80: @subtext1 !important;
+    --newCommunityTheme-widgetColors-sidebarWidgetTitleColor: @text !important;
+
+    // ==========================================================================
+    // New Reddit Theme Variables (newRedditTheme)
+    // ==========================================================================
+    --newRedditTheme-actionIcon: @subtext0 !important;
+    --newRedditTheme-actionIconAlpha20: fade(@crust, 80%) !important;
+    --newRedditTheme-actionIconAlpha50: fade(@crust, 80%) !important;
+    --newRedditTheme-actionIconShaded80: @subtext0 !important;
+    --newRedditTheme-actionIconTinted80: @subtext1 !important;
+    --newRedditTheme-active: @primary !important;
+    --newRedditTheme-activeAlpha10: fade(@crust, 80%) !important;
+    --newRedditTheme-activeAlpha20: fade(@crust, 80%) !important;
+    --newRedditTheme-activeAlpha50: fade(@crust, 80%) !important;
+    --newRedditTheme-activeLight60: @primary !important;
+    --newRedditTheme-activeShaded80: @primary !important;
+    --newRedditTheme-activeShaded90: @primary !important;
+    --newRedditTheme-activeTinted05: @text !important;
+    --newRedditTheme-banner-backgroundColor: @primary !important;
+    --newRedditTheme-banner-iconColor: @primary !important;
+    --newRedditTheme-body: @mantle !important;
+    --newRedditTheme-bodyAlpha50: @surface0 !important;
+    --newRedditTheme-bodyAlpha70: @surface1 !important;
+    --newRedditTheme-bodyAlpha80: @surface2 !important;
+    --newRedditTheme-bodyFade: fade(@crust, 80%) !important;
+    --newRedditTheme-bodyShaded80: @mantle !important;
+    --newRedditTheme-bodyText: @text !important;
+    --newRedditTheme-bodyTextAlpha03: fade(@crust, 80%) !important;
+    --newRedditTheme-bodyTextAlpha20: @surface1 !important;
+    --newRedditTheme-bodyTextShaded20: @surface0 !important;
+    --newRedditTheme-bodyTextTinted20: @subtext1 !important;
+    --newRedditTheme-bodyTinted50: @overlay0 !important;
+    --newRedditTheme-bodyTinted80: @overlay1 !important;
+    --newRedditTheme-button: @text !important;
+    --newRedditTheme-buttonAlpha05: fade(@crust, 80%) !important;
+    --newRedditTheme-buttonAlpha10: fade(@crust, 80%) !important;
+    --newRedditTheme-buttonAlpha20: fade(@crust, 80%) !important;
+    --newRedditTheme-buttonAlpha40: @subtext0 !important;
+    --newRedditTheme-buttonAlpha50: @subtext1 !important;
+    --newRedditTheme-buttonAlpha80: @subtext1 !important;
+    --newRedditTheme-buttonShaded80: @overlay0 !important;
+    --newRedditTheme-buttonTinted20: @primary !important;
+    --newRedditTheme-buttonTinted50: @primary !important;
+    --newRedditTheme-buttonTinted80: @primary !important;
+    --newRedditTheme-canvas: @crust !important;
+    --newRedditTheme-checkbox: @text !important;
+    --newRedditTheme-errorText: @red !important;
+    --newRedditTheme-field: @base !important;
+    --newRedditTheme-fieldFade: @mantle !important;
+    --newRedditTheme-flair: @primary !important;
+    --newRedditTheme-highlight: @base !important;
+    --newRedditTheme-inactive: @surface0 !important;
+    --newRedditTheme-lightText: @text !important;
+    --newRedditTheme-lightTextAlpha75: @subtext1 !important;
+    --newRedditTheme-line: fade(@surface1, 70%) !important;
+    --newRedditTheme-lineShaded80: fade(@surface1, 70%) !important;
+    --newRedditTheme-lineShaded90: fade(@surface1, 70%) !important;
+    --newRedditTheme-lineShadedNinety: fade(@surface1, 70%) !important;
+    --newRedditTheme-linkText: @primary !important;
+    --newRedditTheme-linkTextAlpha80: @primary !important;
+    --newRedditTheme-linkTextShaded80: @primary !important;
+    --newRedditTheme-linkTextTinted80: @primary !important;
+    --newRedditTheme-linkTextWithBody: @primary !important;
+    --newRedditTheme-menu: @mantle !important;
+    --newRedditTheme-menuActiveText: @text !important;
+    --newRedditTheme-menuButtonBackground-active: @primary !important;
+    --newRedditTheme-menuButtonBackground-focus: @base !important;
+    --newRedditTheme-menuButtonBackground-hover: @base !important;
+    --newRedditTheme-menuInactiveText: @text !important;
+    --newRedditTheme-metaText: @subtext0 !important;
+    --newRedditTheme-metaTextAlpha50: fade(@crust, 80%) !important;
+    --newRedditTheme-metaTextShaded80: @subtext1 !important;
+    --newRedditTheme-monospaceColor: @primary !important;
+    --newRedditTheme-navBar-activeLink: @text !important;
+    --newRedditTheme-navBar-activeSubmenuCaret: @text !important;
+    --newRedditTheme-navBar-activeSubmenuLink: @text !important;
+    --newRedditTheme-navBar-backgroundColor: @mantle !important;
+    --newRedditTheme-navBar-hoverLink: @text !important;
+    --newRedditTheme-navBar-inactiveLink: @text !important;
+    --newRedditTheme-navBar-inactiveSubmenuCaret: @text !important;
+    --newRedditTheme-navBar-inactiveSubmenuLink: @text !important;
+    --newRedditTheme-navBar-submenuBackgroundColor: @mantle !important;
+    --newRedditTheme-navIcon: @text !important;
+    --newRedditTheme-navIconFaded10: fade(@crust, 80%) !important;
+    --newRedditTheme-nsfw: @red !important;
+    --newRedditTheme-nsfwBlocking-bgcolor: @crust !important;
+    --newRedditTheme-nsfwBlocking-color: @text !important;
+    --newRedditTheme-nsfwBlocking-contentTitleBgColor: @base !important;
+    --newRedditTheme-nsfwBlocking-mainCtaBgColor: @mantle !important;
+    --newRedditTheme-pageHeader: @surface0 !important;
+    --newRedditTheme-placeholder: @surface1 !important;
+    --newRedditTheme-post: @mantle !important;
+    --newRedditTheme-postError: @red !important;
+    --newRedditTheme-postFlairText: @text !important;
+    --newRedditTheme-postIcon: @primary !important;
+    --newRedditTheme-postLine: fade(@surface1, 70%) !important;
+    --newRedditTheme-postLineShaded80: fade(@surface1, 70%) !important;
+    --newRedditTheme-postLineShaded90: fade(@surface1, 70%) !important;
+    --newRedditTheme-postTinted20: @base !important;
+    --newRedditTheme-postTransparent20: fade(@crust, 80%) !important;
+    --newRedditTheme-primaryButtonShadedEighty: @surface1 !important;
+    --newRedditTheme-primaryButtonTintedEighty: @surface2 !important;
+    --newRedditTheme-primaryButtonTintedFifty: @surface1 !important;
+    --newRedditTheme-primaryButtonTintedSixty: @surface1 !important;
+    --newRedditTheme-quarantine: @yellow !important;
+    --newRedditTheme-report: @base !important;
+    --newRedditTheme-search-syntaxHighlightBackgroundColor: @primary !important;
+    --newRedditTheme-search-syntaxHighlightColor: @base !important;
+    --newRedditTheme-titleText: @text !important;
+    --newRedditTheme-upsell-appleIcon: @overlay0 !important;
+    --newRedditTheme-upsell-ssoButtonBorderColor: @text !important;
+    --newRedditTheme-upsell-ssoButtonTextColor: @text !important;
+    --newRedditTheme-voteText-base: @subtext1 !important;
+    --newRedditTheme-voteText-downvote: @blue !important;
+    --newRedditTheme-voteText-downvoteShaded80: @blue !important;
+    --newRedditTheme-voteText-downvoteTinted80: @blue !important;
+    --newRedditTheme-voteText-upvote: @red !important;
+    --newRedditTheme-voteText-upvoteShaded80: @red !important;
+    --newRedditTheme-voteText-upvoteTinted80: @red !important;
+    --newRedditTheme-widgetColors-appleIcon: @overlay0 !important;
+    --newRedditTheme-widgetColors-lineColor: fade(@surface1, 70%) !important;
+    --newRedditTheme-widgetColors-sidebarWidgetBackgroundColor: @mantle !important;
+    --newRedditTheme-widgetColors-sidebarWidgetBorderColor: fade(@surface1, 70%) !important;
+    --newRedditTheme-widgetColors-sidebarWidgetHeaderColor: @crust !important;
+    --newRedditTheme-widgetColors-sidebarWidgetHeaderColorAlpha60: fade(@crust, 80%) !important;
+    --newRedditTheme-widgetColors-sidebarWidgetTextColor: @text !important;
+    --newRedditTheme-widgetColors-sidebarWidgetTextColorShaded80: @subtext1 !important;
+    --newRedditTheme-widgetColors-sidebarWidgetTitleColor: @text !important;
+    --tw-bg-opacity: @crust !important;
+    --vds-video-bg-color: @crust !important;
+
+    // ==========================================================================
+    // Reddit Chat Variables
+    // ==========================================================================
+    --activity-button-chatFilterColor: @surface0 !important;
+    --activity-button-newChatFilter-activeBg: @primary !important;
+    --activity-button-newChatFilter-activeText: @base !important;
+    --activity-button-newChatFilter-defaultBorder: @surface1 !important;
+    --activity-button-newChatFilter-defaultText: @text !important;
+    --activity-button-primary: @primary !important;
+    --activity-button-secondary: @text !important;
+    --activity-buttonPrimary-color: @primary !important;
+    --activity-buttonSecondary-active: @primary !important;
+    --activity-checkbox-checked: @primary !important;
+    --activity-checkbox-checkmark: @text !important;
+    --activity-checkbox-unchecked: @base !important;
+    --activity-checkbox-uncheckedBorder: @surface1 !important;
+    --activity-icon-active: @primary !important;
+    --activity-icon-contrast: @surface1 !important;
+    --activity-icon-default: @subtext0 !important;
+    --activity-icon-disable: @surface2 !important;
+    --activity-icon-hover: @surface2 !important;
+    --activity-icon-nsfw-bg: @base !important;
+    --activity-icon-nsfw-text: @text !important;
+    --activity-icon-subIcon-backgroundColor: @text !important;
+    --activity-icon-toaster: @crust !important;
+    --activity-input-background: fade(@crust, 80%) !important;
+    --activity-input-border: @surface1 !important;
+    --activity-input-channelRename: @subtext0 !important;
+    --activity-input-color: @subtext1 !important;
+    --activity-input-error: @red !important;
+    --activity-input-focusBg: @green !important;
+    --activity-input-focusColor: @text !important;
+    --activity-input-ownerBg: @surface0 !important;
+    --activity-link-hoverText: @red !important;
+    --activity-link-staticText: @primary !important;
+    --activity-link-staticUnderline: @primary !important;
+    --activity-minimizedPortal-backgroundColor-unreadFinal: @mantle !important;
+    --activity-minimizedPortal-backgroundColor-unreadInitial: @primary !important;
+    --activity-minimizedPortal-color-unreadFinal: @text !important;
+    --activity-minimizedPortal-color-unreadInitial: @text !important;
+    --activity-send-disable: @surface0 !important;
+    --activity-send-hover: @primary !important;
+    --activity-text-active: @primary !important;
+    --activity-text-fade: @subtext0 !important;
+    --activity-text-highlight: @text !important;
+    --activity-text-light: @subtext0 !important;
+    --activity-text-meta: @subtext0 !important;
+    --activity-text-regular: @text !important;
+    --activity-text-success: @green !important;
+    --activity-text-tutorial: @rosewater !important;
+    --activity-text-warning: @red !important;
+    --addReaction-backgroundColor: @surface0 !important;
+    --addReaction-iconFill: @surface1 !important;
+    --boxShadow: fade(@crust, 80%) !important;
+    --bubble-border: fade(@surface1, 70%) !important;
+    --bubble-channelsFilter-background: @crust !important;
+    --bubble-channelsFilter-selected: @overlay0 !important;
+    --bubble-color: @text !important;
+    --bubble-link-color: @primary !important;
+    --bubbleActions-hover: @surface0 !important;
+    --editName: @surface1 !important;
+    --layout-body: @mantle !important;
+    --layout-colsBorder: fade(@surface1, 70%) !important;
+    --layout-controlsBorder: fade(@surface1, 70%) !important;
+    --layout-dropdown-border: fade(@surface1, 70%) !important;
+    --layout-header-counterBg: @red !important;
+    --layout-header-counterText: @text !important;
+    --layout-overlayBackground: fade(@crust, 80%) !important;
+    --layout-overlayReportFlow: fade(@crust, 80%) !important;
+    --layout-scrollbar: @text !important;
+    --layout-scrollbarHover: @primary !important;
+    --layout-timeStamp-tooltip-background: @surface0 !important;
+    --message-list-item-button: @surface1 !important;
+    --message-list-item-onlineIndicator: @green !important;
+    --message-list-item-ownerBg: @surface1 !important;
+    --message-list-item-richItem: @overlay0 !important;
+    --message-list-item-richItemBorder: fade(@surface1, 70%) !important;
+    --message-list-item-white: @text !important;
+    --modal-buttonsBackground: @text !important;
+    --modal-primaryButtonWarning: @red !important;
+    --modal-secondaryButton: @text !important;
+    --newChat-inviteLink-borderColor: fade(@surface1, 70%) !important;
+    --overlay-backgroundColor: @mantle !important;
+    --overlay-headerColor: @text !important;
+    --overlay-inputBackground: @crust !important;
+    --overlay-searchBarBackground: @mantle !important;
+    --prompt-tooltip-background: @primary !important;
+    --searchBar-backgroundColor: @mantle !important;
+    --settings-color: @subtext0 !important;
+    --settings-dropdownItemHoverBackground: @crust !important;
+    --settings-panelBackground: @crust !important;
+    --settings-panelItemHoverBackground: @surface0 !important;
+    --settings-panelItemSelectedBackground: @surface1 !important;
+    --sidebar-background: fade(@surface1, 70%) !important;
+    --sidebar-basic-background-active: @primary !important;
+    --sidebar-basic-background-hover: @mantle !important;
+    --sidebar-footer-background: @crust !important;
+    --sidebar-item-active: @surface1 !important;
+    --sidebar-item-hover: @surface0 !important;
+    --sidebar-item-selected: @surface2 !important;
+    --sidebar-item-text-active: @text !important;
+    --sidebar-subreddit-background-active: @primary !important;
+    --sidebar-subreddit-background-hover: @surface1 !important;
+    --sidebar-text-divider: @surface1 !important;
+    --skeleton-field: @surface2 !important;
+    --skeleton-inactive: @surface0 !important;
+    --subreddit-iconBg: @primary !important;
+    --toast-error: @red !important;
+    --toast-pending: @crust !important;
+    --toast-success: @green !important;
+    --uploads-progress-background: @subtext0 !important;
+    --uploads-progress-bar: @primary !important;
+    --videoModal-button-background: @text !important;
+    --videoModal-button-color: @mantle !important;
+  }
+
+  // ==========================================================================
+  // Apply theme to :root (highest priority for CSS variables)
+  // ==========================================================================
+  :root {
+    .reddit-theme();
+  }
+
+  // ==========================================================================
+  // Apply theme to theme classes (for theme-specific pages)
+  // ==========================================================================
+  :root.theme-dark,
+  :root.theme-light,
+  :root .theme-dark,
+  :root .theme-light,
+  .theme-dark,
+  .theme-light {
+    .reddit-theme();
+  }
+
+  // ==========================================================================
+  // Apply theme to new Reddit UI (shreddit)
+  // ==========================================================================
+  :root.theme-rpl,
+  :root .theme-rpl,
+  :root.theme-beta,
+  :root .theme-beta,
+  shreddit-app {
+    .reddit-theme();
+  }
+
+  // ==========================================================================
+  // Subreddit-specific variable overrides
+  // ==========================================================================
+  div[class^="subredditvars"],
+  [class*="subredditvars"] {
+    .reddit-theme();
+  }
+
+  // ==========================================================================
+  // Reddit Logo Styling
+  // ==========================================================================
+  #reddit-logo {
+    circle[fill="#FF4500"] {
+      fill: @primary !important;
+    }
+    path[fill="#FFF"] {
+      fill: @crust !important;
+    }
+  }
+
+  // Recap Reddit Logo
+  .snoo-cls-1,
+  .snoo-cls-2,
+  .snoo-cls-3,
+  .snoo-cls-6,
+  .snoo-cls-8,
+  .snoo-cls-9 {
+    fill: @base !important;
+  }
+
+  .snoo-cls-4,
+  .snoo-cls-5,
+  .snoo-cls-7,
+  .snoo-cls-10,
+  .snoo-cls-11 {
+    fill: @primary !important;
+  }
+
+  // ==========================================================================
+  // Site Background
+  // ==========================================================================
+  div.ListingLayout-backgroundContainer::before {
+    background: @base !important;
+  }
+
+  // ==========================================================================
+  // Profile Menu
+  // ==========================================================================
+
+  // Karma count
+  span#email-collection-tooltip-id > :nth-child(2) > :nth-child(2) > span {
+    color: @subtext0 !important;
+  }
+
+  // Profile button karma icon
+  i.icon-karma_fill {
+    color: @red !important;
+  }
+
+  // Menu headers
+  div[role="menu"] > div > div > span > span {
+    color: @subtext0 !important;
+  }
+
+  // Switches (sitewide)
+  button[role="switch"][aria-checked="false"] {
+    background: @surface0 !important;
+  }
+
+  button[role="switch"] > div {
+    background: @text !important;
+  }
+
+  // Online status
+  ._2dn5Ncenn0BSD4tCSmxQhA {
+    fill: @green !important;
+  }
+
+  ._3SlBAJb2MbUHwgBZFH8eL7 {
+    fill: @base !important;
+  }
+
+  // ==========================================================================
+  // Profile Page
+  // ==========================================================================
+
+  // Create avatar button
+  button._3F1tNW0P4Ff182mO_CefIg {
+    background: linear-gradient(90deg, @red, @peach) !important;
+    color: @base !important;
+  }
+
+  button._3F1tNW0P4Ff182mO_CefIg > i {
+    color: @base !important;
+  }
+
+  // Cake day and followers icon
+  i.icon-cake_fill,
+  i.icon-user_fill {
+    color: @primary !important;
+  }
+
+  // Add social links button
+  div._3hew1NnzwygOKDNQDKp6R4,
+  div._3hew1NnzwygOKDNQDKp6R4 > i,
+  li._3hew1NnzwygOKDNQDKp6R4 {
+    color: @base !important;
+  }
+
+  // Profile moderation and user settings page
+  div._1VP69d9lk-Wk9zokOaylL {
+    --background: @base !important;
+    --canvas: @base !important;
+  }
+
+  // Beta Badge
+  span._2KFJx8Dhh1o1u0Xb8e7NuD {
+    color: @primary !important;
+  }
+
+  // Delete Account
+  button.EBd2MhBQlQeZ13YeP0K8a {
+    color: @primary !important;
+  }
+
+  // Delete Account Icon
+  svg._1Fa4RPHlhrfUZuNaXK2-eP > path {
+    fill: @primary !important;
+  }
+
+  // Blocked, muted input
+  input._1Vnaj3fBuYrmHKEPQD_zWW {
+    background-color: @base !important;
+  }
+
+  // Fixes profile posts not being themed
+  div.scrollerItem > div,
+  div[data-testid="post-container"],
+  div[style="background:#1A1A1B"],
+  div._2otRz3OtuWajw1RleFDJ5P {
+    background: @mantle !important;
+  }
+
+  // ==========================================================================
+  // NFT Avatar Viewer
+  // ==========================================================================
+
+  // Modal background
+  div._productDetails_7kbcu_53 {
+    background: @mantle !important;
+    color: @text !important;
+  }
+
+  // Tag Color
+  .RESUserTagImage::after {
+    color: @primary !important;
+  }
+
+  // Mint status
+  div._mintStatus_7kbcu_264 {
+    color: @primary !important;
+  }
+
+  // Carousel background
+  div._carousel_7kbcu_45 {
+    background: linear-gradient(243.37deg, @base 16.42%, @blue 100%) !important;
+  }
+
+  // NFT card back
+  div._card_1ooes_1 {
+    background: @blue !important;
+  }
+
+  ol._container_1t62i_1 {
+    border-color: @base !important;
+  }
+
+  ol._container_1t62i_1 > li {
+    border-color: @base !important;
+  }
+
+  ol._container_1t62i_1 > li > div {
+    color: @base !important;
+  }
+
+  div.MuiMobileStepper-dot {
+    background: @surface0 !important;
+  }
+
+  div.MuiMobileStepper-dotActive {
+    background: @primary !important;
+  }
+
+  div._scrollContainer_7kbcu_104 > div > h3,
+  div._cardAuthor_7kbcu_79 {
+    color: @subtext0 !important;
+  }
+
+  div._container_oikih_1 {
+    background: @crust !important;
+    border-color: @surface1 !important;
+  }
+
+  // External links
+  a._pill_7kbcu_280 {
+    background: @crust !important;
+    color: @text !important;
+  }
+
+  // Shop for avatars button
+  button._shopForMoreButton_7kbcu_125 {
+    background: linear-gradient(90deg, @red, @peach) !important;
+    color: @base !important;
+  }
+
+  // ==========================================================================
+  // Avatar Creator
+  // ==========================================================================
+  div._wrapper_1upjl_7 {
+    background: @base !important;
+    color: @text !important;
+  }
+
+  // ==========================================================================
+  // Site Header
+  // ==========================================================================
+
+  // Reddit logo (home link)
+  a[aria-label="Home"] > svg > g > circle {
+    fill: @primary !important;
+  }
+
+  a[aria-label="Home"] > svg:first-child > g > path {
+    fill: @base !important;
+  }
+
+  a[aria-label="Home"] > svg:nth-child(2) > g > path {
+    fill: @text !important;
+  }
+
+  // Post title from notification
+  h1._eYtD2XCVieq6emjKBH3m {
+    color: @text !important;
+  }
+
+  // Notification icon
+  button[aria-label="Open notifications inbox"] > div > span {
+    background: @primary !important;
+    color: @mantle !important;
+  }
+
+  // Advertise button
+  #change-username-tooltip-id > span._2I12Htze2UzJmmfnrgYJOn > a {
+    background: @surface0 !important;
+    color: @text !important;
+  }
+
+  #change-username-tooltip-id > span._2I12Htze2UzJmmfnrgYJOn > a > i {
+    color: @text !important;
+  }
+
+  // Reddit now notification
+  a[href="/now"] > div {
+    background: @primary !important;
+  }
+
+  // Search scope pill text
+  div[data-testid="search-scope-pill-text"] {
+    color: @text !important;
+  }
+
+  // Search popup title
+  div[class*="_2SdHzo12ISmrC8H86TgSCp"][class*="_1QVrieUoti9cxiQSRw314E"][class*="uWdXen_41bh0iwLrgzFkc"] {
+    --posttitletextcolor: @text !important;
+  }
+
+  // Safe search toggle
+  button#safe-search-toggle[aria-checked="true"] {
+    background: @primary !important;
+  }
+
+  // ==========================================================================
+  // Navigation Sidebar
+  // ==========================================================================
+
+  // Close icon
+  i.icon-close {
+    color: @subtext0 !important;
+  }
+
+  // Item color
+  a[role="menuitem"] {
+    color: @text !important;
+  }
+
+  // Navigation sidebar header color
+  div[role="menu"] > div[role="heading"] {
+    color: @subtext0 !important;
+  }
+
+  a[role="menuitem"]:hover {
+    background: @surface0 !important;
+  }
+
+  // Favorites
+  i.icon-star_fill {
+    color: @primary !important;
+  }
+
+  i.icon-star {
+    color: @subtext0 !important;
+  }
+
+  // ==========================================================================
+  // Right Frontpage Sidebar
+  // ==========================================================================
+
+  // Reddit premium icon
+  i.icon-premium_fill {
+    color: @primary !important;
+  }
+
+  // Reddit premium try now button
+  button._10BQ7pjWbeYP63SAPNS8Ts.q_unSaY23rpdd3lDvGZ- {
+    background: @primary !important;
+    color: @base !important;
+  }
+
+  // Recent posts thumbnail borders
+  div._3fWuhJ6bVet7XJT5A0mZM2 > div > div > div {
+    border-color: @subtext0 !important;
+  }
+
+  // ==========================================================================
+  // Posts
+  // ==========================================================================
+
+  // Post background for card style
+  div[data-adclicklocation="background"] {
+    background: @base !important;
+  }
+
+  // Post options (save, comment, etc.)
+  div._3-miAEojrCvx_4FQ8x3P-s,
+  i.icon-comment,
+  i.icon-share,
+  i.icon-save,
+  i.icon-expand,
+  i.icon-collapse,
+  i.icon-text_post,
+  i.icon-image_post,
+  i.icon-media_gallery,
+  i.icon-video_post,
+  i.icon-gif_post,
+  i.icon-embed,
+  i.icon-external_link,
+  i.icon-poll_post {
+    color: @subtext0 !important;
+  }
+
+  // Post title color
+  div[data-adclicklocation="title"] > div > a > div > h3,
+  div[data-adclicklocation="title"] > div:first-child > div:first-child > h1:first-child {
+    color: @text !important;
+  }
+
+  // Post op color and post date color
+  div[data-adclicklocation="top_bar"] > span,
+  a[data-testid="post_author_link"] {
+    color: @subtext0 !important;
+  }
+
+  // NSFW flair
+  span._1wzhGvvafQFOWAyA157okr {
+    border-color: @red !important;
+    color: @red !important;
+  }
+
+  // Pinned post icon
+  i.icon-pin_fill {
+    color: @green !important;
+  }
+
+  // Give award icon
+  i.icon-award {
+    color: @subtext0 !important;
+  }
+
+  // Locked post icon
+  i.icon-archived_fill,
+  i.icon-lock_fill {
+    color: @yellow !important;
+  }
+
+  // Post button divider
+  div[data-click-id="body"] > div:nth-child(3) > div:nth-child(3) {
+    border-color: @surface1 !important;
+  }
+
+  // ==========================================================================
+  // Upvotes/Downvotes
+  // ==========================================================================
+
+  // Upvote/downvote background
+  div.Post,
+  div[data-click-id="media"] {
+    background: @mantle !important;
+    fill: @mantle !important;
+  }
+
+  // Inactive vote text color
+  div[id^="vote-arrows"] > div {
+    color: @subtext0 !important;
+  }
+
+  // Active upvote color
+  i.icon-upvote_fill {
+    color: @red !important;
+  }
+
+  button[aria-label="upvote"][aria-pressed="false"] > span:hover > i {
+    color: @red !important;
+  }
+
+  // Active upvote text color
+  button[aria-label="upvote"][aria-pressed="true"] ~ div {
+    color: @red !important;
+  }
+
+  // Hover background for both upvotes and downvotes
+  button[aria-label="upvote"][aria-label="downvote"] > span:hover {
+    background: @surface0 !important;
+  }
+
+  // Active downvote color
+  .icon-downvote_fill {
+    color: @blue !important;
+  }
+
+  // Active downvote text color
+  button[aria-label="downvote"][aria-pressed="true"] ~ div {
+    color: @blue !important;
+  }
+
+  button[aria-label="downvote"][aria-pressed="false"] > span:hover > i {
+    color: @blue !important;
+  }
+
+  // ==========================================================================
+  // Report Modal
+  // ==========================================================================
+  a.o1ov2mzLxTFAFP-O4Uv8I {
+    color: @primary !important;
+  }
+
+  button._1lDGFVGU9k2mi-4kjU95Rp {
+    color: @base !important;
+  }
+
+  // ==========================================================================
+  // Subreddit Pages
+  // ==========================================================================
+  a[role="button"][target="_blank"] {
+    background: @text !important;
+    color: @base !important;
+  }
+
+  // Radio buttons (flair selector, etc.)
+  div[role="radio"]:hover,
+  div[role="radio"]:focus {
+    background: @primary !important;
+  }
+
+  div[role="radio"] > svg,
+  div[role="radio"] > svg:active {
+    fill: @text !important;
+  }
+
+  // Checkboxes
+  button[role="checkbox"] {
+    fill: @primary !important;
+  }
+
+  // ==========================================================================
+  // Subreddit Right Sidebar
+  // ==========================================================================
+
+  // Header background
+  ._ZhON3a3vplThB8NFwuJn {
+    background: @crust !important;
+    color: @text !important;
+  }
+
+  // Subreddit image background
+  img[alt="Subreddit Icon"][role="presentation"] {
+    background: @primary !important;
+  }
+
+  // Border between elements
+  ._1KrMye71CT332tKKKUWAj6:not(:last-of-type) {
+    border-bottom-color: @surface0 !important;
+  }
+
+  // Follower color
+  .bg-neutral-background {
+    color: @text !important;
+  }
+
+  // Default subreddit icon
+  i.icon-community_fill {
+    color: @primary !important;
+  }
+
+  // Online users
+  div._21RLQh5PvUhC6vOKoFeHUP::before {
+    color: @green !important;
+  }
+
+  // ==========================================================================
+  // Post Viewer
+  // ==========================================================================
+
+  // Spoiler tags
+  ._2v4IIjPhKL0PDaWaWtjJ1E {
+    background: @surface0 !important;
+  }
+
+  // Mod comment tag
+  span[id^="CommentTopMeta--Mod"] {
+    color: @green !important;
+  }
+
+  // OP comment tag
+  span[id^="CommentTopMeta--OP"] {
+    color: @blue !important;
+  }
+
+  // Post overlay (when "open in new tab" disabled)
+  div#overlayScrollContainer > div {
+    background: @crust !important;
+  }
+
+  // Fixes comment section background
+  div._2M2wOqmeoPVvcSsJ6Po9-V._3287nL7j7epK9JmDC3N1VR {
+    background: @mantle !important;
+  }
+
+  // Shade applied to background
+  div._2DJXORCrmcNpPTSq0LqL6i,
+  div._1DK52RbaamLOWw5UPaht_S {
+    background: fade(@crust, 80%) !important;
+  }
+
+  // Gold award gradient
+  div.TmlaIdEplCzZ0F1aRGYQh[role="presentation"] {
+    background: linear-gradient(188deg, fade(@yellow, 12%) 1.7%, fade(@yellow, 0%) 46%, rgba(0, 0, 0, 0)) !important;
+  }
+
+  // Image gallery next/previous buttons
+  a[title="Next"] > i,
+  a[title="Previous"] > i {
+    background: @surface0 !important;
+  }
+
+  // Image gallery image count
+  div._61i6grM3um1yuw4GrN97P {
+    background: fade(@crust, 80%) !important;
+    color: @text !important;
+  }
+
+  // Comment search bar
+  input#comment_search-bar {
+    background: @base !important;
+  }
+
+  // Tab bar below banner
+  ._1gVVmSnHZpkUgVShsn7-ua {
+    background: @mantle !important;
+  }
+
+  // ==========================================================================
+  // Multireddits/Custom Feeds
+  // ==========================================================================
+
+  // Delete custom feed button
+  .bX6SqXfzfxpv4GQbuIYVZ {
+    color: @red !important;
+  }
+
+  // ==========================================================================
+  // Tooltips
+  // ==========================================================================
+  div.HQ2VJViRjokXpRbJzPvvc {
+    background: @mantle !important;
+    color: @text !important;
+  }
+
+  div.HQ2VJViRjokXpRbJzPvvc::after {
+    border-top-color: @mantle !important;
+  }
+
+  // ==========================================================================
+  // Layout: Hide sidebar, full width content
+  // ==========================================================================
+
+  // Hide the right sidebar (second child of main-container)
+  .main-container > :nth-child(2):not(main),
+  aside[aria-label],
+  #right-sidebar-container,
+  [data-testid="frontpage-sidebar"],
+  .sidebar,
+  .side {
+    display: none !important;
+  }
+
+  // Force single column full width layout
+  .main-container {
+    grid-template-columns: minmax(0, 1fr) !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+  }
+
+  // Ensure main content takes full width
+  .main-container > main,
+  main.main {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  // ==========================================================================
+  // Scrollbar Styling
+  // ==========================================================================
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: @scrollbar-track;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: @scrollbar-thumb;
+    border-radius: 4px;
+
+    &:hover {
+      background: @scrollbar-hover;
+    }
+  }
+}
