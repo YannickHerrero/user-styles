@@ -11,6 +11,14 @@ Custom browser userstyles built on the **Base16** color system for consistent th
 | **Rose of Dune** | Light | Soft rose-gold with warm brown accents, inspired by desert dunes at dusk |
 | **Catppuccin Mocha** | Dark | Soothing pastel theme with rich, warm colors |
 
+## Theme Previews
+
+### Rose of Dune (Light)
+![Rose of Dune theme preview](img/rose-of-dune.png)
+
+### Catppuccin Mocha (Dark)
+![Catppuccin Mocha theme preview](img/catppuccin-moccha.png)
+
 ## Supported Websites
 
 All themes support the following websites:
