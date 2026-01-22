@@ -569,24 +569,23 @@
   }
 
   // ==========================================================================
-  // Apply theme to :root (highest priority)
-  // ==========================================================================
-  :root {
-    .github-theme();
-  }
-
-  // ==========================================================================
   // Theme detection - Auto mode
+  // Using doubled attribute selector [data-color-mode][data-color-mode="auto"]
+  // for higher CSS specificity to override GitHub's native theme styles
   // ==========================================================================
-  [data-color-mode="auto"] {
+  [data-color-mode][data-color-mode="auto"] {
     @media (prefers-color-scheme: light) {
-      &[data-light-theme="light"],
+      &[data-light-theme="light"] {
+        .github-theme();
+      }
       &[data-light-theme="dark"] {
         .github-theme();
       }
     }
     @media (prefers-color-scheme: dark) {
-      &[data-dark-theme="light"],
+      &[data-dark-theme="light"] {
+        .github-theme();
+      }
       &[data-dark-theme="dark"] {
         .github-theme();
         header[data-color-mode] {
@@ -600,7 +599,9 @@
   // Theme detection - Manual mode
   // ==========================================================================
   [data-color-mode="light"][data-light-theme="dark"],
-  [data-color-mode="dark"][data-dark-theme="dark"],
+  [data-color-mode="dark"][data-dark-theme="dark"] {
+    .github-theme();
+  }
   [data-color-mode="light"][data-light-theme="light"],
   [data-color-mode="dark"][data-dark-theme="light"] {
     .github-theme();
