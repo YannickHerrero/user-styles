@@ -1,0 +1,488 @@
+/* ==UserStyle==
+@name         Discord - Snow
+@namespace    github.com/yherrero/stylus
+@version      2.0.0
+@description  Snow theme for Discord (Base16)
+@author       yherrero
+@license      MIT
+==/UserStyle== */
+@-moz-document domain("discord.com") {
+  .theme-dark,
+  .theme-light {
+    --brand-100: #d3d3d3 !important;
+    --brand-130: #cccccc !important;
+    --brand-160: #c6c6c6 !important;
+    --brand-200: #c0c0c0 !important;
+    --brand-230: #b9b9b9 !important;
+    --brand-260: #b3b3b3 !important;
+    --brand-300: #adadad !important;
+    --brand-330: #a0a0a0 !important;
+    --brand-360: #939393 !important;
+    --brand-400: #868686 !important;
+    --brand-430: #7a7a7a !important;
+    --brand-460: #6d6d6d !important;
+    --brand-500: #606060 !important;
+    --brand-530: #535353 !important;
+    --brand-560: #474747 !important;
+    --brand-600: #3a3a3a !important;
+    --brand-630: #2d2d2d !important;
+    --brand-660: #202020 !important;
+    --brand-700: #141414 !important;
+    --brand-730: #0d0d0d !important;
+    --brand-760: #070707 !important;
+    --brand-800: #000000 !important;
+    --brand-830: #000000 !important;
+    --brand-860: #000000 !important;
+    --brand-900: #000000 !important;
+    --brand-05a: rgba(96, 96, 96, 0.05) !important;
+    --brand-10a: rgba(96, 96, 96, 0.1) !important;
+    --brand-15a: rgba(96, 96, 96, 0.15) !important;
+    --brand-20a: rgba(96, 96, 96, 0.2) !important;
+    --brand-25a: rgba(96, 96, 96, 0.25) !important;
+    --brand-30a: rgba(96, 96, 96, 0.3) !important;
+    --brand-35a: rgba(96, 96, 96, 0.35) !important;
+    --brand-40a: rgba(96, 96, 96, 0.4) !important;
+    --brand-45a: rgba(96, 96, 96, 0.45) !important;
+    --brand-50a: rgba(96, 96, 96, 0.5) !important;
+    --brand-55a: rgba(96, 96, 96, 0.55) !important;
+    --brand-60a: rgba(96, 96, 96, 0.6) !important;
+    --brand-65a: rgba(96, 96, 96, 0.65) !important;
+    --brand-70a: rgba(96, 96, 96, 0.7) !important;
+    --brand-75a: rgba(96, 96, 96, 0.75) !important;
+    --brand-80a: rgba(96, 96, 96, 0.8) !important;
+    --brand-85a: rgba(96, 96, 96, 0.85) !important;
+    --brand-90a: rgba(96, 96, 96, 0.9) !important;
+    --brand-95a: rgba(96, 96, 96, 0.95) !important;
+    --brand-experiment: #606060 !important;
+    --brand-experiment-360: #939393 !important;
+    --brand-experiment-400: #868686 !important;
+    --brand-experiment-430: #7a7a7a !important;
+    --brand-experiment-460: #6d6d6d !important;
+    --brand-experiment-500: #606060 !important;
+    --brand-experiment-530: #535353 !important;
+    --brand-experiment-560: #474747 !important;
+    --brand-experiment-600: #3a3a3a !important;
+    --brand-experiment-630: #2d2d2d !important;
+    --brand-experiment-660: #202020 !important;
+    --app-frame-background: #e0e0e0 !important;
+    --background-base-lowest: #e0e0e0 !important;
+    --background-base-lower: #ffffff !important;
+    --background-base-low: #ffffff !important;
+    --background-surface-high: #ffffff !important;
+    --background-surface-higher: #ffffff !important;
+    --background-surface-highest: #ffffff !important;
+    --bg-surface-raised: #ffffff !important;
+    --background-gradient-highest: #ffffff !important;
+    --background-primary: #ffffff !important;
+    --background-secondary: #ffffff !important;
+    --background-secondary-alt: #ffffff !important;
+    --background-tertiary: #ffffff !important;
+    --background-accent: #808080 !important;
+    --background-floating: #000000 !important;
+    --background-mobile-primary: #ffffff !important;
+    --background-mobile-secondary: #e0e0e0 !important;
+    --home-background: #ffffff !important;
+    --background-modifier-hover: rgba(96, 96, 96, 0.1) !important;
+    --background-modifier-active: rgba(96, 96, 96, 0.2) !important;
+    --background-modifier-selected: rgba(96, 96, 96, 0.2) !important;
+    --background-modifier-accent: rgba(96, 96, 96, 0.1) !important;
+    --background-mod-muted: rgba(96, 96, 96, 0.05) !important;
+    --background-mod-normal: rgba(96, 96, 96, 0.15) !important;
+    --background-mod-subtle: rgba(96, 96, 96, 0.25) !important;
+    --background-mod-strong: rgba(96, 96, 96, 0.45) !important;
+    --background-feedback-positive: rgba(128, 128, 128, 0.1) !important;
+    --background-feedback-critical: rgba(28, 28, 28, 0.1) !important;
+    --background-feedback-warning: rgba(96, 96, 96, 0.1) !important;
+    --background-feedback-info: rgba(0, 0, 0, 0.1) !important;
+    --text-default: #1c1c1c !important;
+    --text-normal: #1c1c1c !important;
+    --text-muted: #808080 !important;
+    --text-link: #000000 !important;
+    --text-link-low-saturation: #000000 !important;
+    --text-brand: #606060 !important;
+    --text-strong: #1c1c1c !important;
+    --text-subtle: #606060 !important;
+    --text-positive: #808080 !important;
+    --text-warning: #606060 !important;
+    --text-danger: #1c1c1c !important;
+    --text-feedback-positive: #808080 !important;
+    --text-feedback-critical: #1c1c1c !important;
+    --text-feedback-warning: #606060 !important;
+    --text-feedback-info: #000000 !important;
+    --header-primary: #1c1c1c !important;
+    --header-secondary: #606060 !important;
+    --interactive-normal: #606060 !important;
+    --interactive-hover: #1c1c1c !important;
+    --interactive-active: #1c1c1c !important;
+    --interactive-muted: #808080 !important;
+    --interactive-icon-default: #1c1c1c !important;
+    --interactive-icon-hover: #1c1c1c !important;
+    --interactive-icon-active: #1c1c1c !important;
+    --interactive-text-default: #1c1c1c !important;
+    --interactive-text-hover: #1c1c1c !important;
+    --interactive-text-active: #1c1c1c !important;
+    --interactive-background-hover: rgba(96, 96, 96, 0.15) !important;
+    --interactive-background-selected: rgba(128, 128, 128, 0.2) !important;
+    --interactive-background-active: rgba(28, 28, 28, 0.17) !important;
+    --icon-muted: #808080 !important;
+    --icon-default: #1c1c1c !important;
+    --icon-strong: #1c1c1c !important;
+    --icon-subtle: #606060 !important;
+    --icon-feedback-positive: #808080 !important;
+    --icon-feedback-warning: #606060 !important;
+    --icon-feedback-critical: #1c1c1c !important;
+    --icon-feedback-info: #000000 !important;
+    --channels-default: #606060 !important;
+    --channel-icon: #808080 !important;
+    --channel-text-area-placeholder: rgba(28, 28, 28, 0.5) !important;
+    --channeltextarea-background: #e0e0e0 !important;
+    --custom-channel-members-bg: #e0e0e0 !important;
+    --chat-background: #ffffff !important;
+    --chat-background-default: #ffffff !important;
+    --chat-border: rgba(96, 96, 96, 0.2) !important;
+    --chat-text-muted: #808080 !important;
+    --chat-input-container-background: #e0e0e0 !important;
+    --message-background-hover: rgba(224, 224, 224, 0.3) !important;
+    --message-mentioned-background-default: rgba(96, 96, 96, 0.1) !important;
+    --message-mentioned-background-hover: rgba(96, 96, 96, 0.08) !important;
+    --message-reacted-background-default: rgba(96, 96, 96, 0.3) !important;
+    --message-reacted-text-default: #606060 !important;
+    --message-highlight-background-default: rgba(96, 96, 96, 0.08) !important;
+    --message-highlight-background-hover: rgba(96, 96, 96, 0.06) !important;
+    --message-automod-background-default: rgba(28, 28, 28, 0.05) !important;
+    --message-automod-background-hover: rgba(28, 28, 28, 0.1) !important;
+    --border-muted: #e0e0e0 !important;
+    --border-strong: #e0e0e0 !important;
+    --border-normal: rgba(96, 96, 96, 0.2) !important;
+    --border-subtle: #ffffff !important;
+    --control-primary-background-default: #606060 !important;
+    --control-primary-background-hover: #4d4d4d !important;
+    --control-primary-background-active: #404040 !important;
+    --control-secondary-background-default: #e0e0e0 !important;
+    --control-secondary-background-hover: #d3d3d3 !important;
+    --control-secondary-background-active: #cdcdcd !important;
+    --control-secondary-text-default: #1c1c1c !important;
+    --control-secondary-text-hover: #1c1c1c !important;
+    --control-secondary-border-default: #e0e0e0 !important;
+    --control-critical-primary-background-default: #1c1c1c !important;
+    --control-critical-primary-background-hover: #0f0f0f !important;
+    --control-critical-primary-background-active: #020202 !important;
+    --control-critical-primary-text-default: #ffffff !important;
+    --control-critical-primary-text-hover: #ffffff !important;
+    --control-critical-secondary-text-default: #1c1c1c !important;
+    --control-critical-secondary-border-default: #1c1c1c !important;
+    --control-critical-secondary-background-default: transparent !important;
+    --control-critical-secondary-background-hover: #161616 !important;
+    --control-critical-secondary-text-hover: #ffffff !important;
+    --control-critical-secondary-border-hover: #161616 !important;
+    --control-critical-secondary-background-active: #0f0f0f !important;
+    --control-critical-secondary-text-active: #ffffff !important;
+    --control-critical-secondary-border-active: #161616 !important;
+    --control-connected-background-default: #808080 !important;
+    --control-connected-background-hover: #737373 !important;
+    --control-connected-background-active: #6d6d6d !important;
+    --control-connected-border-default: #808080 !important;
+    --control-connected-border-hover: #7a7a7a !important;
+    --control-connected-border-active: #7a7a7a !important;
+    --control-brand-foreground: #606060 !important;
+    --control-brand-foreground-new: #606060 !important;
+    --button-danger-background: #1c1c1c !important;
+    --button-danger-background-hover: #080808 !important;
+    --button-danger-background-active: #000000 !important;
+    --button-positive-background: #808080 !important;
+    --button-positive-background-hover: #6c6c6c !important;
+    --button-positive-background-active: #616161 !important;
+    --button-secondary-background: #e0e0e0 !important;
+    --button-secondary-background-hover: #d3d3d3 !important;
+    --button-secondary-background-active: #cccccc !important;
+    --button-outline-danger-text: #1c1c1c !important;
+    --button-outline-danger-border: #1c1c1c !important;
+    --button-outline-danger-background-hover: rgba(28, 28, 28, 0.15) !important;
+    --button-outline-positive-text: #808080 !important;
+    --button-outline-positive-border: #808080 !important;
+    --button-outline-positive-background-hover: rgba(128, 128, 128, 0.15) !important;
+    --button-outline-primary-text: #1c1c1c !important;
+    --button-outline-brand-text: #1c1c1c !important;
+    --button-outline-brand-background-hover: #5a5a5a !important;
+    --button-outline-brand-border-active: #5a5a5a !important;
+    --redesign-button-positive-background: #808080 !important;
+    --redesign-button-positive-pressed-background: #737373 !important;
+    --redesign-button-secondary-background: #e0e0e0 !important;
+    --redesign-button-secondary-pressed-background: #d3d3d3 !important;
+    --input-background: #000000 !important;
+    --input-background-default: #000000 !important;
+    --input-text-default: #1c1c1c !important;
+    --input-placeholder-text: #808080 !important;
+    --input-placeholder-text-default: #606060 !important;
+    --input-border-default: #808080 !important;
+    --modal-background: #ffffff !important;
+    --modal-footer-background: #ffffff !important;
+    --card-background-default: #ffffff !important;
+    --custom-status-bubble-background: #e0e0e0 !important;
+    --custom-status-bubble-background-color: #e0e0e0 !important;
+    --status-danger: #1c1c1c !important;
+    --status-positive: #808080 !important;
+    --status-warning: #606060 !important;
+    --status-positive-background: #808080 !important;
+    --status-positive-text: #ffffff !important;
+    --status-warning-background: #606060 !important;
+    --status-warning-text: #ffffff !important;
+    --status-danger-background: rgba(28, 28, 28, 0.2) !important;
+    --status-danger-text: #1c1c1c !important;
+    --info-positive-background: rgba(128, 128, 128, 0.15) !important;
+    --info-positive-foreground: #808080 !important;
+    --info-positive-text: #808080 !important;
+    --info-warning-background: rgba(96, 96, 96, 0.15) !important;
+    --info-warning-foreground: #606060 !important;
+    --info-warning-text: #606060 !important;
+    --info-danger-background: rgba(28, 28, 28, 0.15) !important;
+    --info-danger-foreground: #1c1c1c !important;
+    --info-danger-text: #1c1c1c !important;
+    --info-help-background: rgba(128, 128, 128, 0.15) !important;
+    --info-help-foreground: #808080 !important;
+    --info-help-text: #808080 !important;
+    --mention-foreground: #606060 !important;
+    --mention-background: rgba(96, 96, 96, 0.3) !important;
+    --scrollbar-thin-thumb: #606060 !important;
+    --scrollbar-thin-track: transparent !important;
+    --scrollbar-auto-thumb: #606060 !important;
+    --scrollbar-auto-track: #e0e0e0 !important;
+    --scrollbar-auto-scrollbar-color-thumb: #606060 !important;
+    --scrollbar-auto-scrollbar-color-track: #e0e0e0 !important;
+    --focus-primary: #606060 !important;
+    --__adaptive-focus-ring-color: #606060 !important;
+    --spoiler-revealed-background: #e0e0e0 !important;
+    --spoiler-hidden-background: #606060 !important;
+    --__spoiler-background-color--hidden: #606060 !important;
+    --__spoiler-warning-background-color: #6d6d6d !important;
+    --background-code: #ffffff !important;
+    --textbox-markdown-syntax: #808080 !important;
+    --checkbox-border-default: #808080 !important;
+    --elevation-stroke: 0 0 0 1px rgba(96, 96, 96, 0.15) !important;
+    --elevation-low: 0 1px 2px rgba(28, 28, 28, 0.1) !important;
+    --elevation-medium: 0 4px 8px rgba(28, 28, 28, 0.1) !important;
+    --elevation-high: 0 8px 16px rgba(28, 28, 28, 0.1) !important;
+    --primary-100: #606060 !important;
+    --primary-200: #808080 !important;
+    --primary-300: #606060 !important;
+    --primary-400: #606060 !important;
+    --primary-630: #ffffff !important;
+    --primary-700: #ffffff !important;
+    --primary-800: #ffffff !important;
+    --white: #1c1c1c !important;
+    --white-400: #1c1c1c !important;
+    --white-500: #1c1c1c !important;
+    --white-600: #606060 !important;
+    --white-700: #808080 !important;
+    --black-500: #ffffff !important;
+    --green-360: #808080 !important;
+    --green-300: #808080 !important;
+    --yellow-360: #606060 !important;
+    --yellow-300: #606060 !important;
+    --red-400: #1c1c1c !important;
+    --red-430: #020202 !important;
+    --red-500: #000000 !important;
+    --blue-500: #000000 !important;
+    --blue-530: #000000 !important;
+    --opacity-blurple-8: rgba(96, 96, 96, 0.08) !important;
+    --opacity-blurple-16: rgba(96, 96, 96, 0.16) !important;
+    --opacity-blurple-24: rgba(96, 96, 96, 0.24) !important;
+    --opacity-blurple-32: rgba(96, 96, 96, 0.32) !important;
+    --opacity-blurple-60: rgba(96, 96, 96, 0.6) !important;
+    --blurple-50: #606060 !important;
+    --guild-boosting-pink: #808080 !important;
+    --guild-boosting-blue: #000000 !important;
+    --guild-boosting-purple: #808080 !important;
+    --premium-perk-yellow: #606060 !important;
+    --premium-perk-purple: #808080 !important;
+    --premium-perk-dark-blue: #000000 !important;
+    --premium-perk-light-blue: #0d0d0d !important;
+    --premium-perk-blue: #000000 !important;
+    --premium-perk-green: #808080 !important;
+    --premium-perk-pink: #808080 !important;
+    --premium-perk-orange: #606060 !important;
+    --premium-tier-0-blue: #000000 !important;
+    --premium-tier-0-purple: #808080 !important;
+    --premium-tier-1-blue-for-gradients: #000000 !important;
+    --premium-tier-1-dark-blue-for-gradients: #000000 !important;
+    --premium-tier-2-purple-for-gradients: #676767 !important;
+    --premium-tier-2-purple-for-gradients-2: #808080 !important;
+    --premium-tier-2-pink-for-gradients: #808080 !important;
+    --user-profile-overlay-background: #e0e0e0 !important;
+    --user-profile-overlay-background-hover: #e0e0e0 !important;
+    --badge-background-default: #606060 !important;
+    --badge-text-default: #e0e0e0 !important;
+    --badge-text-brand: #ffffff !important;
+    --twitch: #676767 !important;
+    --playstation: #000000 !important;
+    --spotify: #808080 !important;
+    --notice-background-critical: #1c1c1c !important;
+    --notice-background-info: #000000 !important;
+    --notice-background-positive: #808080 !important;
+    --notice-background-warning: #606060 !important;
+    --notice-text-critical: #e0e0e0 !important;
+    --notice-text-info: #e0e0e0 !important;
+    --notice-text-positive: #e0e0e0 !important;
+    --notice-text-warning: #e0e0e0 !important;
+    --logo-primary: #1c1c1c !important;
+    --search-popout-option-non-text-color: #808080 !important;
+    --__header-bar-background: #ffffff !important;
+    --deprecated-card-bg: #000000 !important;
+    --deprecated-card-editable-bg: #000000 !important;
+    --deprecated-store-bg: #ffffff !important;
+    --deprecated-quickswitcher-input-background: #000000 !important;
+    --deprecated-quickswitcher-input-placeholder: #808080 !important;
+    --deprecated-text-input-bg: #000000 !important;
+    --deprecated-text-input-border: rgba(96, 96, 96, 0.2) !important;
+    --deprecated-text-input-border-hover: #808080 !important;
+    --deprecated-text-input-border-disabled: rgba(96, 96, 96, 0.15) !important;
+    --deprecated-text-input-prefix: #808080 !important;
+    --activity-card-background: #000000 !important;
+    --plum-23: #ffffff !important;
+  }
+  ::selection {
+    background-color: rgba(96, 96, 96, 0.6) !important;
+  }
+  .hljs-keyword {
+    color: #808080 !important;
+  }
+  .hljs-string {
+    color: #606060 !important;
+  }
+  .hljs-function {
+    color: #000000 !important;
+  }
+  .hljs-comment {
+    color: #808080 !important;
+  }
+  .hljs-number {
+    color: #606060 !important;
+  }
+  .hljs-class {
+    color: #808080 !important;
+  }
+  .hljs-variable {
+    color: #1c1c1c !important;
+  }
+  .hljs-regexp {
+    color: #808080 !important;
+  }
+  .hljs-built_in {
+    color: #000000 !important;
+  }
+  .hljs-literal {
+    color: #606060 !important;
+  }
+  .hljs-type {
+    color: #808080 !important;
+  }
+  .hljs-params {
+    color: #1c1c1c !important;
+  }
+  .hljs-meta {
+    color: #808080 !important;
+  }
+  .hljs-title {
+    color: #000000 !important;
+  }
+  .hljs-attr {
+    color: #1c1c1c !important;
+  }
+  .hljs-selector-tag {
+    color: #808080 !important;
+  }
+  .hljs-selector-class {
+    color: #808080 !important;
+  }
+  .hljs-selector-id {
+    color: #1c1c1c !important;
+  }
+  pre,
+  code {
+    background: #e0e0e0 !important;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #e0e0e0;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: rgba(96, 96, 96, 0.4);
+    border-radius: 4px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(96, 96, 96, 0.6);
+  }
+  nav[aria-label*="Servers"],
+  nav[aria-label*="serveurs"],
+  nav[aria-label*="Encadre"],
+  [class*="guilds"][class*="wrapper"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  nav[aria-label*="Servers"]:hover,
+  nav[aria-label*="serveurs"]:hover,
+  nav[aria-label*="Encadre"]:hover,
+  [class*="guilds"][class*="wrapper"]:hover {
+    opacity: 1;
+  }
+  [class*="message"] [class*="avatar"],
+  [class*="message"] [class*="Avatar"],
+  [class*="chatContent"] [class*="avatar"],
+  [class*="chatContent"] [class*="Avatar"] {
+    display: none !important;
+  }
+  img,
+  video,
+  [class*="avatar"],
+  [class*="Avatar"],
+  [class*="guildIcon"],
+  [class*="serverIcon"],
+  [class*="emoji"],
+  [class*="Emoji"],
+  [class*="stickerAsset"],
+  [class*="imageWrapper"],
+  [class*="videoWrapper"],
+  [class*="embedVideo"],
+  [class*="embedImage"],
+  [class*="embedThumbnail"],
+  [data-type="gif"],
+  [data-type="sticker"] {
+    opacity: 0.25;
+    transition: opacity 0.2s ease;
+  }
+  img:hover,
+  video:hover,
+  [class*="avatar"]:hover,
+  [class*="Avatar"]:hover,
+  [class*="guildIcon"]:hover,
+  [class*="serverIcon"]:hover,
+  [class*="emoji"]:hover,
+  [class*="Emoji"]:hover,
+  [class*="stickerAsset"]:hover,
+  [data-type="gif"]:hover,
+  [data-type="sticker"]:hover {
+    opacity: 1;
+  }
+  [class*="imageWrapper"]:hover,
+  [class*="imageWrapper"]:hover img,
+  [class*="imageWrapper"]:hover video,
+  [class*="videoWrapper"]:hover,
+  [class*="videoWrapper"]:hover video,
+  [class*="videoWrapper"]:hover img,
+  [class*="embedVideo"]:hover,
+  [class*="embedVideo"]:hover video,
+  [class*="embedVideo"]:hover img,
+  [class*="embedImage"]:hover,
+  [class*="embedImage"]:hover img,
+  [class*="embedThumbnail"]:hover,
+  [class*="embedThumbnail"]:hover img,
+  [class*="embed"]:hover [class*="imageWrapper"],
+  [class*="embed"]:hover [class*="imageWrapper"] img,
+  [class*="embed"]:hover img,
+  [class*="embed"]:hover video {
+    opacity: 1;
+  }
+}

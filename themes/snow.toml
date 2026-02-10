@@ -1,0 +1,29 @@
+[meta]
+name = "Snow"
+id = "snow"
+type = "light"
+
+[base16]
+# Base16 palette - Monochrome grayscale
+base00 = "ffffff"  # Default Background
+base01 = "e0e0e0"  # Lighter Background
+base02 = "c0c0c0"  # Selection Background
+base03 = "808080"  # Comments, Invisibles
+base04 = "606060"  # Dark Foreground
+base05 = "1c1c1c"  # Default Foreground
+base06 = "0a0a0a"  # Light Foreground
+base07 = "000000"  # Lightest Foreground
+base08 = "1c1c1c"  # Variables, Errors (dark)
+base09 = "606060"  # Integers, Constants (medium)
+base0A = "808080"  # Classes, Search BG (light)
+base0B = "606060"  # Strings (medium)
+base0C = "808080"  # Support, Regex (light)
+base0D = "000000"  # Functions, Methods (black)
+base0E = "808080"  # Keywords (light)
+base0F = "a0a0a0"  # Deprecated, Embedded (muted)
+
+[overrides]
+# Overrides to match the Snow color scheme
+primary = "606060"    # Main accent color
+accent = "808080"     # Secondary accent
+border = "e0e0e0"     # Explicit border color

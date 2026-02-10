@@ -1,0 +1,286 @@
+/* ==UserStyle==
+@name         Claude - Snow
+@namespace    github.com/yherrero/stylus
+@version      2.0.0
+@description  Snow theme for Claude.ai (Base16)
+@author       yherrero
+@license      MIT
+==/UserStyle== */
+@-moz-document domain("claude.ai") {
+  :root,
+  :root[data-mode="dark"],
+  :root[data-mode="light"],
+  [data-theme="claude"][data-mode="light"],
+  [data-theme="claude"][data-mode="dark"] {
+    --accent-brand: #606060 !important;
+    --accent-main-000: #606060 !important;
+    --accent-main-100: #606060 !important;
+    --accent-main-200: #535353 !important;
+    --accent-main-900: #7a7a7a !important;
+    --accent-pro-000: #808080 !important;
+    --accent-pro-100: #808080 !important;
+    --accent-pro-200: #737373 !important;
+    --accent-pro-900: #9a9a9a !important;
+    --accent-secondary-000: #808080 !important;
+    --accent-secondary-100: #808080 !important;
+    --accent-secondary-200: #737373 !important;
+    --accent-secondary-900: #9a9a9a !important;
+    --bg-000: #e0e0e0 !important;
+    --bg-100: #ffffff !important;
+    --bg-200: #ffffff !important;
+    --bg-300: #e0e0e0 !important;
+    --bg-400: #e0e0e0 !important;
+    --bg-500: #d8d8d8 !important;
+    --border-000: #ffffff !important;
+    --border-100: rgba(96, 96, 96, 0.15) !important;
+    --border-200: rgba(96, 96, 96, 0.2) !important;
+    --border-300: rgba(96, 96, 96, 0.2) !important;
+    --border-400: #808080 !important;
+    --border-500: #808080 !important;
+    --danger-000: #363636 !important;
+    --danger-100: #1c1c1c !important;
+    --danger-200: #0f0f0f !important;
+    --danger-900: rgba(28, 28, 28, 0.2) !important;
+    --oncolor-000: #e0e0e0 !important;
+    --oncolor-100: #e0e0e0 !important;
+    --oncolor-200: #ffffff !important;
+    --oncolor-300: #000000 !important;
+    --text-000: #1c1c1c !important;
+    --text-100: #1c1c1c !important;
+    --text-200: #1c1c1c !important;
+    --text-300: #606060 !important;
+    --text-400: #808080 !important;
+    --text-500: #808080 !important;
+    --ring-color: #606060 !important;
+    --focus-ring-color: rgba(96, 96, 96, 0.5) !important;
+  }
+  .bg-bg-100,
+  .bg-bg-200 {
+    background-color: #ffffff !important;
+  }
+  .bg-bg-000,
+  .bg-bg-300 {
+    background-color: #e0e0e0 !important;
+  }
+  #__next,
+  [data-testid="app-root"],
+  .flex.min-h-screen,
+  .min-h-screen {
+    background-color: #ffffff !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #1c1c1c !important;
+  }
+  nav {
+    background: #e0e0e0 !important;
+  }
+  nav.\!bg-bg-200,
+  .bg-bg-200 {
+    background: #e0e0e0 !important;
+  }
+  main {
+    background: #ffffff !important;
+  }
+  .code-block__code {
+    background: #e0e0e0 !important;
+  }
+  .code-block__code code span {
+    color: #1c1c1c !important;
+  }
+  .code-block__code code span.token[style*="color: rgb(152, 195, 121)"],
+  .code-block__code code span.token.string {
+    color: #606060 !important;
+  }
+  .code-block__code code span.token[style*="color: rgb(209, 154, 102)"],
+  .code-block__code code span.token.keyword,
+  .code-block__code code span.token.attr-name {
+    color: #808080 !important;
+  }
+  .code-block__code code span.token[style*="color: rgb(97, 175, 239)"],
+  .code-block__code code span.token.function,
+  .code-block__code code span.token.tag {
+    color: #000000 !important;
+  }
+  .code-block__code code span.token[style*="color: rgb(224, 108, 117)"],
+  .code-block__code code span.token.important,
+  .code-block__code code span.token.deleted {
+    color: #1c1c1c !important;
+  }
+  .code-block__code code span.token[style*="color: rgb(198, 120, 221)"],
+  .code-block__code code span.token.class-name,
+  .code-block__code code span.token.builtin {
+    color: #808080 !important;
+  }
+  .code-block__code code span.token[style*="color: rgb(171, 178, 191)"],
+  .code-block__code code span.token.comment {
+    color: #808080 !important;
+  }
+  .code-block__code code span.token.number {
+    color: #606060 !important;
+  }
+  .code-block__code code span.token.operator {
+    color: #606060 !important;
+  }
+  .code-block__code code span.token.punctuation {
+    color: #808080 !important;
+  }
+  .code-block__code code span.token.regex {
+    color: #808080 !important;
+  }
+  code:not(pre code),
+  code.text-danger-000 {
+    background: #e0e0e0 !important;
+    color: #1c1c1c !important;
+    padding: 0.125rem 0.375rem;
+    border-radius: 4px;
+  }
+  div.bg-black\/80 {
+    background: #e0e0e0 !important;
+  }
+  div.text-white {
+    color: #1c1c1c !important;
+  }
+  div.text-\[\#D97757\] {
+    color: #606060 !important;
+  }
+  div.text-always-white svg {
+    color: #ffffff !important;
+  }
+  button.bg-accent-pro-100 > span.inline-block {
+    color: #ffffff !important;
+  }
+  button.bg-accent-secondary-900 span.text-text-000 {
+    color: #ffffff !important;
+  }
+  button.bg-accent-secondary-900 span.text-text-300 {
+    color: #e0e0e0 !important;
+  }
+  button.bg-accent-secondary-900 div.bg-accent-secondary-000 {
+    background: #676767 !important;
+  }
+  div.\!text-danger-000.\[\&\[data-highlighted\]\]\:bg-danger-900[data-highlighted] {
+    background: rgba(28, 28, 28, 0.2) !important;
+  }
+  input[type="checkbox"] + div.bg-bg-000 {
+    background: #1c1c1c !important;
+  }
+  a {
+    color: #000000 !important;
+  }
+  a:hover {
+    color: #000000 !important;
+  }
+  input,
+  textarea {
+    background: #000000 !important;
+    border-color: rgba(96, 96, 96, 0.2) !important;
+    color: #1c1c1c !important;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: #808080 !important;
+  }
+  input:focus,
+  textarea:focus {
+    border-color: #606060 !important;
+    box-shadow: 0 0 0 2px rgba(96, 96, 96, 0.5) !important;
+  }
+  .ProseMirror {
+    background: #e0e0e0 !important;
+    color: #1c1c1c !important;
+  }
+  .ProseMirror::placeholder,
+  .ProseMirror .placeholder {
+    color: #808080 !important;
+  }
+  [data-testid="human-turn"] {
+    background: #e0e0e0 !important;
+  }
+  [data-testid="assistant-turn"] {
+    background: #ffffff !important;
+  }
+  .hover\:bg-bg-300:hover {
+    background: rgba(96, 96, 96, 0.1) !important;
+  }
+  .bg-bg-300 {
+    background: rgba(96, 96, 96, 0.2) !important;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #e0e0e0;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: rgba(96, 96, 96, 0.4);
+    border-radius: 4px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(96, 96, 96, 0.6);
+  }
+  [role="dialog"] {
+    background: #ffffff !important;
+    border-color: rgba(96, 96, 96, 0.2) !important;
+  }
+  [role="menu"],
+  [role="listbox"] {
+    background: #000000 !important;
+    border-color: rgba(96, 96, 96, 0.2) !important;
+  }
+  [role="menuitem"]:hover,
+  [role="option"]:hover {
+    background: rgba(96, 96, 96, 0.1) !important;
+  }
+  .artifact-container,
+  [data-testid="artifact"] {
+    background: #000000 !important;
+    border-color: rgba(96, 96, 96, 0.2) !important;
+  }
+  table {
+    border-color: rgba(96, 96, 96, 0.2) !important;
+  }
+  table th {
+    background: #e0e0e0 !important;
+    color: #1c1c1c !important;
+    border-color: rgba(96, 96, 96, 0.2) !important;
+  }
+  table td {
+    border-color: rgba(96, 96, 96, 0.15) !important;
+  }
+  table tr:hover {
+    background: rgba(96, 96, 96, 0.1) !important;
+  }
+  blockquote {
+    border-left-color: #808080 !important;
+    background: rgba(128, 128, 128, 0.08) !important;
+    color: #606060 !important;
+  }
+  hr {
+    border-color: rgba(96, 96, 96, 0.2) !important;
+  }
+  ul,
+  ol {
+    color: #1c1c1c !important;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #0a0a0a !important;
+  }
+  strong,
+  b {
+    color: #1c1c1c !important;
+  }
+  em,
+  i {
+    color: #606060 !important;
+  }
+  ::selection {
+    background-color: rgba(96, 96, 96, 0.6) !important;
+  }
+}
